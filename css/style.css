@@ -1,0 +1,133 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* ************************ Base ********************** */
+body {
+	font-family: Lato, sans-serif;
+	font-size: 18px;
+}
+input::placeholder {
+	font-size: 18px;
+}
+
+/* ingredients */
+.bg-blue {
+	background: #3282f7;
+	/* color: #fff; */
+}
+
+/* appliances */
+.bg-green {
+	/* background: var(--bs-teal); */
+	background: #68d9a4;
+}
+
+/* ustensils */
+.bg-orange {
+	background: #ed6454;
+}
+
+.hidden {
+	display: none;
+}
+.show {
+	display: block;
+}
+
+/* ************************ logo & brand ********************** */
+.brand-heading {
+	color: #d04f4f;
+	font-family: DM Sans, sans-serif;
+}
+
+/* ************************ main search input ********************** */
+#search-bar-input {
+	height: 69px;
+	background: #e7e7e7;
+	color: #000;
+}
+
+#search-bar-input::placeholder {
+	color: #000;
+	opacity: 0.25;
+}
+
+/* ************************ tags ********************** */
+
+.tags-item {
+	font-size: 14px;
+}
+
+.tags-item-btn {
+	border: transparent;
+	background: url(../img/x-circle.svg) center center / 20px 20px no-repeat;
+	width: 20px;
+	height: 20px;
+	margin-left: 13px;
+}
+
+/* ************************ dropdown ********************** */
+/* dropdown close */
+.dropdown-container {
+	width: 170px;
+	height: 69px;
+}
+
+.form-control.input-dropdown {
+	color: #fff;
+	width: 170px;
+	max-width: 100%;
+	width: 100%;
+	/* height: 69px; */
+}
+
+.form-control.input-dropdown::placeholder {
+	color: #fff;
+	font-weight: 700;
+}
+
+/* dropdown open */
+.dropdown-container.expanded {
+	max-width: 667px;
+	/* width: 667px; */
+	width: auto;
+	height: auto;
+}
+
+.dropdown-container.expanded input {
+	height: 69px;
+}
+
+.dropdown-container.expanded input::placeholder {
+	color: #fff;
+	font-weight: 700;
+	opacity: 0.5;
+}
+/* tags */
+.container-tags {
+	width: 100%;
+}
+
+.list-tags-item {
+	width: 33.3333%;
+	min-width: 217px;
+}
+
+/* expanded */
+/* .form-control.input-dropdown.expanded {
+    min-width: 170px;
+    max-width: 397px;
+} */
+
+/* .form-control.input-dropdown.expanded::placeholder {
+    color: var(--bs-light);
+    opacity: .1px;
+    font-weight: normal;
+} */
+
+/* dropdown chevron icon */
+.fa-chevron-down,
+.fa-chevron-up {
+	margin-top: 35px;
+}
