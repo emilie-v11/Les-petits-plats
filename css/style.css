@@ -3,10 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 /* ************************ Base ********************** */
-body {
+body,
+h2 {
 	font-family: Lato, sans-serif;
 	font-size: 18px;
 }
+
 input::placeholder {
 	font-size: 18px;
 }
@@ -31,9 +33,10 @@ input::placeholder {
 .hidden {
 	display: none;
 }
-.show {
+
+/* .show {
 	display: block;
-}
+} */
 
 /* ************************ logo & brand ********************** */
 .brand-heading {
@@ -64,7 +67,7 @@ input::placeholder {
 	background: url(../img/x-circle.svg) center center / 20px 20px no-repeat;
 	width: 20px;
 	height: 20px;
-	margin-left: 13px;
+	/* margin-left: 13px; */
 }
 
 /* ************************ dropdown ********************** */
@@ -104,21 +107,6 @@ input::placeholder {
 	font-weight: 700;
 	opacity: 0.5;
 }
-/* tags */
-.container-tags {
-	width: 100%;
-}
-
-.list-tags-item {
-	width: 33.3333%;
-	min-width: 217px;
-}
-
-/* expanded */
-/* .form-control.input-dropdown.expanded {
-    min-width: 170px;
-    max-width: 397px;
-} */
 
 /* .form-control.input-dropdown.expanded::placeholder {
     color: var(--bs-light);
@@ -126,8 +114,49 @@ input::placeholder {
     font-weight: normal;
 } */
 
+/* tags */
+.container-tags {
+	width: 100%;
+}
+
+/* .dropdown-list-tags {
+    height: auto;
+} */
+
+.list-tags-item {
+	width: 33.3333%;
+	min-width: 210px;
+}
+
 /* dropdown chevron icon */
-.fa-chevron-down,
-.fa-chevron-up {
+.chevron-down,
+.chevron-up {
 	margin-top: 35px;
+}
+
+/* cards */
+.card {
+	background: #c7bebe;
+    border: transparent;
+	cursor: pointer;
+}
+
+.card-img-top {
+	height: auto;
+	width: auto;
+	min-height: 50%;
+}
+
+.card-body {
+	background: #e7e7e7;
+	min-height: 186px;
+}
+
+.card-ingredients-list {
+	font-size: 12px;
+}
+
+.recipe-description {
+	font-size: 12px;
+	font-family: Roboto, sans-serif;
 }
