@@ -13,9 +13,9 @@
     <meta name="description" content="Les petits plats, le meilleur site pour trouver de savoureuse recette !">
 
     <!-- font-awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -42,18 +42,18 @@
                 <input id="search-bar-input" class="form-control rounded-3 border-light py-3 fs-5" type="search"
                     placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Search">
                 <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                <img class="position-absolute top-50 end-0 translate-middle-y me-4 search-bar-icon "
+                <img class="search-bar-icon position-absolute top-50 end-0 translate-middle-y me-4"
                     src="./img/search-icon.svg" width="32" height="32" alt="icon search" aria-hidden="true">
             </form>
 
             <!-- container tags -->
             <div class="container-lg p-0">
                 <ul class="list-group d-flex justify-content-start flex-wrap list-group-horizontal tags-list ">
-                    <li
+                    <!-- <li
                         class="tags-item list-group-item d-flex align-items-center rounded-3 border-light ps-4 py-2 me-2 mb-2 fw-bold text-white bg-blue">
                         Coco
                         <button class="tags-item-btn ms-3" aria-label="Supprimer le tag"></button>
-                    </li>
+                    </li> -->
                     <!-- <li
                         class="list-group-item d-flex align-items-center rounded-3 border-light py-2 me-2 mb-2 text-white bg-blue fw-bold tags-item">
                         coco
@@ -98,21 +98,21 @@
                     <!-- expanded hidden -->
                     <div id="dropdown-container-ingredients"
                         class="dropdown-container input-group me-3 mb-3 rounded-3 bg-blue text-white ">
-                        <div class="input-dropdown-wrap input-group">
+                        <div class="input-dropdown-wrap input-group position-relative rounded-3 bg-blue">
                             <label for="ingredients-search" class="visually-hidden">Filtrez les recettes par
                                 ingrédients</label>
                             <input id="ingredients-search"
-                                class="input-dropdown form-control position-relative bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
-                                placeholder="Ingrédients" type="text">
-                            <img class="position-absolute top-0 end-0 translate-middle-y me-3 chevron-down "
+                                class="input-dropdown form-control bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
+                                placeholder="Ingrédients" type="search">
+                            <img class="chevron-down position-absolute top-0 end-0 translate-middle-y me-3"
                                 src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
                                 aria-hidden="true">
                         </div>
                         <div id="ingredients-container-tags"
-                            class="container-tags container rounded-3 border-0 text-white p-0 pt-2 pb-3 fw-bold hidden"
+                            class="container-tags container rounded-3 border-0 text-white bg-blue p-0 pt-2 pb-3 fw-bold hidden"
                             aria-hidden="true">
                             <ul id="ingredients-tags-list"
-                                class="dropdown-list-tags list-group row d-flex flex-row flex-wrap justify-content-start m-0 p-0 fw-normal">
+                                class="dropdown-list-tags list-group row d-flex flex-row flex-wrap justify-content-start m-0 p-0 fw-normal ">
                                 <li
                                     class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
                                     Sucre</li>
@@ -248,11 +248,11 @@
     </header>
 
     <main>
-        <!-- container cards -->
+        <!-- container Cards' recipes -->
         <div id="container-cards-recipes" class="container-lg mb-5">
             <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 gy-4 gx-4 g-xxl-5">
 
-                <!-- Card's recipe -->
+                <!-- Cards' recipes -->
                 <div class="col rounded-3">
                     <div class="card rounded-3">
                         <img src="./img/bg-card-img.svg" class="card-img-top rounded-top border-0" width="380"

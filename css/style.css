@@ -16,12 +16,10 @@ input::placeholder {
 /* ingredients */
 .bg-blue {
 	background: #3282f7;
-	/* color: #fff; */
 }
 
 /* appliances */
 .bg-green {
-	/* background: var(--bs-teal); */
 	background: #68d9a4;
 }
 
@@ -33,10 +31,6 @@ input::placeholder {
 .hidden {
 	display: none;
 }
-
-/* .show {
-	display: block;
-} */
 
 /* ************************ logo & brand ********************** */
 .brand-heading {
@@ -71,17 +65,19 @@ input::placeholder {
 }
 
 /* ************************ dropdown ********************** */
-/* dropdown close */
+
 .dropdown-container {
 	width: 170px;
 	height: 69px;
 }
 
+/* input */
 .form-control.input-dropdown {
 	color: #fff;
 	width: 170px;
 	max-width: 100%;
 	width: 100%;
+    font-size: 18px;
 	/* height: 69px; */
 }
 
@@ -90,7 +86,7 @@ input::placeholder {
 	font-weight: 700;
 }
 
-/* dropdown open */
+/* dropdown expanded */
 .dropdown-container.expanded {
 	max-width: 667px;
 	/* width: 667px; */
@@ -100,6 +96,7 @@ input::placeholder {
 
 .dropdown-container.expanded input {
 	height: 69px;
+	width: 667px;
 }
 
 .dropdown-container.expanded input::placeholder {
@@ -117,11 +114,11 @@ input::placeholder {
 /* tags */
 .container-tags {
 	width: 100%;
+	position: absolute;
+	top: 60px;
+	left: 1px;
+	z-index: 100;
 }
-
-/* .dropdown-list-tags {
-    height: auto;
-} */
 
 .list-tags-item {
 	width: 33.3333%;
@@ -134,10 +131,11 @@ input::placeholder {
 	margin-top: 35px;
 }
 
-/* cards */
+/* ************************ cards ********************** */
+
 .card {
 	background: #c7bebe;
-    border: transparent;
+	border: transparent;
 	cursor: pointer;
 }
 
