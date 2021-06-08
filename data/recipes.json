@@ -214,7 +214,7 @@
 				{
 					"ingredient": "Sucre vanillé",
 					"quantity": 1,
-					"unit": "sachets"
+					"unit": "sachet"
 				}
 			],
 			"time": 50,
@@ -252,7 +252,7 @@
 				}
 			],
 			"time": 50,
-			"description": "Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crème liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
+			"description": "Etaler la pâte dans les moules à tartelette. Faire cuire la pâte 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crème liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pâte sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
 			"appliance": "Four",
 			"ustensils": ["moule à tartelettes (6)", "casserole"]
 		},
@@ -424,7 +424,7 @@
 				{
 					"ingredient": "Eau",
 					"quantity": "0.5",
-					"unit": "tasses"
+					"unit": "tasse"
 				}
 			],
 			"time": 40,
@@ -567,7 +567,7 @@
 				{
 					"ingredient": "Basilic",
 					"quantity": 1,
-					"unit": "tiges"
+					"unit": "tige"
 				},
 				{
 					"ingredient": "Huile d'olives",
@@ -576,7 +576,7 @@
 				}
 			],
 			"time": 45,
-			"description": "Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pates et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
+			"description": "Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pâtes et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
 			"appliance": "Four",
 			"ustensils": ["plat à gratin", "couteau", "râpe à fromage"]
 		},
@@ -672,7 +672,7 @@
 		},
 		{
 			"id": 20,
-			"name": "Pates Carbonara",
+			"name": "Pâtes Carbonara",
 			"servings": 5,
 			"ingredients": [
 				{
@@ -742,7 +742,7 @@
 				}
 			],
 			"time": 30,
-			"description": "Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.",
+			"description": "Cuisiner la viande hachée dans une poele à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oignons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Servir.",
 			"appliance": "Casserole",
 			"ustensils": ["Cuillère en bois", "louche", "couteau"]
 		},
@@ -918,7 +918,7 @@
 				{
 					"ingredient": "Ail",
 					"quantity": 1,
-					"unit": "gousses"
+					"unit": "gousse"
 				}
 			],
 			"time": 25,
@@ -947,7 +947,7 @@
 				{
 					"ingredient": "Vermicelles",
 					"quantity": 1,
-					"unit": "verres"
+					"unit": "verre"
 				},
 				{
 					"ingredient": "Beurre salé",
@@ -1003,12 +1003,12 @@
 				{
 					"ingredient": "Pois chiches",
 					"quantity": 1,
-					"unit": "boites"
+					"unit": "boite"
 				},
 				{
 					"ingredient": "Ail",
 					"quantity": 1,
-					"unit": "gousses"
+					"unit": "gousse"
 				},
 				{
 					"ingredient": "Citron",
@@ -1118,7 +1118,7 @@
 				{
 					"ingredient": "Noix de muscade",
 					"quantity": 1,
-					"unit": "pincées"
+					"unit": "pincée"
 				}
 			],
 			"time": 20,
@@ -1215,12 +1215,12 @@
 				{
 					"ingredient": "Cumin",
 					"quantity": 1,
-					"unit": "cuillères à café"
+					"unit": "cuillère à café"
 				},
 				{
 					"ingredient": "Noix de muscade",
 					"quantity": 1,
-					"unit": "pincées"
+					"unit": "pincée"
 				}
 			],
 			"time": 25,
@@ -1383,12 +1383,12 @@
 				{
 					"ingredient": "Sucre en poudre",
 					"quantity": 4,
-					"unit": "cuillères à café"
+					"unit": "cuillère à café"
 				},
 				{
 					"ingredient": "Bicarbonate",
 					"quantity": 1,
-					"unit": "cuillères à café"
+					"unit": "cuillère à café"
 				}
 			],
 			"time": 10,
@@ -1413,7 +1413,7 @@
 				{
 					"ingredient": "Sucre vanillé",
 					"quantity": 1,
-					"unit": "sachets"
+					"unit": "sachet"
 				}
 			],
 			"time": 20,
@@ -1438,7 +1438,7 @@
 				{
 					"ingredient": "Poires au jus",
 					"quantity": 0.5,
-					"unit": "boites"
+					"unit": "boite"
 				},
 				{
 					"ingredient": "Boudoirs",
@@ -1571,7 +1571,7 @@
 				{
 					"ingredient": "Sucre vanillé",
 					"quantity": 1,
-					"unit": "sachets"
+					"unit": "sachet"
 				},
 				{
 					"ingredient": "Oeuf",
@@ -1636,17 +1636,17 @@
 				{
 					"ingredient": "Tomates pelées",
 					"quantity": 1,
-					"unit": "boites"
+					"unit": "boite"
 				},
 				{
 					"ingredient": "Lardons",
 					"quantity": 1,
-					"unit": "barquettes"
+					"unit": "barquette"
 				},
 				{
 					"ingredient": "Champignons de paris",
 					"quantity": 1,
-					"unit": "boites"
+					"unit": "boite"
 				},
 				{
 					"ingredient": "Gruyère",

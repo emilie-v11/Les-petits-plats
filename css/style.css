@@ -75,9 +75,9 @@ input::placeholder {
 .form-control.input-dropdown {
 	color: #fff;
 	width: 170px;
-	max-width: 100%;
+	/* max-width: 100%; */
 	width: 100%;
-    font-size: 18px;
+	font-size: 18px;
 	/* height: 69px; */
 }
 
@@ -96,6 +96,7 @@ input::placeholder {
 
 .dropdown-container.expanded input {
 	height: 69px;
+	/* width: 100%; */
 	width: 667px;
 }
 
@@ -116,7 +117,7 @@ input::placeholder {
 	width: 100%;
 	position: absolute;
 	top: 60px;
-	left: 1px;
+	left: 0px;
 	z-index: 100;
 }
 
@@ -148,13 +149,30 @@ input::placeholder {
 .card-body {
 	background: #e7e7e7;
 	min-height: 186px;
+	
+}
+
+.card-title {
+	max-width: 70%;
 }
 
 .card-ingredients-list {
 	font-size: 12px;
+    display: -webkit-box;
+	-webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    max-height: 100%
 }
 
 .recipe-description {
 	font-size: 12px;
 	font-family: Roboto, sans-serif;
+	/* max-height: 107px; */
+	text-align: justify;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
 }

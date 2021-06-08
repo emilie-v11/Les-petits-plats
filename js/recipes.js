@@ -29,7 +29,7 @@ const recipes = [
 		],
 		time: 10,
 		description:
-			"Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée",
+			"Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistance désirée.",
 		appliance: 'Blender',
 		ustensils: ['cuillère à soupe', 'verres', 'presse citron'],
 	},
@@ -67,7 +67,7 @@ const recipes = [
 		],
 		time: 60,
 		description:
-			'Découper le thon en dés, mettre dans un plat et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond). Laisser reposer au réfrigérateur au moins 2 heures. (Si possible faites-le le soir pour le lendemain. Après avoir laissé mariner le poisson, coupez le concombre en fines rondelles sans la peau et les tomates en prenant soin de retirer les pépins. Rayer la carotte. Ajouter les légumes au poissons avec le citron cette fois ci dans un Saladier. Ajouter le lait de coco. Pour ajouter un peu plus de saveur vous pouver ajouter 1 à 2 cuillère à soupe de Crème de coco',
+			'Découper le thon en dés, mettre dans un plat et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond). Laisser reposer au réfrigérateur au moins 2 heures. (Si possible faites-le le soir pour le lendemain. Après avoir laissé mariner le poisson, coupez le concombre en fines rondelles sans la peau et les tomates en prenant soin de retirer les pépins. Rayer la carotte. Ajouter les légumes au poissons avec le citron cette fois-ci dans un saladier. Ajouter le lait de coco. Pour ajouter un peu plus de saveur vous pouvez ajouter 1 à 2 cuillères à soupe de Crème de coco',
 		appliance: 'Saladier',
 		ustensils: ['presse citron'],
 	},
@@ -104,7 +104,7 @@ const recipes = [
 		],
 		time: 80,
 		description:
-			"Découper le poulet en morceaux, les faire dorer dans une cocotte avec de l'huile d'olive. Salez et poivrez. Une fois doré, laisser cuire en ajoutant de l'eau. Au bout de 30 minutes, ajouter le coulis de tomate, le lait de coco ainsi que le poivron et l'oignon découpés en morceaux. Laisser cuisiner 30 minutes de plus. Servir avec du riz",
+			"Découper le poulet en morceaux, les faire dorer dans une cocotte avec de l'huile d'olive. Salez et poivrez. Une fois doré, laisser cuire en ajoutant de l'eau. Au bout de 30 minutes, ajouter le coulis de tomate, le lait de coco ainsi que le poivron et l'oignon découpés en morceaux. Laisser cuire 30 minutes de plus. Servir avec du riz",
 		appliance: 'Cocotte',
 		ustensils: ['couteau'],
 	},
@@ -144,7 +144,7 @@ const recipes = [
 		],
 		time: 50,
 		description:
-			'Faire cuire le riz. Une fois le riz cuit, le laisser refroidir. Couper les oeufs dur en quarts ou en lamelle au choix, coupez le tomates en dés, ajouter au riz les oeufs, les tomates, le poisson, le maïs et la vinaigrette. Ajouter au gout de chacun des corniches, olives etc..',
+			'Faire cuire le riz. Une fois le riz cuit, le laisser refroidir. Couper les oeufs durs en quarts ou en lamelle au choix, coupez le tomates en dés, ajouter au riz les oeufs, les tomates, le poisson, le maïs et la vinaigrette. Ajouter au goût de chacun des cornichons, olives etc..',
 		appliance: 'Cuiseur de riz',
 		ustensils: ['saladier', 'passoire'],
 	},
@@ -184,7 +184,7 @@ const recipes = [
 		],
 		time: 45,
 		description:
-			'Etaler la pâte feuilleté aux dimensions du moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de crème fraiche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes',
+			'Etaler la pâte feuilleté aux dimensions du moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de crème fraiche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes.',
 		appliance: 'Four',
 		ustensils: ['moule à tarte', 'râpe à fromage', 'couteau'],
 	},
@@ -218,12 +218,12 @@ const recipes = [
 			{
 				ingredient: 'Sucre vanillé',
 				quantity: 1,
-				unit: 'sachets',
+				unit: 'sachet',
 			},
 		],
 		time: 50,
 		description:
-			"Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est pret, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crème fraiche. Laisser cuire au four pendant 30 minutes",
+			"Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est prêt, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crème fraiche. Laisser cuire au four pendant 30 minutes.",
 		appliance: 'Four',
 		ustensils: ['moule à tarte', 'saladier', 'fourchette'],
 	},
@@ -258,7 +258,7 @@ const recipes = [
 		],
 		time: 50,
 		description:
-			"Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crème liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
+			"Etaler la pâte dans les moules à tartelette. Faire cuire la pâte 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crème liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pâte sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
 		appliance: 'Four',
 		ustensils: ['moule à tartelettes (6)', 'casserole'],
 	},
@@ -434,7 +434,7 @@ const recipes = [
 			{
 				ingredient: 'Eau',
 				quantity: '0.5',
-				unit: 'tasses',
+				unit: 'tasse',
 			},
 		],
 		time: 40,
@@ -581,7 +581,7 @@ const recipes = [
 			{
 				ingredient: 'Basilic',
 				quantity: 1,
-				unit: 'tiges',
+				unit: 'tige',
 			},
 			{
 				ingredient: "huile d'olives",
@@ -591,7 +591,7 @@ const recipes = [
 		],
 		time: 45,
 		description:
-			"Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pates et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
+			"Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pâtes et couches de tomates, terminez par une couche de pates et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
 		appliance: 'Four',
 		ustensils: ['plat à gratin', 'couteau', 'râpe à fromage'],
 	},
@@ -670,7 +670,7 @@ const recipes = [
 			{
 				ingredient: 'Lait',
 				quantity: 1,
-				unit: 'litres',
+				unit: 'litre',
 			},
 			{
 				ingredient: 'Sucre glace',
@@ -682,7 +682,7 @@ const recipes = [
 				quantity: 1,
 			},
 		],
-		time: 0,
+		time: 10,
 		description:
 			"Coupez les fruits en morceaux, ajouter le jus de citron et le lait ainsi que le sucre glace. Mixez. Ajoutez des glaçons si le lait n'a pas été mis au frais.",
 		appliance: 'Blender',
@@ -690,7 +690,7 @@ const recipes = [
 	},
 	{
 		id: 20,
-		name: 'Pates Carbonara',
+		name: 'Pâtes Carbonara',
 		servings: 5,
 		ingredients: [
 			{
@@ -762,7 +762,7 @@ const recipes = [
 		],
 		time: 30,
 		description:
-			'Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.',
+			'Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Servir.',
 		appliance: 'Casserole',
 		ustensils: ['Cuillère en bois', 'louche', 'couteau'],
 	},
@@ -942,7 +942,7 @@ const recipes = [
 			{
 				ingredient: 'Ail',
 				quantity: 1,
-				unit: 'gousses',
+				unit: 'gousse',
 			},
 		],
 		time: 25,
@@ -972,7 +972,7 @@ const recipes = [
 			{
 				ingredient: 'Vermicelles',
 				quantity: 1,
-				unit: 'verres',
+				unit: 'verre',
 			},
 			{
 				ingredient: 'Beurre salé',
@@ -1030,12 +1030,12 @@ const recipes = [
 			{
 				ingredient: 'Pois chiches',
 				quantity: 1,
-				unit: 'boites',
+				unit: 'boite',
 			},
 			{
 				ingredient: 'Ail',
 				quantity: 1,
-				unit: 'gousses',
+				unit: 'gousse',
 			},
 			{
 				ingredient: 'Citron',
@@ -1148,7 +1148,7 @@ const recipes = [
 			{
 				ingredient: 'Noix de muscade',
 				quantity: 1,
-				unit: 'pincées',
+				unit: 'pincée',
 			},
 		],
 		time: 20,
@@ -1248,12 +1248,12 @@ const recipes = [
 			{
 				ingredient: 'Cumin',
 				quantity: 1,
-				unit: 'cuillères à café',
+				unit: 'cuillère à café',
 			},
 			{
 				ingredient: 'Noix de muscade',
 				quantity: 1,
-				unit: 'pincées',
+				unit: 'pincée',
 			},
 		],
 		time: 25,
@@ -1412,7 +1412,7 @@ const recipes = [
 			{
 				ingredient: 'Eau',
 				quantity: 1,
-				unit: 'Litres',
+				unit: 'litre',
 			},
 			{
 				ingredient: 'Citron Vert',
@@ -1421,12 +1421,12 @@ const recipes = [
 			{
 				ingredient: 'Sucre en poudre',
 				quantity: 4,
-				unit: 'cuillères à café',
+				unit: 'cuillère à café',
 			},
 			{
 				ingredient: 'Bicarbonate',
 				quantity: 1,
-				unit: 'cuillères à café',
+				unit: 'cuillère à café',
 			},
 		],
 		time: 10,
@@ -1452,7 +1452,7 @@ const recipes = [
 			{
 				ingredient: 'Sucre vanillé',
 				quantity: 1,
-				unit: 'sachets',
+				unit: 'sachet',
 			},
 		],
 		time: 20,
@@ -1478,7 +1478,7 @@ const recipes = [
 			{
 				ingredient: 'Poires au jus',
 				quantity: 0.5,
-				unit: 'boites',
+				unit: 'boite',
 			},
 			{
 				ingredient: 'Boudoirs',
@@ -1533,7 +1533,7 @@ const recipes = [
 			{
 				ingredient: 'Lait',
 				quantity: 1,
-				unit: 'litres',
+				unit: 'litre',
 			},
 			{
 				ingredient: 'Chocolat',
@@ -1611,7 +1611,7 @@ const recipes = [
 			{
 				ingredient: 'Sucre vanillé',
 				quantity: 1,
-				unit: 'sachets',
+				unit: 'sachet',
 			},
 			{
 				ingredient: 'Oeuf',
@@ -1678,17 +1678,17 @@ const recipes = [
 			{
 				ingredient: 'Tomates pelées',
 				quantity: 1,
-				unit: 'boites',
+				unit: 'boite',
 			},
 			{
 				ingredient: 'Lardons',
 				quantity: 1,
-				unit: 'barquettes',
+				unit: 'barquette',
 			},
 			{
 				ingredient: 'Champignons de paris',
 				quantity: 1,
-				unit: 'boites',
+				unit: 'boite',
 			},
 			{
 				ingredient: 'Gruyère',
@@ -1730,7 +1730,7 @@ const recipes = [
 				unit: 'cuillère à soupe',
 			},
 		],
-		time: 0,
+		time: 10,
 		description:
 			"Découper les fruits. Le passer au blender jusqu'à obtenir une texture liquide. Mettre au frais. Servir",
 		appliance: 'Blender',
@@ -1751,7 +1751,7 @@ const recipes = [
 				quantity: 6,
 			},
 			{
-				ingredient: "Poudre d'amendes",
+				ingredient: "Poudre d'amandes",
 				quantity: 500,
 				unit: 'grammes',
 			},
@@ -1768,7 +1768,7 @@ const recipes = [
 		],
 		time: 60,
 		description:
-			"Préparer la frangipane : Mélanger le sucre la poudre d'amander, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
+			"Préparer la frangipane : mélanger le sucre, la poudre d'amandes, le beurre et les oeufs. Etaler la moitié de la pâte feuilletée et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pâte feuilletée. Mettre au four 30 minutes.",
 		appliance: 'Four',
 		ustensils: ['rouleau à patisserie', 'fouet'],
 	},

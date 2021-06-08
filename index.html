@@ -93,167 +93,185 @@
             </div>
 
             <!-- 3 dropdowns container -->
-            <div class="container p-0 mx-0 my-2">
-                <div class="btn-group d-flex flex-wrap ">
-                    <!-- expanded hidden -->
-                    <div id="dropdown-container-ingredients"
-                        class="dropdown-container input-group me-3 mb-3 rounded-3 bg-blue text-white ">
-                        <div class="input-dropdown-wrap input-group position-relative rounded-3 bg-blue">
-                            <label for="ingredients-search" class="visually-hidden">Filtrez les recettes par
-                                ingrédients</label>
-                            <input id="ingredients-search"
-                                class="input-dropdown form-control bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
-                                placeholder="Ingrédients" type="search">
-                            <img class="chevron-down position-absolute top-0 end-0 translate-middle-y me-3"
-                                src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
-                                aria-hidden="true">
-                        </div>
-                        <div id="ingredients-container-tags"
-                            class="container-tags container rounded-3 border-0 text-white bg-blue p-0 pt-2 pb-3 fw-bold hidden"
+            <div class="btn-group d-flex flex-wrap p-0 mx-0 my-2">
+                <!-- expanded hidden -->
+                <div id="dropdown-container-ingredients"
+                    class="dropdown-container position-relative me-3 mb-3 rounded-3 bg-blue text-white ">
+                    <div class="input-dropdown-wrap input-group rounded-3 bg-blue">
+                        <label for="ingredients-search" class="visually-hidden">Filtrez les recettes par
+                            ingrédients</label>
+                        <input id="ingredients-search"
+                            class="input-dropdown form-control container bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
+                            placeholder="Ingrédients" type="text">
+                        <img class="chevron-down position-absolute top-0 end-0 translate-middle-y me-3"
+                            src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
                             aria-hidden="true">
-                            <ul id="ingredients-tags-list"
-                                class="dropdown-list-tags list-group row d-flex flex-row flex-wrap justify-content-start m-0 p-0 fw-normal ">
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Sucre</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Huile d'olive</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Coulis de tomate</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Moutarde de Dijon</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Concombre</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Crème liquide</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Oeuf</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Sucre</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Huile d'olive</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Coulis de tomate</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Concombre</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Moutarde de Dijon</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Crème liquide</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Oeuf</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Sucre</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Huile d'olive</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Coulis de tomate</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Moutarde de Dijon</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Concombre</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Crème liquide</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Oeuf</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Sucre</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Huile d'olive</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Coulis de tomate</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Concombre</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Moutarde de Dijon</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Crème liquide</li>
-                                <li
-                                    class="list-tags-item col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
-                                    Oeuf</li>
-                            </ul>
-                        </div>
                     </div>
-
-                    <div id="dropdown-container-appliances"
-                        class="dropdown-container input-group mb-3 me-3 rounded-3 bg-green text-white ">
-                        <div class="input-dropdown-wrap input-group">
-                            <label for="appliances-search" class="visually-hidden">Filtrez les recettes par
-                                appareils</label>
-                            <input id="appliances-search"
-                                class="input-dropdown form-control position-relative bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
-                                placeholder="Appareils" type="text">
-                            <img class="position-absolute top-0 end-0 translate-middle-y me-3 chevron-down "
-                                src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
-                                aria-hidden="true">
-                        </div>
-                        <div id="appliances-container-tags"
-                            class="container-tags container rounded-3 border-0 text-white pt-2 pb-3 fw-bold hidden"
-                            aria-hidden="true">
-                            <ul id="appliances-tags-list" class="tags-list row">
-                            </ul>
-                        </div>
+                    <div id="ingredients-container-tags"
+                        class="container-tags container rounded-3 border-0 text-white bg-blue p-0 pt-2 pb-3 fw-bold hidden"
+                        aria-hidden="true">
+                        <ul id="ingredients-list-tags"
+                            class="dropdown-list-tags list-group row d-flex flex-row flex-wrap justify-content-start m-0 p-0 fw-normal ">
+                            <li
+                                class="list-tags-item ingredients col-1 row-cols-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Sucre</li>
+                            <li
+                                class="list-tags-item ingredients col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Huile d'olive</li>
+                            <li
+                                class="list-tags-item ingredients col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Coulis de tomate</li>
+                            <li
+                                class="list-tags-item ingredients col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Moutarde de Dijon</li>
+                            <!-- <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Concombre</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Crème liquide</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Oeuf</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Sucre</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Huile d'olive</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Coulis de tomate</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Concombre</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Moutarde de Dijon</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Crème liquide</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Oeuf</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Sucre</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Huile d'olive</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Coulis de tomate</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Moutarde de Dijon</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Concombre</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Crème liquide</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Oeuf</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Sucre</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Huile d'olive</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Coulis de tomate</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Concombre</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Moutarde de Dijon</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Crème liquide</li>
+                                <li
+                                    class="list-tags-item ingredients col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                    Oeuf</li> -->
+                        </ul>
                     </div>
-
-                    <div id="dropdown-container-ustensils"
-                        class="dropdown-container input-group mb-3 me-3 rounded-3 bg-orange text-white ">
-                        <div class="input-dropdown-wrap input-group">
-                            <label for="ustensils-search" class="visually-hidden">Filtrez les recettes par
-                                ustensiles</label>
-                            <input id="ustensils-search"
-                                class="input-dropdown form-control position-relative bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
-                                placeholder="Ustensiles" type="text">
-                            <img class="position-absolute top-0 end-0 translate-middle-y me-3 chevron-down "
-                                src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
-                                aria-hidden="true">
-                        </div>
-                        <div id="ustensils-container-tags"
-                            class="container-tags rounded-3 border-0 text-white pt-2 pb-3 fw-bold hidden"
-                            aria-hidden="true">
-                            <ul id="ustensils-tags-list" class="tags-list container row">
-                            </ul>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- expanded hidden -->
+                <div id="dropdown-container-appliances"
+                    class="dropdown-container input-group mb-3 me-3 rounded-3 bg-green text-white ">
+                    <div class="input-dropdown-wrap input-group position-relative rounded-3 bg-green">
+                        <label for="appliances-search" class="visually-hidden">Filtrez les recettes par
+                            appareils</label>
+                        <input id="appliances-search"
+                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
+                            placeholder="Appareils" type="text">
+                        <img class="chevron-down position-absolute top-0 end-0 translate-middle-y me-3 "
+                            src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
+                            aria-hidden="true">
+                    </div>
+                    <div id="appliances-container-tags"
+                        class="container-tags container rounded-3 border-0 text-white bg-green p-0 pt-2 pb-3 fw-bold hidden"
+                        aria-hidden="true">
+                        <ul id="appliances-list-tags"
+                            class="dropdown-list-tags list-group row d-flex flex-row flex-wrap justify-content-start m-0 p-0 fw-normal">
+                            <li
+                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Blender</li>
+                            <li
+                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Saladier</li>
+                            <li
+                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Cocotte</li>
+                            <li
+                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Cuiseur de riz</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- expanded hidden -->
+                <div id="dropdown-container-ustensils"
+                    class="dropdown-container input-group mb-3 me-0 rounded-3 bg-orange text-white ">
+                    <div class="input-dropdown-wrap input-group position-relative rounded-3 bg-orange">
+                        <label for="ustensils-search" class="visually-hidden">Filtrez les recettes par
+                            ustensiles</label>
+                        <input id="ustensils-search"
+                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
+                            placeholder="Ustensiles" type="text">
+                        <img class="chevron-down position-absolute top-0 end-0 translate-middle-y me-3"
+                            src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
+                            aria-hidden="true">
+                    </div>
+                    <div id="ustensils-container-tags"
+                        class="container-tags container rounded-3 border-0 text-white bg-orange p-0 pt-2 pb-3 fw-bold hidden"
+                        aria-hidden="true">
+                        <ul id="ustensils-list-tags"
+                            class="dropdown-list-tags list-group container row d-flex flex-row flex-wrap justify-content-start m-0 p-0 fw-normal">
+                            <li
+                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Cuillère à Soupe</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
+
 
         </nav>
     </header>
 
     <main>
         <!-- container Cards' recipes -->
-        <div id="container-cards-recipes" class="container-lg mb-5">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 gy-4 gx-4 g-xxl-5">
+        <div id="wrap-container-cards" class="container-lg mb-5">
+            <div id="container-cards-recipes" class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 gy-4 gx-4 g-xxl-5">
 
                 <!-- Cards' recipes -->
-                <div class="col rounded-3">
+                <!-- <div class="col rounded-3">
                     <div class="card rounded-3">
                         <img src="./img/bg-card-img.svg" class="card-img-top rounded-top border-0" width="380"
                             height="178" aria-hidden="true" alt="">
@@ -861,7 +879,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
 
