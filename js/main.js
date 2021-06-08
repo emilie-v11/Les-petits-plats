@@ -2,20 +2,118 @@
 //==================================================================================================
 // DOM ELEMENTS
 //==================================================================================================
-const containerCards = document.getElementById('container-cards-recipes');
-console.log(containerCards);
+//  Dropdowns
+// const containerTags = document.getElementsByClassName('container-tags');
+// const dropdownContainer = document.getElementsByClassName('dropdown-container');
+// const inputDropdown = document.getElementsByClassName('input-dropdown');
 
-// variables
+// Ingredients
+const ingredientsContainerDropdown = document.getElementById(
+	'ingredients-container-dropdown'
+);
+const ingredientsSearch = document.getElementById('ingredients-search');
+const ingredientsContainerTags = document.getElementById(
+	'ingredients-container-tags'
+);
+
+// Appliances
+const appliancesContainerDropdown = document.getElementById(
+	'appliances-container-dropdown'
+);
+const appliancesSearch = document.getElementById('appliances-search');
+const appliancesContainerTags = document.getElementById(
+	'appliances-container-tags'
+);
+
+// Ustensils
+const ustensilsContainerDropdown = document.getElementById(
+	'ustensils-container-dropdown'
+);
+const ustensilsSearch = document.getElementById('ustensils-search');
+const ustensilsContainerTags = document.getElementById(
+	'ustensils-container-tags'
+);
+
+// img chevron
+const imgChevronIngredients = document.querySelector(
+	'.img-chevron-ingredients'
+);
+const imgChevronAppliances = document.querySelector('.img-chevron-appliances');
+const imgChevronUstensils = document.querySelector('.img-chevron-ustensils');
+
+//  Cards
+const containerCards = document.getElementById('container-cards-recipes');
+
+//=====================================
+// Variables
+//=====================================
 console.log(recipes);
 const allRecipesData = recipes;
 
+//==================================================================================================
+// HANDLER DROPDOWNs
+//==================================================================================================
+
+ingredientsSearch.addEventListener('click', function () {
+	ingredientsContainerDropdown.classList.toggle('expanded');
+	ingredientsContainerTags.classList.toggle('hidden');
+	if (ingredientsSearch.placeholder === 'Ingrédients') {
+		ingredientsSearch.placeholder = 'Recherche un ingrédient';
+		imgChevronIngredients.src = './img/chevron-up.svg';
+	} else {
+		ingredientsSearch.placeholder = 'Ingrédients';
+		imgChevronIngredients.src = './img/chevron-down.svg';
+	}
+});
+
+appliancesSearch.addEventListener('click', function () {
+	appliancesContainerDropdown.classList.toggle('expanded');
+	appliancesContainerTags.classList.toggle('hidden');
+	if (appliancesSearch.placeholder === 'Appareils') {
+		appliancesSearch.placeholder = 'Recherche un appareil';
+		imgChevronAppliances.src = './img/chevron-up.svg';
+	} else {
+		appliancesSearch.placeholder = 'Appareils';
+		imgChevronAppliances.src = './img/chevron-down.svg';
+	}
+});
+
+ustensilsSearch.addEventListener('click', function () {
+	ustensilsContainerDropdown.classList.toggle('expanded');
+	ustensilsContainerTags.classList.toggle('hidden');
+	if (ustensilsSearch.placeholder === 'Ustensiles') {
+		ustensilsSearch.placeholder = 'Recherche un ustensile';
+		imgChevronUstensils.src = './img/chevron-up.svg';
+	} else {
+		ustensilsSearch.placeholder = 'Ustensiles';
+		imgChevronUstensils.src = './img/chevron-down.svg';
+	}
+});
+
+// ingredientsSearch.addEventListener('click', openDropdown);
+// appliancesSearch.addEventListener('click', openDropdown);
+// ustensilsSearch.addEventListener('click', openDropdown);
+
+function openDropdown() {
+	dropdownContainer.classList.toggle('expanded');
+	containerTags.classList.toggle('hidden');
+}
+
+//==================================================================================================
+//  INGREDIENTS TAGS LIST IN DROPDOWN
+//==================================================================================================
+
+//==================================================================================================
+//  RECIPES' CARDS
+//==================================================================================================
 // Create all recipes' cards
-function allRecipesCards() {
+function renderRecipesCards() {
 	let newRecipeCard = '';
 
 	allRecipesData.map(recipe => {
 		let ingredients = recipe.ingredients;
 		console.log(recipe);
+		console.log(ingredients);
 
 		// Ingredients' recipes cards
 		let newIngredientTag = '';
@@ -60,7 +158,7 @@ function allRecipesCards() {
 		// Create recipes' cards
 		newRecipeCard += `
         <div class="col rounded-3">
-            <div class="card rounded-3">
+            <a href="#" class="card rounded-3">
                 <img src="./img/bg-card-img.svg" class="card-img-top rounded-top border-0" width="380"
                     height="178" aria-hidden="true" alt="">
                 <div class="card-body p-3 rounded-bottom">
@@ -84,11 +182,11 @@ function allRecipesCards() {
                     </div>
 
                 </div>
-            </div>
+            </a>
         </div>
         `;
 		containerCards.innerHTML = newRecipeCard;
 	});
 }
 
-allRecipesCards();
+renderRecipesCards();
