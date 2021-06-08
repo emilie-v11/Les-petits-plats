@@ -15,39 +15,30 @@ function allRecipesCards() {
 
 	allRecipesData.map(recipe => {
 		let ingredients = recipe.ingredients;
-		console.log(ingredients);
+		console.log(recipe);
 
 		// Ingredients' recipes cards
 		let newIngredientTag = '';
 		ingredients.map(ingredient => {
 			// fix unit's ingredients : Plural / singular or abbreviation
-			const fixUnit =
+			let fixUnits =
 				ingredient.unit === 'grammes'
 					? ingredient.unit.replace('grammes', 'g')
-					: ingredient.unit === 'cuillère à soupe' &&
+					: (ingredient.unit === 'cuillère à soupe' ||
+							ingredient.unit === 'cuillère à café') &&
 					  ingredient.quantity !== 1
-					? ingredient.unit.replace('cuillère à soupe', 'cuillères')
-					: ingredient.unit === 'cuillère à soupe' &&
+					? ingredient.unit.replace(ingredient.unit, 'cuillères')
+					: (ingredient.unit === 'cuillère à soupe' ||
+							ingredient.unit === 'cuillère à café') &&
 					  ingredient.quantity === 1
-					? ingredient.unit.replace('cuillère à soupe', 'cuillère')
-					: ingredient.unit === 'cuillère à café' &&
+					? ingredient.unit.replace(ingredient.unit, 'cuillère')
+					: (ingredient.unit === 'gousse' ||
+							ingredient.unit === 'sachet') &&
 					  ingredient.quantity !== 1
-					? ingredient.unit.replace('cuillère à café', 'cuillères')
-					: ingredient.unit === 'cuillère à café' &&
-					  ingredient.quantity === 1
-					? ingredient.unit.replace('cuillère à café', 'cuillère')
-					: ingredient.unit === 'gousse' && ingredient.quantity !== 1
 					? ingredient.unit.concat('s')
 					: ingredient.unit !== undefined
 					? ingredient.unit
 					: '';
-
-			// let ingredientUnit = 'gousse';
-			// let isPlural = 's';
-			// console.log(ingredientUnit, isPlural);
-
-			// let unitIsPlural = ingredientUnit.concat(isPlural);
-			// console.log(unitIsPlural);
 
 			newIngredientTag += `
             <li class="card-ingredients-item list-group-item bg-transparent border-0 fw-bold p-0">
@@ -60,7 +51,7 @@ function allRecipesCards() {
 					}
                 </span>
                 <span class="recipe-unit fw-normal">
-                    ${fixUnit}
+                    ${fixUnits}
                 </span>
             </li>
             `;
