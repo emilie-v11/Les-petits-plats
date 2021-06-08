@@ -5,19 +5,19 @@
 const containerCards = document.getElementById('container-cards-recipes');
 console.log(containerCards);
 
+// variables
 console.log(recipes);
-// let newRecipeCard = '';
 const allRecipesData = recipes;
 
+// Create all recipes' cards
 function allRecipesCards() {
 	let newRecipeCard = '';
-	// allRecipesData.forEach(recipe => {})
 
 	allRecipesData.map(recipe => {
 		let ingredients = recipe.ingredients;
 		console.log(ingredients);
 
-		// Ingredients' recipe
+		// Ingredients' recipes cards
 		let newIngredientTag = '';
 		ingredients.map(ingredient => {
 			// fix unit's ingredients : Plural / singular or abbreviation
@@ -36,9 +36,18 @@ function allRecipesCards() {
 					: ingredient.unit === 'cuillère à café' &&
 					  ingredient.quantity === 1
 					? ingredient.unit.replace('cuillère à café', 'cuillère')
+					: ingredient.unit === 'gousse' && ingredient.quantity !== 1
+					? ingredient.unit.concat('s')
 					: ingredient.unit !== undefined
 					? ingredient.unit
 					: '';
+
+			// let ingredientUnit = 'gousse';
+			// let isPlural = 's';
+			// console.log(ingredientUnit, isPlural);
+
+			// let unitIsPlural = ingredientUnit.concat(isPlural);
+			// console.log(unitIsPlural);
 
 			newIngredientTag += `
             <li class="card-ingredients-item list-group-item bg-transparent border-0 fw-bold p-0">
@@ -57,7 +66,7 @@ function allRecipesCards() {
             `;
 		});
 
-		// Render recipes' cards
+		// Create recipes' cards
 		newRecipeCard += `
         <div class="col rounded-3">
             <div class="card rounded-3">

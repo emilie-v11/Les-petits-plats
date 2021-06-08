@@ -1071,7 +1071,7 @@ const recipes = [
 			{
 				ingredient: 'Ail',
 				quantity: 2,
-				unit: 'gousses',
+				unit: 'gousse',
 			},
 		],
 		time: 60,
