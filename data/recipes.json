@@ -141,7 +141,7 @@
 				}
 			],
 			"time": 50,
-			"description": "Faire cuire le riz. Une fois le riz cuit, le laisser refroidir. Couper les oeufs dur en quarts ou en lamelle au choix, coupez le tomates en dés, ajouter au riz les oeufs, les tomates, le poisson, le maïs et la vinaigrette. Ajouter au gout de chacun des corniches, olives etc..",
+			"description": "Faire cuire le riz. Une fois le riz cuit, le laisser refroidir. Couper les oeufs dur en quarts ou en lamelle au choix, coupez le tomates en dés, ajouter au riz les oeufs, les tomates, le poisson, le maïs et la vinaigrette. Ajouter au goût de chacun des corniches, olives etc..",
 			"appliance": "Cuiseur de riz",
 			"ustensils": ["saladier", "passoire"]
 		},
@@ -164,7 +164,7 @@
 					"quantity": 2
 				},
 				{
-					"ingredient": "Crème fraiche",
+					"ingredient": "Crème fraîche",
 					"quantity": 2,
 					"unit": "cuillère à soupe"
 				},
@@ -180,7 +180,7 @@
 				}
 			],
 			"time": 45,
-			"description": "Etaler la pâte feuilleté aux dimensions du moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de crème fraiche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
+			"description": "Etaler la pâte feuilleté aux dimensions du moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de crème fraîche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
 			"appliance": "Four",
 			"ustensils": ["moule à tarte", "râpe à fromage", "couteau"]
 		},
@@ -202,7 +202,7 @@
 					"quantity": "2"
 				},
 				{
-					"ingredient": "Crème fraiche",
+					"ingredient": "Crème fraîche",
 					"quantity": 25,
 					"unit": "cl"
 				},
@@ -218,7 +218,7 @@
 				}
 			],
 			"time": 50,
-			"description": "Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est pret, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crême fraiche. Laisser cuire au four pendant 30 minutes",
+			"description": "Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraîche aux oeufs. Une fois que tout est pret, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crême fraîche. Laisser cuire au four pendant 30 minutes",
 			"appliance": "Four",
 			"ustensils": ["moule à tarte", "saladier", "fourchette"]
 		},
@@ -294,11 +294,11 @@
 			"time": 60,
 			"description": "Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour démouler. Servir avec une boule de glace pour plus de gourmandise.",
 			"appliance": "Four",
-			"ustensils": ["moule à gateaux", "casserole"]
+			"ustensils": ["moule à gâteau", "casserole"]
 		},
 		{
 			"id": 9,
-			"name": "Salade Méditerannéene fraiche au chèvre",
+			"name": "Salade méditerranéenne fraîche au chèvre",
 			"servings": 4,
 			"ingredients": [
 				{
@@ -314,7 +314,7 @@
 					"unit": "grammes"
 				},
 				{
-					"ingredient": "Vinaigre Balsamic"
+					"ingredient": "Vinaigre balsamique"
 				},
 				{
 					"ingredient": "Huile d'olive"
@@ -324,7 +324,7 @@
 				}
 			],
 			"time": 15,
-			"description": "Peler le concombre le couper 2, retirer les pépins. Couper les olives en morceaux, ainsi que le fromage de chèvre. Ajouter le basilic ainsi que le vinaigre balsamic et l'huile d'olives à votre gout.",
+			"description": "Peler le concombre le couper 2, retirer les pépins. Couper les olives en morceaux, ainsi que le fromage de chèvre. Ajouter le basilic ainsi que le vinaigre balsamique et l'huile d'olive à votre goût.",
 			"appliance": "Saladier",
 			"ustensils": ["cuillère en bois", "couteau"]
 		},
@@ -359,9 +359,9 @@
 				}
 			],
 			"time": 60,
-			"description": "Commencer par cuire les pommes de terre dans l'eau bouillante. Puis epluchez les et coupez les en rondelles. Emincer les oignons puis les faire dorer dans du beurre. Ajouter le jambon fumé coupé en en morceaux ainsi que les pommes de terres. Salez, poivrez à votre gout ( et celui de vos convives ) Laissez cuisiner durant environ 10 minutes puis ajouter le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le rebelochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !",
+			"description": "Commencer par cuire les pommes de terre dans l'eau bouillante. Puis epluchez les et coupez les en rondelles. Emincer les oignons puis les faire dorer dans du beurre. Ajouter le jambon fumé coupé en en morceaux ainsi que les pommes de terres. Salez, poivrez à votre goût ( et celui de vos convives ) Laissez cuisiner durant environ 10 minutes puis ajouter le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le rebelochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !",
 			"appliance": "Four",
-			"ustensils": ["plat à gratin", "couteau", "Économe"]
+			"ustensils": ["plat à gratin", "couteau", "économe"]
 		},
 		{
 			"id": 11,
@@ -398,7 +398,7 @@
 				}
 			],
 			"time": 10,
-			"description": "Commencer par couper les feuilles de salade, ajouter les tomates cerises et le fromage découpé en cubes ou en boules avec la cuillère à melon. Découper le jambon de parme en fines lamelles. Ajouter la pomme elle aussi découpée en petit morceaux. Assaisonnez à votre gout. ",
+			"description": "Commencer par couper les feuilles de salade, ajouter les tomates cerises et le fromage découpé en cubes ou en boules avec la cuillère à melon. Découper le jambon de parme en fines lamelles. Ajouter la pomme elle aussi découpée en petit morceaux. Assaisonnez à votre goût. ",
 			"appliance": "Saladier",
 			"ustensils": ["couteau", "cuillère à melon"]
 		},
@@ -503,7 +503,7 @@
 			"time": 100,
 			"description": "Mélanger la farine et les oeufs, faire fondre 25 grammes de beurre et ajouter à la pâte. Ajouter du sel. Laisser reposer 1 heure. Faire les galettes et laisser refroidire. Faire chauffer les saucisses avec du beurre et l'oignon. Enrouler les saucisses dans les crêpes avec une partie du fromage. Mettre le reste du fromage à raclette par dessus les crêpes. Passer four pendant 20 minutes",
 			"appliance": "Four",
-			"ustensils": ["poelle à frire", "couteau"]
+			"ustensils": ["poêle à frire", "couteau"]
 		},
 		{
 			"id": 15,
@@ -570,7 +570,7 @@
 					"unit": "tige"
 				},
 				{
-					"ingredient": "Huile d'olives",
+					"ingredient": "Huile d'olive",
 					"quantity": 2,
 					"unit": "cuillère à soupe"
 				}
@@ -608,7 +608,7 @@
 				}
 			],
 			"time": 15,
-			"description": "Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajouter un cuillière à soupe de juste de citron ainsi que les glaçons. Ajoutez quelques fueilles de menthe pour plus de fraicheur. Mixez le tout. Servir et déguster.",
+			"description": "Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajouter un cuillière à soupe de juste de citron ainsi que les glaçons. Ajoutez quelques fueilles de menthe pour plus de fraîcheur. Mixez le tout. Servir et déguster.",
 			"appliance": "Blender",
 			"ustensils": ["verres", "couteau", "presse citron"]
 		},
@@ -686,7 +686,7 @@
 					"unit": "grammes"
 				},
 				{
-					"ingredient": "Crème fraiche",
+					"ingredient": "Crème fraîche",
 					"quantity": 200,
 					"unit": "grammes"
 				},
@@ -702,7 +702,7 @@
 				}
 			],
 			"time": 30,
-			"description": "Faire cuire les pates comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crème fraiche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
+			"description": "Faire cuire les pâtes comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crème fraîche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
 			"appliance": "Sauteuse",
 			"ustensils": ["râpe à fromage", "cuillère en bois"]
 		},
@@ -736,13 +736,13 @@
 					"unit": "cl"
 				},
 				{
-					"ingredient": "Crème Fraiche",
+					"ingredient": "Crème fraîche",
 					"quantity": 1,
 					"unit": "cuillère à soupe"
 				}
 			],
 			"time": 30,
-			"description": "Cuisiner la viande hachée dans une poele à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oignons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Servir.",
+			"description": "Cuisiner la viande hachée dans une poêle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oignons avec la viande hachée. Faire cuire les pâtes le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pâtes sont cuites, ajouter la crème fraîche à la viande hachée. Servir.",
 			"appliance": "Casserole",
 			"ustensils": ["Cuillère en bois", "louche", "couteau"]
 		},
@@ -777,9 +777,9 @@
 				}
 			],
 			"time": 30,
-			"description": "Faire fondre le chocolat et le beurre au bain marie. Dans un saladier battre les oeufs avec le sucre jusqu'à obtenir une texture de type mousse. Ajouter la farine ainsi que le mélange de beurre et chocolat fondu. Beurrez le moule à gateaux. Mettre au four préchauffé à 200° puis faites chauffer pendant 15 minutes. C'est prêt. Servir avec une boule de glace ou une crème dessert.",
+			"description": "Faire fondre le chocolat et le beurre au bain marie. Dans un saladier battre les oeufs avec le sucre jusqu'à obtenir une texture de type mousse. Ajouter la farine ainsi que le mélange de beurre et chocolat fondu. Beurrez le moule à gâteau. Mettre au four préchauffé à 200° puis faites chauffer pendant 15 minutes. C'est prêt. Servir avec une boule de glace ou une crème dessert.",
 			"appliance": "Four",
-			"ustensils": ["moule à gateaux", "fouet", "casserole"]
+			"ustensils": ["moule à gâteau", "fouet", "casserole"]
 		},
 		{
 			"id": 23,
@@ -806,7 +806,7 @@
 					"quantity": 3
 				},
 				{
-					"ingredient": "Crème Fraîche",
+					"ingredient": "Crème fraîche",
 					"quantity": 20,
 					"unit": "cl"
 				},
@@ -817,9 +817,9 @@
 				}
 			],
 			"time": 60,
-			"description": "Etaler la pate dans un moule et la piquer.Parsemer de beurre. Faire chauffer les lardon dans une poêle. Battre les oeufs en ajoutant la crème fraîche et le lait. Finalement ajouter les lardons, salez poivrez à votre gout. Verser l'ensemble sur la pâte. Cuire environ 50 minutes.",
+			"description": "Etaler la pâte dans un moule et la piquer.Parsemer de beurre. Faire chauffer les lardon dans une poêle. Battre les oeufs en ajoutant la crème fraîche et le lait. Finalement ajouter les lardons, salez poivrez à votre goût. Verser l'ensemble sur la pâte. Cuire environ 50 minutes.",
 			"appliance": "Four",
-			"ustensils": ["moule à gateaux", "rouleau à patisserie", "fouet"]
+			"ustensils": ["moule à gâteau", "rouleau à pâtisserie", "fouet"]
 		},
 		{
 			"id": 24,
@@ -856,7 +856,7 @@
 				}
 			],
 			"time": 40,
-			"description": "Découper le concombre et les tomates en dés, les mettre dans un saladier avec le mais et les miettes de poisson, ajouter les pates. Ajouter la mayonnaise. Mélanger le tout et servir frais.",
+			"description": "Découper le concombre et les tomates en dés, les mettre dans un saladier avec le mais et les miettes de poisson, ajouter les pâtes. Ajouter la mayonnaise. Mélanger le tout et servir frais.",
 			"appliance": "Saladier",
 			"ustensils": ["couteau", "cuillère en bois"]
 		},
@@ -909,7 +909,7 @@
 					"quantity": 1
 				},
 				{
-					"ingredient": "Huile d'olives"
+					"ingredient": "Huile d'olive"
 				},
 				{
 					"ingredient": "Oignon",
@@ -1022,7 +1022,7 @@
 				}
 			],
 			"time": 30,
-			"description": "Prendre les pois chiches, les mettre dans le mixer avec de l'huile d'olive, ajouter le jus des 2 citrons et du paprika selon le gout.",
+			"description": "Prendre les pois chiches, les mettre dans le mixer avec de l'huile d'olive, ajouter le jus des 2 citrons et du paprika selon le goût.",
 			"appliance": "Mixer",
 			"ustensils": ["cuillère en bois", "presse citron"]
 		},
@@ -1157,7 +1157,7 @@
 				}
 			],
 			"time": 5,
-			"description": "Mélanger le fromage blanc avec le citron. Ajouter un peu de sel et poivre à votre gout. Faire dorer le pain de mie. Puis étaler le mélange. Ajouter une feuille de salade puis le saumon fumé. C'est prêt.",
+			"description": "Mélanger le fromage blanc avec le citron. Ajouter un peu de sel et poivre à votre goût. Faire dorer le pain de mie. Puis étaler le mélange. Ajouter une feuille de salade puis le saumon fumé. C'est prêt.",
 			"appliance": "Four",
 			"ustensils": ["couteau", "cuillère en bois"]
 		},
@@ -1185,7 +1185,7 @@
 				}
 			],
 			"time": 25,
-			"description": "Eplucher les patates douces et coupez les en morceaux. Les faire cuire durant 20 minute dans une casserole d'eau bouillante. Passer au mixer en ajoutant la crème et l'huile d'olive à son gout. Salez, poivrez. Pressez l'orange et ajouter le jus à l'ensemble. Servir.",
+			"description": "Eplucher les patates douces et coupez les en morceaux. Les faire cuire durant 20 minute dans une casserole d'eau bouillante. Passer au mixer en ajoutant la crème et l'huile d'olive à son goût. Salez, poivrez. Pressez l'orange et ajouter le jus à l'ensemble. Servir.",
 			"appliance": "Mixer",
 			"ustensils": ["couteau", "économe", "cuillère en bois"]
 		},
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"time": 35,
-			"description": "Raper les courgette et les faire revenir durant 15 minutes. Ajouter les fromages de chèvre frais. Préparer la béchamelle avec le lait et la maizena. Salez poivrez, ajouter de la noix de muscade selon les gouts. Dans un plat, mettre un peu de sauces au fond, puis des lasagnes, puis des courgettes etc... terminer par de la sauces et ajouter le gruiyère. Passer au four à 180° durant 20 à 25 minutes.",
+			"description": "Raper les courgette et les faire revenir durant 15 minutes. Ajouter les fromages de chèvre frais. Préparer la béchamelle avec le lait et la maizena. Salez poivrez, ajouter de la noix de muscade selon les goûts. Dans un plat, mettre un peu de sauces au fond, puis des lasagnes, puis des courgettes etc... terminer par de la sauces et ajouter le gruiyère. Passer au four à 180° durant 20 à 25 minutes.",
 			"appliance": "Four",
 			"ustensils": ["plat à gratin", "râpe à fromage", "fouet"]
 		},
@@ -1282,7 +1282,7 @@
 					"unit": "grammes"
 				},
 				{
-					"ingredient": "Huile d'olives",
+					"ingredient": "Huile d'olive",
 					"quantity": 25,
 					"unit": "cl"
 				},
@@ -1304,7 +1304,7 @@
 			"time": 60,
 			"description": "Couper les courgettes dans le sens de la longueur. Vider les courgette dans un saladier. Réserver.Faire revenir la chair des courgettes dans 25cl d'huile d'olive. Ajouter l'oignon puis la viande hachée. Mettre la farce dans les courgettes. Ajouter le coulis de tomates. Mettre au four pendant 30 minutes. Avant la fin de la cuisson ajouter le fromage rapé",
 			"appliance": "Four",
-			"ustensils": ["couteau", "cuillère en bois", "Poelle à frire"]
+			"ustensils": ["couteau", "cuillère en bois", "Poêle à frire"]
 		},
 		{
 			"id": 38,
@@ -1362,7 +1362,7 @@
 				}
 			],
 			"time": 40,
-			"description": "Découper les pommes en dé. Mélanger dans un saladier la farine, le sucre et le beurre. Bien mélanger. Beurrer le moule et ajouter les pommes. Par dessus placez la pate que vous avez obtenu. Cuire 20 minutes au four",
+			"description": "Découper les pommes en dé. Mélanger dans un saladier la farine, le sucre et le beurre. Bien mélanger. Beurrer le moule et ajouter les pommes. Par dessus placez la pâte que vous avez obtenu. Cuire 20 minutes au four",
 			"appliance": "Four",
 			"ustensils": ["saladier", "couteau", "fouet"]
 		},
@@ -1479,10 +1479,10 @@
 				}
 			],
 			"time": 50,
-			"description": "Préchauffez le fours à 200°. Etaler la pate. La mettre dans un moule. Battre les oeufs avec le sucre. Ajouter le jus de citron et le beurre. Verser le tout sur la pate. Au four 30 minutes. Bon appetit ",
+			"description": "Préchauffez le fours à 200°. Etaler la pâte. La mettre dans un moule. Battre les oeufs avec le sucre. Ajouter le jus de citron et le beurre. Verser le tout sur la pâte. Au four 30 minutes. Bon appetit ",
 			"appliance": "Four",
 			"ustensils": [
-				"rouleau à patisserie",
+				"rouleau à pâtisserie",
 				"moule à tarte",
 				"presse citron"
 			]
@@ -1525,7 +1525,7 @@
 		},
 		{
 			"id": 45,
-			"name": "Crème patissière",
+			"name": "Crème pâtissière",
 			"servings": 8,
 			"ingredients": [
 				{
@@ -1614,13 +1614,13 @@
 					"unit": "grammes"
 				},
 				{
-					"ingredient": "Crème Fraîche",
+					"ingredient": "Crème fraîche",
 					"quantity": 20,
 					"unit": "cl"
 				}
 			],
 			"time": 5,
-			"description": "Mélanger le jus de citron avec le sucre et la mascarpone. Ajouter la crème fraiche. Mélanger le tout et mettre au congélateur pendant 1 heure. Servir",
+			"description": "Mélanger le jus de citron avec le sucre et la mascarpone. Ajouter la crème fraîche. Mélanger le tout et mettre au congélateur pendant 1 heure. Servir",
 			"appliance": "Saladier",
 			"ustensils": ["fouet", "verres", "cuillère en bois"]
 		},
@@ -1655,9 +1655,9 @@
 				}
 			],
 			"time": 40,
-			"description": "Étaler la pate à pizza. Ecraser les tomates pelées, les étaler sur la pâte, ajouter les lardons et les champignons. Ajouter le gruyère eet passer au four à 220° durant 20 minutes",
+			"description": "Étaler la pâte à pizza. Ecraser les tomates pelées, les étaler sur la pâte, ajouter les lardons et les champignons. Ajouter le gruyère eet passer au four à 220° durant 20 minutes",
 			"appliance": "Four",
-			"ustensils": ["rouleau à patisserie", "râpe à fromage", "couteau"]
+			"ustensils": ["rouleau à pâtisserie", "râpe à fromage", "couteau"]
 		},
 		{
 			"id": 49,
@@ -1723,9 +1723,9 @@
 				}
 			],
 			"time": 60,
-			"description": "Préparer la frangipane : Mélanger le sucre la poudre d'amander, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
+			"description": "Préparer la frangipane : Mélanger le sucre la poudre d'amander, le beurre et les oeufs. Etaler la moitier de la pâte feuilleté et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pâte feuilletée. Mettre au four 30 minutes",
 			"appliance": "Four",
-			"ustensils": ["rouleau à patisserie", "fouet"]
+			"ustensils": ["rouleau à pâtisserie", "fouet"]
 		}
 	]
 }
