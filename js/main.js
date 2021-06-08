@@ -42,13 +42,11 @@ function allRecipesCards() {
 
 			newIngredientTag += `
             <li class="card-ingredients-item list-group-item bg-transparent border-0 fw-bold p-0">
-                <span class="recipe-ingredient">${
-					ingredient.ingredient
-				}: </span>
+                <span class="recipe-ingredient">${ingredient.ingredient}</span>
                 <span class="recipe-quantity fw-normal">
                     ${
 						ingredient.quantity !== undefined
-							? ingredient.quantity
+							? `: ${ingredient.quantity}`
 							: ''
 					}
                 </span>
