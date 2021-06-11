@@ -93,26 +93,26 @@
             </div>
 
             <!-- 3 dropdowns container -->
-            <form class="btn-group d-flex flex-wrap p-0 mx-0 my-2" autocomplete="off">
+            <form class="container btn-group d-flex flex-row justify-content-start flex-wrap p-0 mx-0 my-2"
+                autocomplete="off">
 
                 <!-- expanded hidden -->
                 <div id="ingredients-container-dropdown"
-                    class="dropdown-container position-relative me-3 mb-3 rounded-3 bg-blue text-white ">
-                    <div class="input-dropdown-wrap input-group d-flex rounded-3 bg-blue">
+                    class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-blue ">
+                    <div class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-blue">
                         <label for="ingredients-search" class="visually-hidden">Filtrez les recettes par
                             ingrédients</label>
                         <input id="ingredients-search"
-                            class="input-dropdown form-control container position-relative bg-transparent border-0 ps-4 pe-4 py-3 text-white fw-bold "
+                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-0 py-3 text-white fw-bold "
                             placeholder="Ingrédients" type="text">
-                        <button id="ingredients-btn-chevron"
-                            class="btn-chevron btn d-flex position-absolute top-50 end-0 translate-middle-x translate-middle-y me-2">
+                        <button id="ingredients-btn-chevron" class="btn-chevron btn mx-2" type="button">
                             <!-- <img class="img-chevron-ingredients chevron-down d-flex align-items-center justify-content-center"
                                 src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
                                 aria-hidden="true"> -->
                         </button>
                     </div>
                     <div id="ingredients-container-tags"
-                        class="container-tags container rounded-3 border-0 text-white bg-blue p-0 pt-2 pb-3 fw-bold hidden"
+                        class="container-tags container position-absolute rounded-3 border-0 text-white p-0 pt-2 pb-3 fw-bold bg-blue hidden"
                         aria-hidden="true">
                         <ul id="ingredients-list-tags"
                             class="dropdown-list-tags list-group row row-cols-1 row-cols-sm-2 row-cols-md-3 d-flex flex-row justify-content-start m-0 p-0 fw-normal ">
@@ -206,36 +206,32 @@
 
                 <!-- expanded hidden -->
                 <div id="appliances-container-dropdown"
-                    class="dropdown-container input-group mb-3 me-3 rounded-3 bg-green text-white ">
-                    <div class="input-dropdown-wrap input-group position-relative rounded-3 bg-green">
+                    class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-green ">
+                    <div class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-green">
                         <label for="appliances-search" class="visually-hidden">Filtrez les recettes par
                             appareils</label>
                         <input id="appliances-search"
-                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-4 py-3 text-white fw-bold "
+                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-0 py-3 text-white fw-bold "
                             placeholder="Appareils" type="text">
-                        <button id="appliances-btn-chevron"
-                            class="btn-chevron btn d-flex position-absolute top-50 end-0 translate-middle-x translate-middle-y me-2">
-                            <!-- <img class="img-chevron-appliances chevron-down position-absolute top-0 end-0 translate-middle-y me-3 "
-                                src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
-                                aria-hidden="true"> -->
+                        <button id="appliances-btn-chevron" class="btn-chevron btn mx-2" type="button">
                         </button>
                     </div>
                     <div id="appliances-container-tags"
-                        class="container-tags container rounded-3 border-0 text-white bg-green p-0 pt-2 pb-3 fw-bold hidden"
+                        class="container-tags container position-absolute rounded-3 border-0 text-white p-0 pt-2 pb-3 fw-bold bg-green hidden"
                         aria-hidden="true">
                         <ul id="appliances-list-tags"
-                            class="dropdown-list-tags list-group row d-flex flex-row flex-wrap justify-content-start m-0 p-0 fw-normal">
+                            class="dropdown-list-tags list-group row row-cols-1 row-cols-sm-2 row-cols-md-3 d-flex flex-row justify-content-start m-0 p-0 fw-normal">
                             <li
-                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                class="list-tags-item appliances col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
                                 Blender</li>
                             <li
-                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                class="list-tags-item appliances col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
                                 Saladier</li>
                             <li
-                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                class="list-tags-item appliances col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
                                 Cocotte</li>
                             <li
-                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                class="list-tags-item appliances col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
                                 Cuiseur de riz</li>
                         </ul>
                     </div>
@@ -243,27 +239,32 @@
 
                 <!-- expanded hidden -->
                 <div id="ustensils-container-dropdown"
-                    class="dropdown-container input-group mb-3 me-0 rounded-3 bg-orange text-white ">
-                    <div class="input-dropdown-wrap input-group position-relative rounded-3 bg-orange">
+                    class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-orange ">
+                    <div class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-orange">
                         <label for="ustensils-search" class="visually-hidden">Filtrez les recettes par
                             ustensiles</label>
                         <input id="ustensils-search"
-                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-4 py-3 text-white fw-bold "
+                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-0 py-3 text-white fw-bold "
                             placeholder="Ustensiles" type="text">
-                        <button id="ustensils-btn-chevron"
-                            class="btn-chevron btn d-flex position-absolute top-50 end-0 translate-middle-x translate-middle-y me-2">
-                            <!-- <img class="img-chevron-ustensils chevron-down position-absolute top-0 end-0 translate-middle-y me-3"
-                                src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
-                                aria-hidden="true"> -->
+                        <button id="ustensils-btn-chevron" class="btn-chevron btn mx-2" type="button">
                         </button>
                     </div>
                     <div id="ustensils-container-tags"
-                        class="container-tags container rounded-3 border-0 text-white bg-orange p-0 pt-2 pb-3 fw-bold hidden"
+                        class="container-tags container position-absolute rounded-3 border-0 text-white p-0 pt-2 pb-3 fw-bold bg-orange hidden"
                         aria-hidden="true">
                         <ul id="ustensils-list-tags"
-                            class="dropdown-list-tags list-group container row d-flex flex-row flex-wrap justify-content-start m-0 p-0 fw-normal">
+                            class="dropdown-list-tags list-group row row-cols-1 row-cols-sm-2 row-cols-md-3 d-flex flex-row justify-content-start m-0 p-0 fw-normal">
                             <li
-                                class="list-tags-item appliances col-4 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                class="list-tags-item ustensils col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Cuillère à Soupe</li>
+                            <li
+                                class="list-tags-item ustensils col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Cuillère à Soupe</li>
+                            <li
+                                class="list-tags-item ustensils col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
+                                Cuillère à Soupe</li>
+                            <li
+                                class="list-tags-item ustensils col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4">
                                 Cuillère à Soupe</li>
                         </ul>
                     </div>

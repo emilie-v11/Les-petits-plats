@@ -80,7 +80,7 @@ input::placeholder {
 /* input */
 .form-control.input-dropdown {
 	color: #fff;
-	width: 170px;
+	/* width: 170px; */
 	/* max-width: 100%; */
 	width: 100%;
 	font-size: 18px;
@@ -96,7 +96,7 @@ input::placeholder {
 .dropdown-container.expanded {
 	max-width: 667px;
 	/* width: 667px; */
-	width: auto;
+	width: 100%;
 	height: auto;
 }
 
@@ -104,6 +104,7 @@ input::placeholder {
 	height: 69px;
 	/* width: 100%; */
 	width: 667px;
+    width: 100%;
 }
 
 .dropdown-container.expanded input::placeholder {
@@ -112,13 +113,28 @@ input::placeholder {
 	opacity: 0.5;
 }
 
+.btn-chevron {
+    width: 32px;
+    height: 32px;
+    /* height: 69px; */
+    background: url(../img/chevron-down.svg) center center / 16px 11px no-repeat;
+
+}
+
+/* dropdown chevron icon */
+/* .chevron-down,
+.chevron-up {
+    margin-top: 35px;
+    color: #fff;
+} */
+
 /* tags */
 .container-tags {
 	width: 100%;
 	max-width: 667px;
 	height: auto;
 	/* width: auto; */
-	position: absolute;
+	/* position: absolute; */
 	top: 63px;
 	/* left: 1px; */
 	z-index: 100;
@@ -128,20 +144,6 @@ input::placeholder {
 	width: 33.3333%;
 	min-width: 210px;
 	max-width: 210px;
-}
-
-.btn-chevron {
-	width: 32px;
-	height: 32px;
-	background: url(../img/chevron-down.svg) center center / 16px 11px no-repeat;
-
-}
-
-/* dropdown chevron icon */
-.chevron-down,
-.chevron-up {
-	/* margin-top: 35px; */
-	color: #fff;
 }
 
 /* ************************ cards ********************** */

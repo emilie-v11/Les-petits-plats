@@ -41,12 +41,12 @@ const ustensilsContainerTags = document.getElementById(
 	'ustensils-container-tags'
 );
 
-// img chevron
-const imgChevronIngredients = document.querySelector(
-	'.img-chevron-ingredients'
-);
-const imgChevronAppliances = document.querySelector('.img-chevron-appliances');
-const imgChevronUstensils = document.querySelector('.img-chevron-ustensils');
+// // img chevron
+// const imgChevronIngredients = document.querySelector(
+// 	'.img-chevron-ingredients'
+// );
+// const imgChevronAppliances = document.querySelector('.img-chevron-appliances');
+// const imgChevronUstensils = document.querySelector('.img-chevron-ustensils');
 
 //  Cards
 const containerCards = document.getElementById('container-cards-recipes');
@@ -62,7 +62,6 @@ let textContentPlaceholder;
 // HANDLER DROPDOWNS
 //==================================================================================================
 
-// ingredientsSearch.addEventListener('click', function () {
 ingredientsBtnChevron.addEventListener('click', function (e) {
 	e.preventDefault();
 	if (!ingredientsDropdown.classList.contains('expanded')) {
@@ -103,32 +102,28 @@ appliancesBtnChevron.addEventListener('click', function (e) {
 			appliancesBtnChevron
 		);
 	}
-	// appliancesDropdown.classList.toggle('expanded');
-	// appliancesContainerTags.classList.toggle('hidden');
-	// if (appliancesSearch.placeholder === 'Appareils') {
-	// 	appliancesSearch.placeholder = 'Recherche un appareil';
-	// 	imgChevronAppliances.src = './img/chevron-up.svg';
-	// } else {
-	// 	appliancesSearch.placeholder = 'Appareils';
-	// 	imgChevronAppliances.src = './img/chevron-down.svg';
-	// }
 });
 
-ustensilsSearch.addEventListener('click', function () {
-	ustensilsDropdown.classList.toggle('expanded');
-	ustensilsContainerTags.classList.toggle('hidden');
-	if (ustensilsSearch.placeholder === 'Ustensiles') {
-		ustensilsSearch.placeholder = 'Recherche un ustensile';
-		imgChevronUstensils.src = './img/chevron-up.svg';
+ustensilsBtnChevron.addEventListener('click', function (e) {
+	e.preventDefault();
+	if (!ustensilsDropdown.classList.contains('expanded')) {
+		textContentPlaceholder = 'Recherche un ustensile';
+		openDropdown(
+			ustensilsDropdown,
+			ustensilsContainerTags,
+			ustensilsSearch,
+			ustensilsBtnChevron
+		);
 	} else {
-		ustensilsSearch.placeholder = 'Ustensiles';
-		imgChevronUstensils.src = './img/chevron-down.svg';
+		textContentPlaceholder = 'Ustensiles';
+		closeDropdown(
+			ustensilsDropdown,
+			ustensilsContainerTags,
+			ustensilsSearch,
+			ustensilsBtnChevron
+		);
 	}
 });
-
-// ingredientsSearch.addEventListener('click', openDropdown);
-// appliancesSearch.addEventListener('click', openDropdown);
-// ustensilsSearch.addEventListener('click', openDropdown);
 
 function openDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
 	dropdown.classList.add('expanded');
@@ -144,6 +139,7 @@ function closeDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
 	inputDropdown.placeholder = textContentPlaceholder;
 	btnChevron.style.background =
 		'url(../img/chevron-down.svg) center center / 16px 11px no-repeat';
+	inputDropdown.value = '';
 }
 
 //==================================================================================================
