@@ -6,30 +6,37 @@
 // const containerTags = document.getElementsByClassName('container-tags');
 // const dropdownContainer = document.getElementsByClassName('dropdown-container');
 // const inputDropdown = document.getElementsByClassName('input-dropdown');
+// const btnChevron = document.getElementsByClassName('btn-chevron');
 
 // Ingredients
-const ingredientsContainerDropdown = document.getElementById(
+const ingredientsDropdown = document.getElementById(
 	'ingredients-container-dropdown'
 );
 const ingredientsSearch = document.getElementById('ingredients-search');
+const ingredientsBtnChevron = document.getElementById(
+	'ingredients-btn-chevron'
+);
+console.log(ingredientsBtnChevron);
 const ingredientsContainerTags = document.getElementById(
 	'ingredients-container-tags'
 );
 
 // Appliances
-const appliancesContainerDropdown = document.getElementById(
+const appliancesDropdown = document.getElementById(
 	'appliances-container-dropdown'
 );
 const appliancesSearch = document.getElementById('appliances-search');
+const appliancesBtnChevron = document.getElementById('appliances-btn-chevron');
 const appliancesContainerTags = document.getElementById(
 	'appliances-container-tags'
 );
 
 // Ustensils
-const ustensilsContainerDropdown = document.getElementById(
+const ustensilsDropdown = document.getElementById(
 	'ustensils-container-dropdown'
 );
 const ustensilsSearch = document.getElementById('ustensils-search');
+const ustensilsBtnChevron = document.getElementById('ustensils-btn-chevron');
 const ustensilsContainerTags = document.getElementById(
 	'ustensils-container-tags'
 );
@@ -49,37 +56,66 @@ const containerCards = document.getElementById('container-cards-recipes');
 //=====================================
 console.log(recipes);
 const allRecipesData = recipes;
+let textContentPlaceholder;
 
 //==================================================================================================
-// HANDLER DROPDOWNs
+// HANDLER DROPDOWNS
 //==================================================================================================
 
-ingredientsSearch.addEventListener('click', function () {
-	ingredientsContainerDropdown.classList.toggle('expanded');
-	ingredientsContainerTags.classList.toggle('hidden');
-	if (ingredientsSearch.placeholder === 'Ingrédients') {
-		ingredientsSearch.placeholder = 'Recherche un ingrédient';
-		imgChevronIngredients.src = './img/chevron-up.svg';
+// ingredientsSearch.addEventListener('click', function () {
+ingredientsBtnChevron.addEventListener('click', function (e) {
+	e.preventDefault();
+	if (!ingredientsDropdown.classList.contains('expanded')) {
+		textContentPlaceholder = 'Recherche un ingrédient';
+		openDropdown(
+			ingredientsDropdown,
+			ingredientsContainerTags,
+			ingredientsSearch,
+			ingredientsBtnChevron
+		);
 	} else {
-		ingredientsSearch.placeholder = 'Ingrédients';
-		imgChevronIngredients.src = './img/chevron-down.svg';
+		textContentPlaceholder = 'Ingrédients';
+		closeDropdown(
+			ingredientsDropdown,
+			ingredientsContainerTags,
+			ingredientsSearch,
+			ingredientsBtnChevron
+		);
 	}
 });
 
-appliancesSearch.addEventListener('click', function () {
-	appliancesContainerDropdown.classList.toggle('expanded');
-	appliancesContainerTags.classList.toggle('hidden');
-	if (appliancesSearch.placeholder === 'Appareils') {
-		appliancesSearch.placeholder = 'Recherche un appareil';
-		imgChevronAppliances.src = './img/chevron-up.svg';
+appliancesBtnChevron.addEventListener('click', function (e) {
+	e.preventDefault();
+	if (!appliancesDropdown.classList.contains('expanded')) {
+		textContentPlaceholder = 'Recherche un appareil';
+		openDropdown(
+			appliancesDropdown,
+			appliancesContainerTags,
+			appliancesSearch,
+			appliancesBtnChevron
+		);
 	} else {
-		appliancesSearch.placeholder = 'Appareils';
-		imgChevronAppliances.src = './img/chevron-down.svg';
+		textContentPlaceholder = 'Appareils';
+		closeDropdown(
+			appliancesDropdown,
+			appliancesContainerTags,
+			appliancesSearch,
+			appliancesBtnChevron
+		);
 	}
+	// appliancesDropdown.classList.toggle('expanded');
+	// appliancesContainerTags.classList.toggle('hidden');
+	// if (appliancesSearch.placeholder === 'Appareils') {
+	// 	appliancesSearch.placeholder = 'Recherche un appareil';
+	// 	imgChevronAppliances.src = './img/chevron-up.svg';
+	// } else {
+	// 	appliancesSearch.placeholder = 'Appareils';
+	// 	imgChevronAppliances.src = './img/chevron-down.svg';
+	// }
 });
 
 ustensilsSearch.addEventListener('click', function () {
-	ustensilsContainerDropdown.classList.toggle('expanded');
+	ustensilsDropdown.classList.toggle('expanded');
 	ustensilsContainerTags.classList.toggle('hidden');
 	if (ustensilsSearch.placeholder === 'Ustensiles') {
 		ustensilsSearch.placeholder = 'Recherche un ustensile';
@@ -94,9 +130,20 @@ ustensilsSearch.addEventListener('click', function () {
 // appliancesSearch.addEventListener('click', openDropdown);
 // ustensilsSearch.addEventListener('click', openDropdown);
 
-function openDropdown() {
-	dropdownContainer.classList.toggle('expanded');
-	containerTags.classList.toggle('hidden');
+function openDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
+	dropdown.classList.add('expanded');
+	containerTags.classList.remove('hidden');
+	inputDropdown.placeholder = textContentPlaceholder;
+	btnChevron.style.background =
+		'url(../img/chevron-up.svg) center center / 16px 11px no-repeat';
+}
+
+function closeDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
+	dropdown.classList.remove('expanded');
+	containerTags.classList.add('hidden');
+	inputDropdown.placeholder = textContentPlaceholder;
+	btnChevron.style.background =
+		'url(../img/chevron-down.svg) center center / 16px 11px no-repeat';
 }
 
 //==================================================================================================

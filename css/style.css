@@ -115,25 +115,33 @@ input::placeholder {
 /* tags */
 .container-tags {
 	width: 100%;
-    max-width: 667px;
-    height: auto;
-    /* width: auto; */
+	max-width: 667px;
+	height: auto;
+	/* width: auto; */
 	position: absolute;
-	top: 60px;
-	left: 1px;
+	top: 63px;
+	/* left: 1px; */
 	z-index: 100;
 }
 
 .list-tags-item {
 	width: 33.3333%;
 	min-width: 210px;
-    max-width: 210px;
+	max-width: 210px;
+}
+
+.btn-chevron {
+	width: 32px;
+	height: 32px;
+	background: url(../img/chevron-down.svg) center center / 16px 11px no-repeat;
+
 }
 
 /* dropdown chevron icon */
 .chevron-down,
 .chevron-up {
-	margin-top: 35px;
+	/* margin-top: 35px; */
+	color: #fff;
 }
 
 /* ************************ cards ********************** */

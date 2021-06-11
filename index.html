@@ -37,7 +37,7 @@
             </div>
 
             <!-- Search bar-->
-            <form class="d-flex input-group mb-4 search-bar">
+            <form class="d-flex input-group mb-4 search-bar" autocomplete="off">
                 <label for="search-bar-input" class="visually-hidden"> Ecrire un mot pour filtrer les recettes </label>
                 <input id="search-bar-input" class="form-control rounded-3 border-light py-3 fs-5" type="search"
                     placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Search">
@@ -93,20 +93,23 @@
             </div>
 
             <!-- 3 dropdowns container -->
-            <form class="btn-group d-flex flex-wrap p-0 mx-0 my-2">
+            <form class="btn-group d-flex flex-wrap p-0 mx-0 my-2" autocomplete="off">
 
                 <!-- expanded hidden -->
                 <div id="ingredients-container-dropdown"
                     class="dropdown-container position-relative me-3 mb-3 rounded-3 bg-blue text-white ">
-                    <div class="input-dropdown-wrap input-group rounded-3 bg-blue">
+                    <div class="input-dropdown-wrap input-group d-flex rounded-3 bg-blue">
                         <label for="ingredients-search" class="visually-hidden">Filtrez les recettes par
                             ingrédients</label>
                         <input id="ingredients-search"
-                            class="input-dropdown form-control container position-relative bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
+                            class="input-dropdown form-control container position-relative bg-transparent border-0 ps-4 pe-4 py-3 text-white fw-bold "
                             placeholder="Ingrédients" type="text">
-                        <img class="img-chevron-ingredients chevron-down position-absolute top-0 end-0 translate-middle-y me-3"
-                            src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
-                            aria-hidden="true" tabindex="-1">
+                        <button id="ingredients-btn-chevron"
+                            class="btn-chevron btn d-flex position-absolute top-50 end-0 translate-middle-x translate-middle-y me-2">
+                            <!-- <img class="img-chevron-ingredients chevron-down d-flex align-items-center justify-content-center"
+                                src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
+                                aria-hidden="true"> -->
+                        </button>
                     </div>
                     <div id="ingredients-container-tags"
                         class="container-tags container rounded-3 border-0 text-white bg-blue p-0 pt-2 pb-3 fw-bold hidden"
@@ -208,11 +211,14 @@
                         <label for="appliances-search" class="visually-hidden">Filtrez les recettes par
                             appareils</label>
                         <input id="appliances-search"
-                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
+                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-4 py-3 text-white fw-bold "
                             placeholder="Appareils" type="text">
-                        <img class="img-chevron-appliances chevron-down position-absolute top-0 end-0 translate-middle-y me-3 "
-                            src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
-                            aria-hidden="true">
+                        <button id="appliances-btn-chevron"
+                            class="btn-chevron btn d-flex position-absolute top-50 end-0 translate-middle-x translate-middle-y me-2">
+                            <!-- <img class="img-chevron-appliances chevron-down position-absolute top-0 end-0 translate-middle-y me-3 "
+                                src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
+                                aria-hidden="true"> -->
+                        </button>
                     </div>
                     <div id="appliances-container-tags"
                         class="container-tags container rounded-3 border-0 text-white bg-green p-0 pt-2 pb-3 fw-bold hidden"
@@ -242,11 +248,14 @@
                         <label for="ustensils-search" class="visually-hidden">Filtrez les recettes par
                             ustensiles</label>
                         <input id="ustensils-search"
-                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-5 py-3 text-white fw-bold "
+                            class="input-dropdown form-control bg-transparent border-0 ps-4 pe-4 py-3 text-white fw-bold "
                             placeholder="Ustensiles" type="text">
-                        <img class="img-chevron-ustensils chevron-down position-absolute top-0 end-0 translate-middle-y me-3"
-                            src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
-                            aria-hidden="true">
+                        <button id="ustensils-btn-chevron"
+                            class="btn-chevron btn d-flex position-absolute top-50 end-0 translate-middle-x translate-middle-y me-2">
+                            <!-- <img class="img-chevron-ustensils chevron-down position-absolute top-0 end-0 translate-middle-y me-3"
+                                src="./img/chevron-down.svg" width="16" height="10" alt="chevron-down icon"
+                                aria-hidden="true"> -->
+                        </button>
                     </div>
                     <div id="ustensils-container-tags"
                         class="container-tags container rounded-3 border-0 text-white bg-orange p-0 pt-2 pb-3 fw-bold hidden"
@@ -259,9 +268,7 @@
                         </ul>
                     </div>
                 </div>
-
             </form>
-
 
         </nav>
     </header>
