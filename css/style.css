@@ -1,8 +1,8 @@
-/* Fonts */
+/************************** Fonts ************************************/
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-/* ************************ Base ********************** */
+/************************** Base *************************************/
 body,
 h2 {
 	font-family: Lato, sans-serif;
@@ -38,13 +38,13 @@ input::placeholder {
 	display: none;
 }
 
-/* ************************ logo & brand ********************** */
+/************************** logo & brand *****************************/
 .brand-heading {
 	color: #d04f4f;
 	font-family: DM Sans, sans-serif;
 }
 
-/* ************************ main search input ********************** */
+/************************** main search input ************************/
 #search-bar-input {
 	height: 69px;
 	background: #e7e7e7;
@@ -56,8 +56,7 @@ input::placeholder {
 	opacity: 0.25;
 }
 
-/* ************************ tags ********************** */
-
+/* ************************ tags span ********************************/
 .tags-item {
 	font-size: 14px;
 }
@@ -70,8 +69,8 @@ input::placeholder {
 	/* margin-left: 13px; */
 }
 
-/* ************************ dropdown ********************** */
-
+/************************** dropdown *********************************/
+/* dropdown close */
 .dropdown-container {
 	width: 170px;
 	height: 69px;
@@ -104,7 +103,7 @@ input::placeholder {
 	height: 69px;
 	/* width: 100%; */
 	width: 667px;
-    width: 100%;
+	width: 100%;
 }
 
 .dropdown-container.expanded input::placeholder {
@@ -113,22 +112,15 @@ input::placeholder {
 	opacity: 0.5;
 }
 
+/* button */
 .btn-chevron {
-    width: 32px;
-    height: 32px;
-    /* height: 69px; */
-    background: url(../img/chevron-down.svg) center center / 16px 11px no-repeat;
-
+	width: 32px;
+	height: 32px;
+	/* height: 69px; */
+	background: url(../img/chevron-down.svg) center center / 16px 11px no-repeat;
 }
 
-/* dropdown chevron icon */
-/* .chevron-down,
-.chevron-up {
-    margin-top: 35px;
-    color: #fff;
-} */
-
-/* tags */
+/* tags list dropdown */
 .container-tags {
 	width: 100%;
 	max-width: 667px;
@@ -142,12 +134,20 @@ input::placeholder {
 
 .list-tags-item {
 	width: 33.3333%;
-	min-width: 210px;
-	max-width: 210px;
+	min-width: 222px;
+	max-width: 222px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 18px;
 }
 
-/* ************************ cards ********************** */
+/* .list-tags-item:hover {
+	color: #3282f7;
+	background-color: #fff;
+} */
 
+/************************** cards ***********************************/
 .card {
 	background: #c7bebe;
 	border: transparent;
@@ -181,7 +181,6 @@ input::placeholder {
 .recipe-description {
 	font-size: 12px;
 	font-family: Roboto, sans-serif;
-	/* max-height: 107px; */
 	text-align: justify;
 	overflow: hidden;
 	text-overflow: ellipsis;
