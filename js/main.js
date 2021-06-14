@@ -2,6 +2,9 @@
 //==================================================================================================
 // DOM ELEMENTS
 //==================================================================================================
+const wrapperHomepage = document.getElementById('wrapper-homepage');
+console.log(wrapperHomepage);
+
 // Dropdown container list tags
 const ingredientsListTags = document.getElementById('ingredients-list-tags');
 const appliancesListTags = document.getElementById('appliances-list-tags');
@@ -289,9 +292,10 @@ function renderRecipesCards() {
 }
 
 renderRecipesCards();
+trapFocusDropdown(wrapperHomepage);
 
 // containerCards.innerHTML = `
 // Aucune recette ne correspond à votre recherche.
-// Essayez fraise, 
+// Essayez fraise,
 // `;
 //===================================================================

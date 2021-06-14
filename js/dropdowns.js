@@ -99,6 +99,7 @@ function handlerDropdownIngredients(e) {
 			ingredientsSearch,
 			ingredientsBtnChevron
 		);
+		trapFocusDropdown(ingredientsDropdown);
 		// renderIngredientsList();
 	} else {
 		closeDropdown(
@@ -131,6 +132,7 @@ function handlerDropdownAppliances(e) {
 			appliancesSearch,
 			appliancesBtnChevron
 		);
+		trapFocusDropdown(appliancesDropdown);
 		// renderAppliancesList();
 	} else {
 		closeDropdown(
@@ -163,6 +165,7 @@ function handlerDropdownUstensils(e) {
 			ustensilsSearch,
 			ustensilsBtnChevron
 		);
+		trapFocusDropdown(ustensilsDropdown);
 		// renderUstensilsList();
 	} else {
 		closeDropdown(
@@ -202,6 +205,51 @@ function closeAllDropdowns() {
 }
 
 //=====================================
+// Trap the focus in each Dropdown
+//=====================================
+
+// add all the elements inside modal which you want to make focusable
+let focusableElements = 'button, [href], input';
+let modal;
+let firstFocusableElement;
+let focusableContent;
+let lastFocusableElement;
+
+// trap the focus inside the form
+function trapFocusDropdown(dropdownType) {
+	modal = dropdownType; // select the modal by id
+	firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
+	focusableContent = modal.querySelectorAll(focusableElements);
+	lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+	trapFocus();
+}
+
+// Function for trap the focus
+function trapFocus() {
+	document.addEventListener('keydown', function (e) {
+		let isTabPressed = e.key === 'Tab' || e.key === 9;
+		if (!isTabPressed) {
+			return;
+		}
+		if (e.shiftKey) {
+			// if shift key pressed for shift + tab combination
+			if (document.activeElement === firstFocusableElement) {
+				e.preventDefault();
+				lastFocusableElement.focus(); // add focus for the last focusable element
+			}
+		} else {
+			// if tab key is pressed
+			if (document.activeElement === lastFocusableElement) {
+				e.preventDefault();
+				// if focused has reached to last focusable element then focus first focusable element after pressing tab
+				firstFocusableElement.focus(); // add focus for the first focusable element
+			}
+		}
+	});
+	firstFocusableElement.focus();
+}
+
+//=====================================
 // Events
 //=====================================
 
@@ -216,7 +264,15 @@ document.addEventListener('keydown', function (e) {
 	}
 });
 
-// .addEventListener('click', closeAllDropdown);
+// document.addEventListener('click', event => {
+// 	// if (
+// 	// 	dropdownsEl.classList.contains('expanded') &&
+// 	// 	!event.target === dropdownsEl)
+// 	// ) {
+// 	// 	closeAllDropdowns();
+// 	// }
+// 	console.log(event.target);
+// });
 
 //==================================================================================================
 
