@@ -211,7 +211,7 @@ const recipes = [
 				unit: 'cl',
 			},
 			{
-				ingredient: 'Sucre en Poudre',
+				ingredient: 'Sucre en poudre',
 				quantity: 100,
 				unit: 'grammes',
 			},
@@ -242,7 +242,7 @@ const recipes = [
 				unit: 'grammes',
 			},
 			{
-				ingredient: 'Crème liquide',
+				ingredient: 'Crème fraîche',
 				quantity: 80,
 				unit: 'cl',
 			},
@@ -258,7 +258,7 @@ const recipes = [
 		],
 		time: 50,
 		description:
-			"Etaler la pâte dans les moules à tartelette. Faire cuire la pâte 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crème liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pâte sur les tartelettes. Couper les fraises en 2 et les positionner dessus.",
+			"Etaler la pâte dans les moules à tartelette. Faire cuire la pâte 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crème fraîche, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pâte sur les tartelettes. Couper les fraises en 2 et les positionner dessus.",
 		appliance: 'Four',
 		ustensils: ['Moule à tartelettes (6)', 'Casserole'],
 	},
@@ -287,7 +287,7 @@ const recipes = [
 				quantity: 2,
 			},
 			{
-				ingredient: 'Sucre en Poudre',
+				ingredient: 'Sucre en poudre',
 				quantity: '110',
 				unit: 'grammes',
 			},
@@ -745,7 +745,7 @@ const recipes = [
 				unit: 'grammes',
 			},
 			{
-				ingredient: 'Viande hachée 15% de matière grasse',
+				ingredient: 'Viande hachée',
 				quantity: 400,
 				unit: 'grammes',
 			},
@@ -762,7 +762,7 @@ const recipes = [
 		],
 		time: 30,
 		description:
-			'Cuire la viande hachée dans une Poêle à frire. Dans une autre, faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oignons avec la viande hachée. Faire cuire les pâtes le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pâtes sont cuites, ajouter la crème fraîche à la viande hachée. Servir.',
+			'Cuire la viande hachée dans une Poêle à frire. Dans une autre, faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oignons avec la viande hachée. Faire cuire les pâtes le temps indiqué sur le paquet. Ajouter le coulis de tomate à la viande hachée. Une fois que les pâtes sont cuites, ajouter la crème fraîche à la viande hachée. Servir.',
 		appliance: 'Casserole',
 		ustensils: ['Cuillère en bois', 'Louche', 'Couteau'],
 	},
@@ -1099,7 +1099,7 @@ const recipes = [
 				unit: 'grammes',
 			},
 			{
-				ingredient: 'Petits poids',
+				ingredient: 'Petits pois',
 				quantity: 100,
 				unit: 'grammes',
 			},
@@ -1111,7 +1111,7 @@ const recipes = [
 		],
 		time: 60,
 		description:
-			"Découper en cubes les carottes et pommes de terre. Faire revenir dans du beurre. Ajouter les lardons, une fois les lardons dorés, ajouter un grand verre d'eau. Ajouter les petit pois et les haricots verts ( tous deux pré-cuits ). Ajouter Sel, poivre, thym et laurier",
+			"Découper en cubes les carottes et pommes de terre. Faire revenir dans du beurre. Ajouter les lardons, une fois les lardons dorés, ajouter un grand verre d'eau. Ajouter les petits pois et les haricots verts ( tous deux pré-cuits ). Ajouter Sel, poivre, thym et laurier.",
 		appliance: 'Poêle',
 		ustensils: ['Couteau', 'Économe'],
 	},
@@ -1326,7 +1326,7 @@ const recipes = [
 				quantity: 1,
 			},
 			{
-				ingredient: 'Coulis de tomates',
+				ingredient: 'Coulis de tomate',
 				quantity: 20,
 				unit: 'cl',
 			},
@@ -1338,7 +1338,7 @@ const recipes = [
 		],
 		time: 60,
 		description:
-			"Couper les courgettes dans le sens de la longueur. Vider les courgettes dans un saladier. Réserver. Faire revenir la chair des courgettes dans 25cl d'huile d'olive. Ajouter l'oignon puis la viande hachée. Mettre la farce dans les courgettes. Ajouter le coulis de tomates. Mettre au four pendant 30 minutes. Avant la fin de la cuisson ajouter le fromage rapé.",
+			"Couper les courgettes dans le sens de la longueur. Vider les courgettes dans un saladier. Réserver. Faire revenir la chair des courgettes dans 25cl d'huile d'olive. Ajouter l'oignon puis la viande hachée. Mettre la farce dans les courgettes. Ajouter le coulis de tomate. Mettre au four pendant 30 minutes. Avant la fin de la cuisson ajouter le fromage rapé.",
 		appliance: 'Four',
 		ustensils: ['Couteau', 'Cuillère en bois', 'Poêle à frire'],
 	},
@@ -1507,7 +1507,7 @@ const recipes = [
 				unit: 'grammes',
 			},
 			{
-				ingredient: 'Beurre fondu',
+				ingredient: 'Beurre',
 				quantity: 100,
 				unit: 'grammes',
 			},

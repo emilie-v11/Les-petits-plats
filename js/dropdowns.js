@@ -11,7 +11,6 @@ const ingredientsSearch = document.getElementById('ingredients-search');
 const ingredientsBtnChevron = document.getElementById(
 	'ingredients-btn-chevron'
 );
-console.log(ingredientsBtnChevron);
 const ingredientsContainerTags = document.getElementById(
 	'ingredients-container-tags'
 );
@@ -79,26 +78,6 @@ function closeDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
 	}
 }
 
-// let type;
-// function openDropdown(type) {
-// 	`${type + 'Dropdown'}`.classList.add('expanded');
-// 	`${type + 'ContainerTags'}`.classList.remove('hidden');
-// 	`${type + 'BtnChevron'}`.style.background =
-// 		'url(../img/chevron-up.svg) center center / 16px 11px no-repeat';
-// 	// `${type + 'Search'}`.placeholder = 'Recherche un ingrédient';
-// 	switch (inputDropdown.id) {
-// 		case 'ingredients-search':
-// 			inputDropdown.placeholder = 'Recherche un ingrédient';
-// 			break;
-// 		case 'appliances-search':
-// 			inputDropdown.placeholder = 'Recherche un appareil';
-// 			break;
-// 		case 'ustensils-search':
-// 			inputDropdown.placeholder = 'Recherche un ustensile';
-// 			break;
-// 	}
-// }
-
 function handlerDropdownIngredients(e) {
 	e.preventDefault();
 	if (!ingredientsDropdown.classList.contains('expanded')) {
@@ -120,6 +99,7 @@ function handlerDropdownIngredients(e) {
 			ingredientsSearch,
 			ingredientsBtnChevron
 		);
+		// renderIngredientsList();
 	} else {
 		closeDropdown(
 			ingredientsDropdown,
@@ -151,6 +131,7 @@ function handlerDropdownAppliances(e) {
 			appliancesSearch,
 			appliancesBtnChevron
 		);
+		// renderAppliancesList();
 	} else {
 		closeDropdown(
 			appliancesDropdown,
@@ -182,6 +163,7 @@ function handlerDropdownUstensils(e) {
 			ustensilsSearch,
 			ustensilsBtnChevron
 		);
+		// renderUstensilsList();
 	} else {
 		closeDropdown(
 			ustensilsDropdown,
@@ -191,6 +173,72 @@ function handlerDropdownUstensils(e) {
 		);
 	}
 }
+
+function closeAllDropdowns() {
+	if (
+		ingredientsDropdown.classList.contains('expanded') ||
+		appliancesDropdown.classList.contains('expanded') ||
+		ustensilsDropdown.classList.contains('expanded')
+	) {
+		closeDropdown(
+			ingredientsDropdown,
+			ingredientsContainerTags,
+			ingredientsSearch,
+			ingredientsBtnChevron
+		);
+		closeDropdown(
+			appliancesDropdown,
+			appliancesContainerTags,
+			appliancesSearch,
+			appliancesBtnChevron
+		);
+		closeDropdown(
+			ustensilsDropdown,
+			ustensilsContainerTags,
+			ustensilsSearch,
+			ustensilsBtnChevron
+		);
+	}
+}
+
+//=====================================
+// Events
+//=====================================
+
+ingredientsBtnChevron.addEventListener('click', handlerDropdownIngredients);
+appliancesBtnChevron.addEventListener('click', handlerDropdownAppliances);
+ustensilsBtnChevron.addEventListener('click', handlerDropdownUstensils);
+
+document.addEventListener('keydown', function (e) {
+	// console.log(e.key);
+	if (e.key === 'Escape') {
+		closeAllDropdowns();
+	}
+});
+
+// .addEventListener('click', closeAllDropdown);
+
+//==================================================================================================
+
+// let type;
+// function openDropdown(type) {
+// 	`${type + 'Dropdown'}`.classList.add('expanded');
+// 	`${type + 'ContainerTags'}`.classList.remove('hidden');
+// 	`${type + 'BtnChevron'}`.style.background =
+// 		'url(../img/chevron-up.svg) center center / 16px 11px no-repeat';
+// 	// `${type + 'Search'}`.placeholder = 'Recherche un ingrédient';
+// 	switch (inputDropdown.id) {
+// 		case 'ingredients-search':
+// 			inputDropdown.placeholder = 'Recherche un ingrédient';
+// 			break;
+// 		case 'appliances-search':
+// 			inputDropdown.placeholder = 'Recherche un appareil';
+// 			break;
+// 		case 'ustensils-search':
+// 			inputDropdown.placeholder = 'Recherche un ustensile';
+// 			break;
+// 	}
+// }
 
 // function closeDropdownIngredients() {
 // 	closeDropdown(
@@ -248,11 +296,3 @@ function handlerDropdownUstensils(e) {
 // 	ustensilsBtnChevron.style.background =
 // 		'url(../img/chevron-down.svg) center center / 16px 11px no-repeat';
 // }
-
-//=====================================
-// Events
-//=====================================
-
-ingredientsBtnChevron.addEventListener('click', handlerDropdownIngredients);
-appliancesBtnChevron.addEventListener('click', handlerDropdownAppliances);
-ustensilsBtnChevron.addEventListener('click', handlerDropdownUstensils);

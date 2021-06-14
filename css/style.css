@@ -49,6 +49,8 @@ input::placeholder {
 	height: 69px;
 	background: #e7e7e7;
 	color: #000;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #search-bar-input::placeholder {
@@ -57,16 +59,16 @@ input::placeholder {
 }
 
 /* ************************ tags span ********************************/
-.tags-item {
+.filtered-tags-item {
 	font-size: 14px;
 }
 
-.tags-item-btn {
+/* button close filtered tags item */
+.filtered-tags-btn {
 	border: transparent;
 	background: url(../img/x-circle.svg) center center / 20px 20px no-repeat;
 	width: 20px;
 	height: 20px;
-	/* margin-left: 13px; */
 }
 
 /************************** dropdown *********************************/
@@ -117,6 +119,7 @@ input::placeholder {
 	width: 32px;
 	height: 32px;
 	/* height: 69px; */
+	margin-top: 5px;
 	background: url(../img/chevron-down.svg) center center / 16px 11px no-repeat;
 }
 
