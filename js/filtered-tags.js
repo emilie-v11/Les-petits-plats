@@ -10,13 +10,12 @@ const listTagsItem = document.querySelectorAll('.list-tags-item');
 const filteredTagsList = document.querySelector('.filtered-tags-list');
 const filteredTagsItem = document.getElementsByClassName('filtered-tags-item');
 // const filteredTagsItem = document.querySelectorAll('.filtered-tags-item');
-console.log(filteredTagsItem);
+// console.log(filteredTagsItem);
 
 //=====================================
 // Variables
 //=====================================
 let filteredTagsArray = [];
-console.log(filteredTagsArray);
 // let activeTagsArray = [];
 let RecipesByTagsItemArray = [];
 
@@ -29,12 +28,12 @@ let tagBgColor;
 // let activeTags;
 
 function addNewTag(event, tagBgColor) {
-	let filteredTagValue = event.target.textContent;
-    if (filteredTagsArray.includes(filteredTagValue)) {
+	let filteredTagValue = event.target.dataset.value; // textContent
+	if (filteredTagsArray.includes(filteredTagValue)) {
 		return;
 	} else {
 		filteredTagsArray.push(filteredTagValue);
-		console.log(filteredTagValue);
+		console.log(filteredTagValue, event.target.dataset);
 
 		tagBgColor = event.target.dataset.color;
 		tagBgColorArray.push(tagBgColor);
@@ -44,6 +43,7 @@ function addNewTag(event, tagBgColor) {
 
 		renderFilteredTags();
 		console.log(filteredTagsArray);
+		console.log(tagBgColorArray);
 		// filterRecipesByTagsItem();
 	}
 }
