@@ -33,14 +33,19 @@
                 </div>
 
                 <!-- Search bar-->
-                <form class="d-flex input-group mb-4 search-bar" autocomplete="off">
-                    <label for="search-bar-input" class="visually-hidden"> Ecrire un mot pour filtrer les recettes
-                    </label>
-                    <input id="search-bar-input" class="form-control rounded-3 border-light ps-3 pe-5 fs-5" type="text"
-                        placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Search">
-                    <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                    <img class="search-bar-icon position-absolute top-50 end-0 translate-middle-y me-4"
-                        src="./img/search-icon.svg" width="32" height="32" alt="icon search" aria-hidden="true">
+                <form class=" container-lg mb-4 p-0 search-bar" autocomplete="off">
+                    <div class="input-group ">
+                        <label for="search-bar-input" class="visually-hidden"> Ecrire un mot pour filtrer les
+                            recettes</label>
+                        <input id="search-bar-input" class="form-control rounded-3 border-light ps-3 pe-5 fs-5"
+                            type="text" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+                            aria-label="Search">
+                        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                        <img class="search-bar-icon position-absolute top-50 end-0 translate-middle-y me-4"
+                            src="./img/search-icon.svg" width="32" height="32" alt="icon search" aria-hidden="true">
+                    </div>
+                    <!-- autocomplete -->
+                    <!-- <div></div> -->
                 </form>
 
                 <!-- container tags -->
@@ -74,6 +79,7 @@
                                 aria-label="ouvrir le menu déroulant">
                             </button>
                         </div>
+                        <!-- autocomplete -->
                         <div id="ingredients-container-tags"
                             class="container-tags container position-absolute rounded-3 border-0 p-0 pt-2 pb-3 fw-bold bg-blue hidden"
                             aria-hidden="true">
@@ -97,6 +103,7 @@
                                 aria-label="ouvrir le menu déroulant">
                             </button>
                         </div>
+                        <!-- autocomplete -->
                         <div id="appliances-container-tags"
                             class="container-tags container position-absolute rounded-3 border-0 text-white p-0 pt-2 pb-3 fw-bold bg-green hidden"
                             aria-hidden="true">
@@ -120,6 +127,7 @@
                                 aria-label="ouvrir le menu déroulant">
                             </button>
                         </div>
+                        <!-- autocomplete -->
                         <div id="ustensils-container-tags"
                             class="container-tags container position-absolute rounded-3 border-0 text-white p-0 pt-2 pb-3 fw-bold bg-orange hidden"
                             aria-hidden="true">
