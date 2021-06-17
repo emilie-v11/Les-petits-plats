@@ -12,7 +12,7 @@ const containerCards = document.getElementById('container-cards-recipes');
 //=====================================
 console.log(recipes);
 // const allRecipesData = recipes;
-let allRecipesArray = [];
+// let allRecipesArray = []; // suppr in main branch
 
 //==================================================================================================
 //  RECIPES' CARDS

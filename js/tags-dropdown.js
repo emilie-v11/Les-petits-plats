@@ -39,7 +39,7 @@ function renderIngredientsList() {
 
 	let ingredientsList = new Set(allIngredientsRecipes);
 
-	let ingredientsListArray = [...ingredientsList];
+	ingredientsListArray = [...ingredientsList];
 	console.log(ingredientsListArray);
 
 	ingredientsListArray.map(item => {
@@ -51,10 +51,11 @@ function renderIngredientsList() {
         `;
 		console.log(item);
 
-		ingredientsListTags.innerHTML = newItemIngredient;
-	});
+    });
+    ingredientsListTags.innerHTML = newItemIngredient;
 }
 renderIngredientsList();
+
 
 //=====================================
 // List Tags Appliances
@@ -71,7 +72,7 @@ function renderAppliancesList() {
 
 	let appliancesList = new Set(allAppliancesRecipes);
 
-	let appliancesListArray = [...appliancesList];
+	appliancesListArray = [...appliancesList];
 	console.log(appliancesListArray);
 
 	appliancesListArray.map(item => {
@@ -82,9 +83,8 @@ function renderAppliancesList() {
 	    </a>
 	    `;
 		console.log(item);
-
-		appliancesListTags.innerHTML = newItemAppliance;
 	});
+    appliancesListTags.innerHTML = newItemAppliance;
 }
 renderAppliancesList();
 
@@ -107,7 +107,7 @@ function renderUstensilsList() {
 
 	let ustensilsList = new Set(allUstensilsRecipes);
 
-	let ustensilsListArray = [...ustensilsList];
+	ustensilsListArray = [...ustensilsList];
 	console.log(ustensilsListArray);
 
 	ustensilsListArray.map(item => {
@@ -118,8 +118,7 @@ function renderUstensilsList() {
 	    </a>
 	    `;
 		console.log(item);
-
-		ustensilsListTags.innerHTML = newItemUstensils;
 	});
+    ustensilsListTags.innerHTML = newItemUstensils;
 }
 renderUstensilsList();
