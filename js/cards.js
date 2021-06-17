@@ -12,7 +12,7 @@ const containerCards = document.getElementById('container-cards-recipes');
 //=====================================
 console.log(recipes);
 // const allRecipesData = recipes;
-let allRecipesArray = [];
+// let allRecipesArray = [];
 
 //==================================================================================================
 //  RECIPES' CARDS
@@ -22,10 +22,8 @@ let allRecipesArray = [];
 function renderRecipesCards() {
 	let newRecipeCard = '';
 
-	recipes.filter(recipe => {
+	recipes.forEach(recipe => {
 		const ingredients = recipe.ingredients;
-		// console.log(recipe);
-		// console.log(ingredients);
 
 		// Ingredients' recipes cards
 		let newIngredientTag = '';
@@ -50,15 +48,16 @@ function renderRecipesCards() {
 					? ingredient.unit
 					: '';
 
+			let fixQuantity =
+				ingredient.quantity !== undefined
+					? `: ${ingredient.quantity}`
+					: '';
+
 			newIngredientTag += `
             <li class="card-ingredients-item list-group-item bg-transparent border-0 fw-bold p-0">
                 <span class="recipe-ingredient">${ingredient.ingredient}</span>
                 <span class="recipe-quantity fw-normal">
-                    ${
-						ingredient.quantity !== undefined
-							? `: ${ingredient.quantity}`
-							: ''
-					}
+                    ${fixQuantity}
                 </span>
                 <span class="recipe-unit fw-normal">
                     ${fixUnits}
