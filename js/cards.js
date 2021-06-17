@@ -12,20 +12,18 @@ const containerCards = document.getElementById('container-cards-recipes');
 //=====================================
 console.log(recipes);
 // const allRecipesData = recipes;
-// let allRecipesArray = []; // suppr in main branch
+let allRecipesArray = []; // suppr in main branch
 
 //==================================================================================================
 //  RECIPES' CARDS
 //==================================================================================================
 
 // Create all recipes' cards
-function renderRecipesCards() {
+const renderRecipesCards = () => {
 	let newRecipeCard = '';
 
-	recipes.filter(recipe => {
+	allRecipesArray = recipes.forEach(recipe => {
 		const ingredients = recipe.ingredients;
-		// console.log(recipe);
-		// console.log(ingredients);
 
 		// Ingredients' recipes cards
 		let newIngredientTag = '';
@@ -49,16 +47,17 @@ function renderRecipesCards() {
 					: ingredient.unit !== undefined
 					? ingredient.unit
 					: '';
+			// fix quantity's ingredients
+			let fixQuantity =
+				ingredient.quantity !== undefined
+					? `: ${ingredient.quantity}`
+					: '';
 
 			newIngredientTag += `
             <li class="card-ingredients-item list-group-item bg-transparent border-0 fw-bold p-0">
                 <span class="recipe-ingredient">${ingredient.ingredient}</span>
                 <span class="recipe-quantity fw-normal">
-                    ${
-						ingredient.quantity !== undefined
-							? `: ${ingredient.quantity}`
-							: ''
-					}
+                    ${fixQuantity}
                 </span>
                 <span class="recipe-unit fw-normal">
                     ${fixUnits}
@@ -69,8 +68,8 @@ function renderRecipesCards() {
 
 		// Create recipes' cards
 		newRecipeCard += `
-        <div class="col rounded-3">
-            <a href="#" class="card rounded-3" aria-label="Accéder à la fiche de recette: '${recipe.name}'">
+        <div id="${recipe.id}" class="col rounded-3">
+            <a href="#" class="col card rounded-3" aria-label="Accéder à la fiche de recette: '${recipe.name}'">
                 <img src="./img/bg-card-img.svg" class="card-img-top rounded-top border-0" width="380"
                     height="178" aria-hidden="true" alt="">
                 <div class="card-body p-3 rounded-bottom">
@@ -100,8 +99,8 @@ function renderRecipesCards() {
 	});
 	containerCards.innerHTML = newRecipeCard;
 	console.log(containerCards);
-}
-
+};
+console.log(allRecipesArray);
 renderRecipesCards();
 trapFocusDropdown(wrapperHomepage);
 

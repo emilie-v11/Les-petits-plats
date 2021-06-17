@@ -4,6 +4,7 @@
 //==================================================================================================
 const mainSearchBar = document.getElementById('search-bar-input');
 // console.log(mainSearchBar);
+const alertMessage = document.getElementById('alert-message');
 
 //=====================================
 // Variables
@@ -17,6 +18,7 @@ console.log(containerCards);
 
 // Search recipes and filter it
 const searchRecipes = searchText => {
+	renderRecipesCards();
 	// Get matches to current text input
 	let matches = recipes.filter(recipe => {
 		// const regex = new RegExp(`${searchText}`, 'gi');
@@ -25,65 +27,84 @@ const searchRecipes = searchText => {
 		);
 		return (
 			recipe.name
+				.toLowerCase()
 				.normalize('NFD')
 				.replace(/[\u0300-\u036f]/g, '')
 				.match(regex) ||
 			recipe.ingredients
 				.join()
+				.toLowerCase()
 				.normalize('NFD')
 				.replace(/[\u0300-\u036f]/g, '')
 				.match(regex) ||
 			recipe.description
+				.toLowerCase()
 				.normalize('NFD')
 				.replace(/[\u0300-\u036f]/g, '')
 				.match(regex)
 		);
 	});
-	if (searchText.length === 0) {
-		matches = [];
-		containerCards.innerHTML = [];
-	}
 
-	outputHtml(matches);
+	noMatch(searchText, matches, 3);
+
+	// outputHtml(matches);
 
 	console.log(matches);
 };
 
-const outputHtml = matches => {
-	if (matches.length > 0) {
-		renderRecipesCards();
-	}
-};
+// const outputHtml = matches => {
+// 	if (matches.length > 0) {
+// 		// renderRecipesCards();
+// 		console.log('oui match recipe');
+// 	}
+// };
+
+//==================================================================================================
+// EVENT
+//==================================================================================================
 
 mainSearchBar.addEventListener('input', () => {
 	searchRecipes(mainSearchBar.value);
 });
 //==================================================================================================
 
-const accentsMap = {
-	a: 'á|à|ã|â|À|Á|Ã|Â',
-	e: 'é|è|ê|É|È|Ê',
-	i: 'í|ì|î|Í|Ì|Î',
-	o: 'ó|ò|ô|õ|Ó|Ò|Ô|Õ',
-	u: 'ú|ù|û|ü|Ú|Ù|Û|Ü',
-	c: 'ç|Ç',
-	n: 'ñ|Ñ',
-};
-const testWord = 'Crème fraîche';
+function noMatch(value, matches, number) {
+	if (value.length < number) {
+		alertMessage.classList.add('hidden');
+		return;
+	} else {
+		if (matches.length === 0) {
+			containerCards.innerHTML = '';
+			alertMessage.classList.remove('hidden');
+		} else if (matches.length >= 1) {
+			alertMessage.classList.add('hidden');
+		}
+	}
+}
 
-// const slugify = text => Object.keys(accentsMap).reduce((acc, cur) => acc.replace(new RegExp(accentsMap[cur], 'g'), cur), text);
-const slugify = text =>
-	Object.keys(accentsMap).reduce(
-		(acc, cur) => acc.replace(new RegExp(accentsMap[cur], 'g'), cur),
-		text
-	);
+// const accentsMap = {
+// 	a: 'á|à|ã|â|À|Á|Ã|Â',
+// 	e: 'é|è|ê|É|È|Ê',
+// 	i: 'í|ì|î|Í|Ì|Î',
+// 	o: 'ó|ò|ô|õ|Ó|Ò|Ô|Õ',
+// 	u: 'ú|ù|û|ü|Ú|Ù|Û|Ü',
+// 	c: 'ç|Ç',
+// 	n: 'ñ|Ñ',
+// };
+// const testWord = 'Crème fraîche';
 
-console.log(ingredientsListArray);
-// String.prototype.matchAll(regexp)
-//// String.prototype.normalize([form])
-//// str.normalize('NFKC');
-console.log(slugify(testWord));
+// // const slugify = text => Object.keys(accentsMap).reduce((acc, cur) => acc.replace(new RegExp(accentsMap[cur], 'g'), cur), text);
+// const slugify = text =>
+// 	Object.keys(accentsMap).reduce(
+// 		(acc, cur) => acc.replace(new RegExp(accentsMap[cur], 'g'), cur),
+// 		text
+// 	);
 
-const str = 'Crème Brulée';
+// console.log(ingredientsListArray);
+// // String.prototype.matchAll(regexp)
+// //// String.prototype.normalize([form])
+// //// str.normalize('NFKC');
+// console.log(slugify(testWord));
 
-console.log(str.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+// const str = 'Crème Brulée';
+// console.log(str.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
