@@ -35,7 +35,7 @@ console.log(allRecipes);
 
 function searchRecipes(searchText) {
 	if (searchText.length >= 3) {
-		const filterCardsInput = allRecipes.filter(recipe => {
+		const filterCardsByInput = allRecipes.filter(recipe => {
 			const regex = new RegExp(
 				`${searchText}`
 					.toLowerCase()
@@ -62,21 +62,22 @@ function searchRecipes(searchText) {
 			);
 		});
 		containerCards.innerHTML = '';
-		renderRecipesCards(filterCardsInput);
+		renderRecipesCards(filterCardsByInput);
 
-		noMatch(searchText, filterCardsInput, 3);
-		console.log(filterCardsInput);
+		noMatch(searchText, filterCardsByInput, 3);
+		console.log(filterCardsByInput);
 	} else {
 		renderRecipesCards(allRecipes);
+		alertMessage.classList.add('hidden');
 	}
 }
 
-function normalizeValue(value) {
-	return value
-		.toLowerCase()
-		.normalize('NFD')
-		.replace(/[\u0300-\u036f]/g, '');
-}
+// function normalizeValue(value) {
+// 	return value
+// 		.toLowerCase()
+// 		.normalize('NFD')
+// 		.replace(/[\u0300-\u036f]/g, '');
+// }
 
 // // Search recipes and filter it
 // const searchRecipes = searchText => {
@@ -130,13 +131,16 @@ mainSearchBar.addEventListener('input', () => {
 function noMatch(value, matches, number) {
 	if (value.length < number) {
 		alertMessage.classList.add('hidden');
+		alertMessage.ariaHidden = 'true';
 		return;
 	} else {
 		if (matches.length === 0) {
 			containerCards.innerHTML = '';
 			alertMessage.classList.remove('hidden');
+			alertMessage.ariaHidden = 'false';
 		} else if (matches.length >= 1) {
 			alertMessage.classList.add('hidden');
+			alertMessage.ariaHidden = 'true';
 		}
 	}
 }

@@ -71,7 +71,8 @@
 
                     <!-- expanded / hidden -->
                     <div id="ingredients-container-dropdown"
-                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-blue ">
+                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-blue "
+                        aria-haspopup="true" aria-expanded="false">
                         <div class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-blue">
                             <label for="ingredients-search" class="visually-hidden">Filtrez les recettes par
                                 ingrédients</label>
@@ -94,7 +95,8 @@
 
                     <!-- expanded / hidden -->
                     <div id="appliances-container-dropdown"
-                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-green ">
+                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-green "
+                        aria-haspopup="true" aria-expanded="false">
                         <div
                             class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-green">
                             <label for="appliances-search" class="visually-hidden">Filtrez les recettes par
@@ -118,7 +120,8 @@
 
                     <!-- expanded / hidden -->
                     <div id="ustensils-container-dropdown"
-                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-orange ">
+                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-orange "
+                        aria-haspopup="true" aria-expanded="false">
                         <div
                             class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-orange">
                             <label for="ustensils-search" class="visually-hidden">Filtrez les recettes par
@@ -145,9 +148,10 @@
         </header>
 
         <main>
-            <div id="alert-message" class="container-lg mb-5 hidden">
+            <div id="alert-message" class="container-lg mb-5 hidden" aria-hidden="true">
                 <p class="alert alert-danger text-center" role="alert">
-                    Aucune recette ne correspond à votre critère... Vous pouvez chercher "tarte aux pommes", "poisson", etc.
+                    Aucune recette ne correspond à votre critère... Vous pouvez chercher "tarte aux pommes", "poisson",
+                    etc.
                 </p>
             </div>
 
