@@ -6,23 +6,26 @@ const wrapperHomepage = document.getElementById('wrapper-homepage');
 
 //  Cards
 const containerCards = document.getElementById('container-cards-recipes');
+const cardsRecipes = document.getElementsByClassName('card-recipe');
+console.log(cardsRecipes);
 
 //=====================================
 // Variables
 //=====================================
 console.log(recipes);
 // const allRecipesData = recipes;
-let allRecipesArray = []; // suppr in main branch
+let allRecipes = recipes; // suppr in main branch
 
 //==================================================================================================
 //  RECIPES' CARDS
 //==================================================================================================
 
 // Create all recipes' cards
-const renderRecipesCards = () => {
+function renderRecipesCards(recipes) {
+	// renderRecipesCards
 	let newRecipeCard = '';
 
-	allRecipesArray = recipes.forEach(recipe => {
+	recipes.forEach(recipe => {
 		const ingredients = recipe.ingredients;
 
 		// Ingredients' recipes cards
@@ -68,7 +71,7 @@ const renderRecipesCards = () => {
 
 		// Create recipes' cards
 		newRecipeCard += `
-        <div id="${recipe.id}" class="col rounded-3">
+        <article id="${recipe.id}" class="card-recipe col rounded-3">
             <a href="#" class="col card rounded-3" aria-label="Accéder à la fiche de recette: '${recipe.name}'">
                 <img src="./img/bg-card-img.svg" class="card-img-top rounded-top border-0" width="380"
                     height="178" aria-hidden="true" alt="">
@@ -91,17 +94,17 @@ const renderRecipesCards = () => {
                             <p class="recipe-description card-text ">${recipe.description}</p>
                         </div>
                     </div>
-
                 </div>
             </a>
-        </div>
+        </article>
         `;
 	});
 	containerCards.innerHTML = newRecipeCard;
 	console.log(containerCards);
-};
-console.log(allRecipesArray);
-renderRecipesCards();
+
+	// filter()
+}
+renderRecipesCards(allRecipes);
 trapFocusDropdown(wrapperHomepage);
 
 // containerCards.innerHTML = `

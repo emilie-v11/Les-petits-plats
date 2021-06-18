@@ -6,57 +6,116 @@ const mainSearchBar = document.getElementById('search-bar-input');
 // console.log(mainSearchBar);
 const alertMessage = document.getElementById('alert-message');
 
+const cardTitles = document.getElementsByClassName('card-title');
+console.log(cardTitles);
+const cardIngredientsItems = document.getElementsByClassName(
+	'card-ingredients-item'
+);
+const cardDescriptions = document.getElementsByClassName('recipe-description');
+
 //=====================================
 // Variables
 //=====================================
-console.log(recipes);
+// console.log(recipes);
 console.log(containerCards);
+const cards = Array.from(cardsRecipes);
+console.log(cards);
+console.log(allRecipes);
+//=====================================
+// Variables
+//=====================================
+// RegExp
+// const isMatchTitle =
+// const isMatchIngredients
+// const isMatchDescription
 
 //==================================================================================================
 // FILTER RECIPES BY MAIN INPUT SEARCH-BAR
 //==================================================================================================
 
-// Search recipes and filter it
-const searchRecipes = searchText => {
-	renderRecipesCards();
-	// Get matches to current text input
-	let matches = recipes.filter(recipe => {
-		// const regex = new RegExp(`${searchText}`, 'gi');
-		const regex = new RegExp(
-			`${searchText}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-		);
-		return (
-			recipe.name
-				.toLowerCase()
-				.normalize('NFD')
-				.replace(/[\u0300-\u036f]/g, '')
-				.match(regex) ||
-			recipe.ingredients
-				.join()
-				.toLowerCase()
-				.normalize('NFD')
-				.replace(/[\u0300-\u036f]/g, '')
-				.match(regex) ||
-			recipe.description
-				.toLowerCase()
-				.normalize('NFD')
-				.replace(/[\u0300-\u036f]/g, '')
-				.match(regex)
-		);
-	});
+function searchRecipes(searchText) {
+	if (searchText.length >= 3) {
+		const filterCardsInput = allRecipes.filter(recipe => {
+			const regex = new RegExp(
+				`${searchText}`
+					.toLowerCase()
+					.normalize('NFD')
+					.replace(/[\u0300-\u036f]/g, '')
+			);
+			return (
+				recipe.name
+					.toLowerCase()
+					.normalize('NFD')
+					.replace(/[\u0300-\u036f]/g, '')
+					.match(regex) ||
+				recipe.ingredients
+					.join()
+					.toLowerCase()
+					.normalize('NFD')
+					.replace(/[\u0300-\u036f]/g, '')
+					.match(regex) ||
+				recipe.description
+					.toLowerCase()
+					.normalize('NFD')
+					.replace(/[\u0300-\u036f]/g, '')
+					.match(regex)
+			);
+		});
+		containerCards.innerHTML = '';
+		renderRecipesCards(filterCardsInput);
 
-	noMatch(searchText, matches, 3);
+		noMatch(searchText, filterCardsInput, 3);
+		console.log(filterCardsInput);
+	} else {
+		renderRecipesCards(allRecipes);
+	}
+}
 
-	// outputHtml(matches);
+function normalizeValue(value) {
+	return value
+		.toLowerCase()
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '');
+}
 
-	console.log(matches);
-};
+// // Search recipes and filter it
+// const searchRecipes = searchText => {
+// 	// Get matches to current text input
+// 	let matches = cards.filter(card => {
+// 		const regex = new RegExp(
+// 			`${searchText}`
+// 				.toLowerCase()
+// 				.normalize('NFD')
+// 				.replace(/[\u0300-\u036f]/g, '')
+// 		);
+// 		return recipe.name
+// 			.toLowerCase()
+// 			.normalize('NFD')
+// 			.replace(/[\u0300-\u036f]/g, '')
+// 			.match(regex); //||
+// 		// 	recipe.ingredients
+// 		// 		.join()
+// 		// 		.toLowerCase()
+// 		// 		.normalize('NFD')
+// 		// 		.replace(/[\u0300-\u036f]/g, '')
+// 		// 		.match(regex) ||
+// 		// 	recipe.description
+// 		// 		.toLowerCase()
+// 		// 		.normalize('NFD')
+// 		// 		.replace(/[\u0300-\u036f]/g, '')
+// 		// 		.match(regex)
+// 		// if (!card.cardTitles.match(regex)) {
 
-// const outputHtml = matches => {
-// 	if (matches.length > 0) {
-// 		// renderRecipesCards();
-// 		console.log('oui match recipe');
-// 	}
+// 		// } else {
+// 		// }
+// 		console.log(card.cardTitles);
+// 	});
+
+// noMatch(searchText, matches, 3);
+
+// outputHtml(matches);
+
+// 	console.log(matches);
 // };
 
 //==================================================================================================
