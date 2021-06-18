@@ -17,17 +17,7 @@ const cardDescriptions = document.getElementsByClassName('recipe-description');
 // Variables
 //=====================================
 // console.log(recipes);
-console.log(containerCards);
-const cards = Array.from(cardsRecipes);
-console.log(cards);
 console.log(allRecipes);
-//=====================================
-// Variables
-//=====================================
-// RegExp
-// const isMatchTitle =
-// const isMatchIngredients
-// const isMatchDescription
 
 //==================================================================================================
 // FILTER RECIPES BY MAIN INPUT SEARCH-BAR
@@ -61,10 +51,11 @@ function searchRecipes(searchText) {
 					.match(regex)
 			);
 		});
-		containerCards.innerHTML = '';
+		// containerCards.innerHTML = '';
 		renderRecipesCards(filterCardsByInput);
 
 		noMatch(searchText, filterCardsByInput, 3);
+		// recipes filtered
 		console.log(filterCardsByInput);
 	} else {
 		renderRecipesCards(allRecipes);
@@ -72,56 +63,10 @@ function searchRecipes(searchText) {
 	}
 }
 
-// function normalizeValue(value) {
-// 	return value
-// 		.toLowerCase()
-// 		.normalize('NFD')
-// 		.replace(/[\u0300-\u036f]/g, '');
-// }
-
-// // Search recipes and filter it
-// const searchRecipes = searchText => {
-// 	// Get matches to current text input
-// 	let matches = cards.filter(card => {
-// 		const regex = new RegExp(
-// 			`${searchText}`
-// 				.toLowerCase()
-// 				.normalize('NFD')
-// 				.replace(/[\u0300-\u036f]/g, '')
-// 		);
-// 		return recipe.name
-// 			.toLowerCase()
-// 			.normalize('NFD')
-// 			.replace(/[\u0300-\u036f]/g, '')
-// 			.match(regex); //||
-// 		// 	recipe.ingredients
-// 		// 		.join()
-// 		// 		.toLowerCase()
-// 		// 		.normalize('NFD')
-// 		// 		.replace(/[\u0300-\u036f]/g, '')
-// 		// 		.match(regex) ||
-// 		// 	recipe.description
-// 		// 		.toLowerCase()
-// 		// 		.normalize('NFD')
-// 		// 		.replace(/[\u0300-\u036f]/g, '')
-// 		// 		.match(regex)
-// 		// if (!card.cardTitles.match(regex)) {
-
-// 		// } else {
-// 		// }
-// 		console.log(card.cardTitles);
-// 	});
-
-// noMatch(searchText, matches, 3);
-
-// outputHtml(matches);
-
-// 	console.log(matches);
-// };
-
 //==================================================================================================
 // EVENT
 //==================================================================================================
+mainSearchBar.addEventListener('click', closeAllDropdowns);
 
 mainSearchBar.addEventListener('input', () => {
 	searchRecipes(mainSearchBar.value);

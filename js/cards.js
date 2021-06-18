@@ -13,12 +13,18 @@ console.log(cardsRecipes);
 // Variables
 //=====================================
 console.log(recipes);
-// const allRecipesData = recipes;
-let allRecipes = recipes; // suppr in main branch
+const allRecipes = recipes;
 
 //==================================================================================================
 //  RECIPES' CARDS
 //==================================================================================================
+
+const init = function () {
+	renderRecipesCards(allRecipes);
+	trapFocusDropdown(wrapperHomepage);
+};
+
+init();
 
 // Create all recipes' cards
 function renderRecipesCards(recipes) {
@@ -101,16 +107,4 @@ function renderRecipesCards(recipes) {
 	});
 	containerCards.innerHTML = newRecipeCard;
 	console.log(containerCards);
-
-	// filter()
 }
-renderRecipesCards(allRecipes);
-trapFocusDropdown(wrapperHomepage);
-
-// containerCards.innerHTML = `
-// Aucune recette ne correspond à votre recherche.
-// Essayez fraise,
-// `;
-//===================================================================
-// console.log(allRecipesData);
-console.log(recipes);
