@@ -3,15 +3,14 @@
 // DOM ELEMENTS
 //==================================================================================================
 const mainSearchBar = document.getElementById('search-bar-input');
-// console.log(mainSearchBar);
 const alertMessage = document.getElementById('alert-message');
 
-const cardTitles = document.getElementsByClassName('card-title');
-console.log(cardTitles);
-const cardIngredientsItems = document.getElementsByClassName(
-	'card-ingredients-item'
-);
-const cardDescriptions = document.getElementsByClassName('recipe-description');
+// const cardTitles = document.getElementsByClassName('card-title');
+// console.log(cardTitles);
+// const cardIngredientsItems = document.getElementsByClassName(
+// 	'card-ingredients-item'
+// );
+// const cardDescriptions = document.getElementsByClassName('recipe-description');
 
 //=====================================
 // Variables
@@ -53,10 +52,9 @@ function searchRecipes(searchText) {
 		});
 		// containerCards.innerHTML = '';
 		renderRecipesCards(filterCardsByInput);
-
-		noMatch(searchText, filterCardsByInput, 3);
-		// recipes filtered
+        noMatch(searchText, filterCardsByInput, 3);
 		console.log(filterCardsByInput);
+
 	} else {
 		renderRecipesCards(allRecipes);
 		alertMessage.classList.add('hidden');

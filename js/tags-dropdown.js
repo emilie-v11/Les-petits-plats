@@ -11,6 +11,9 @@ const ustensilsListTags = document.getElementById('ustensils-list-tags');
 //=====================================
 // Variables
 //=====================================
+let allIngredients;
+let allAppliances;
+let allUstensils;
 // console.log(recipes);
 // const allRecipesData = recipes;
 let ingredientsListArray = [];
@@ -23,7 +26,7 @@ let ustensilsListArray = [];
 // List Tags Ingredients
 //=====================================
 
-function renderIngredientsList() {
+function renderIngredientsList(ingredients) {
 	let newItemIngredient = '';
 	let allIngredientsRecipes = [];
 
@@ -50,18 +53,16 @@ function renderIngredientsList() {
         </a>
         `;
 		console.log(item);
-
-    });
-    ingredientsListTags.innerHTML = newItemIngredient;
+	});
+	ingredientsListTags.innerHTML = newItemIngredient;
 }
-renderIngredientsList();
-
+renderIngredientsList(ingredientsListArray);
 
 //=====================================
 // List Tags Appliances
 //=====================================
 
-function renderAppliancesList() {
+function renderAppliancesList(item) {
 	let newItemAppliance = '';
 	let allAppliancesRecipes = [];
 
@@ -84,15 +85,15 @@ function renderAppliancesList() {
 	    `;
 		console.log(item);
 	});
-    appliancesListTags.innerHTML = newItemAppliance;
+	appliancesListTags.innerHTML = newItemAppliance;
 }
-renderAppliancesList();
+renderAppliancesList(allAppliances);
 
 //=====================================
 // List Tags Ustensils
 //=====================================
 
-function renderUstensilsList() {
+function renderUstensilsList(item) {
 	let newItemUstensils = '';
 	let allUstensilsRecipes = [];
 
@@ -119,6 +120,6 @@ function renderUstensilsList() {
 	    `;
 		console.log(item);
 	});
-    ustensilsListTags.innerHTML = newItemUstensils;
+	ustensilsListTags.innerHTML = newItemUstensils;
 }
-renderUstensilsList();
+renderUstensilsList(allUstensils);

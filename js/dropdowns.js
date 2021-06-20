@@ -64,8 +64,8 @@ function openDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
 function closeDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
 	dropdown.classList.remove('expanded');
 	dropdown.ariaExpanded = 'false';
-    containerTags.classList.add('hidden');
-    containerTags.ariaHidden = 'true';
+	containerTags.classList.add('hidden');
+	containerTags.ariaHidden = 'true';
 	btnChevron.style.background =
 		'url(./img/chevron-down.svg) center center / 16px 11px no-repeat';
 	inputDropdown.value = '';
@@ -82,8 +82,8 @@ function closeDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
 	}
 }
 
-function handlerDropdownIngredients(e) {
-	e.preventDefault();
+function handlerDropdownIngredients() {
+	// e.preventDefault();
 	if (!ingredientsDropdown.classList.contains('expanded')) {
 		closeDropdown(
 			appliancesDropdown,
@@ -104,7 +104,6 @@ function handlerDropdownIngredients(e) {
 			ingredientsBtnChevron
 		);
 		trapFocusDropdown(ingredientsDropdown);
-		// renderIngredientsList();
 	} else {
 		closeDropdown(
 			ingredientsDropdown,
@@ -115,8 +114,8 @@ function handlerDropdownIngredients(e) {
 	}
 }
 
-function handlerDropdownAppliances(e) {
-	e.preventDefault();
+function handlerDropdownAppliances() {
+	// e.preventDefault();
 	if (!appliancesDropdown.classList.contains('expanded')) {
 		closeDropdown(
 			ingredientsDropdown,
@@ -137,7 +136,6 @@ function handlerDropdownAppliances(e) {
 			appliancesBtnChevron
 		);
 		trapFocusDropdown(appliancesDropdown);
-		// renderAppliancesList();
 	} else {
 		closeDropdown(
 			appliancesDropdown,
@@ -148,8 +146,8 @@ function handlerDropdownAppliances(e) {
 	}
 }
 
-function handlerDropdownUstensils(e) {
-	e.preventDefault();
+function handlerDropdownUstensils() {
+	// e.preventDefault();
 	if (!ustensilsDropdown.classList.contains('expanded')) {
 		closeDropdown(
 			ingredientsDropdown,
@@ -170,7 +168,6 @@ function handlerDropdownUstensils(e) {
 			ustensilsBtnChevron
 		);
 		trapFocusDropdown(ustensilsDropdown);
-		// renderUstensilsList();
 	} else {
 		closeDropdown(
 			ustensilsDropdown,

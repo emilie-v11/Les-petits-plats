@@ -21,9 +21,8 @@ const allRecipes = recipes;
 
 const init = function () {
 	renderRecipesCards(allRecipes);
-	trapFocusDropdown(wrapperHomepage);
+    trapFocusDropdown(wrapperHomepage);
 };
-
 init();
 
 // Create all recipes' cards
@@ -61,7 +60,6 @@ function renderRecipesCards(recipes) {
 				ingredient.quantity !== undefined
 					? `: ${ingredient.quantity}`
 					: '';
-
 			newIngredientTag += `
             <li class="card-ingredients-item list-group-item bg-transparent border-0 fw-bold p-0">
                 <span class="recipe-ingredient">${ingredient.ingredient}</span>
@@ -74,7 +72,6 @@ function renderRecipesCards(recipes) {
             </li>
             `;
 		});
-
 		// Create recipes' cards
 		newRecipeCard += `
         <article id="${recipe.id}" class="card-recipe col rounded-3">
@@ -106,5 +103,5 @@ function renderRecipesCards(recipes) {
         `;
 	});
 	containerCards.innerHTML = newRecipeCard;
-	console.log(containerCards);
+	// console.log(containerCards);
 }
