@@ -11,27 +11,52 @@ const alertMessage = document.getElementById('alert-message');
 // console.log(allRecipes);
 
 //==================================================================================================
-// FILTER RECIPES BY MAIN INPUT SEARCH-BAR
+// INIT ALL CARDS RECIPES AND DROPDOWNS LISTS
 //==================================================================================================
+
 const init = function () {
 	renderRecipesCards(allRecipes);
-	// trapFocusDropdown(wrapperHomepage);
-	// trapFocusDropdown(window);
 	renderIngredientsList(allRecipes);
 	renderAppliancesList(allRecipes);
 	renderUstensilsList(allRecipes);
+	// trapFocusDropdown(wrapperHomepage);
+	// trapFocusDropdown(window);
 };
 init();
+
+//==================================================================================================
+// ALERT MESSAGE WHEN NO MATCH
+//==================================================================================================
+
+function noMatch(value, matches, number) {
+    if (value.length < number) {
+        alertMessage.classList.add('hidden');
+		alertMessage.ariaHidden = 'true';
+		return;
+	} else {
+        if (matches.length === 0) {
+            containerCards.innerHTML = '';
+			alertMessage.classList.remove('hidden');
+			alertMessage.ariaHidden = 'false';
+		} else if (matches.length >= 1) {
+            alertMessage.classList.add('hidden');
+			alertMessage.ariaHidden = 'true';
+		}
+	}
+}
+//==================================================================================================
+// FILTER RECIPES BY MAIN INPUT SEARCH-BAR
+//==================================================================================================
 
 let filterCardsByInput = [];
 
 function searchRecipes(searchText) {
-	console.log(ingredientsListArray);
-	console.log(appliancesListArray);
+	// console.log(ingredientsListArray);
+	// console.log(appliancesListArray);
 
 	if (searchText.length >= 3) {
 		filterCardsByInput = allRecipes.filter(recipe => {
-			console.log(recipe.ingredients);
+			// console.log(recipe.ingredients);
 			const regex = new RegExp(
 				`${searchText}`
 					.toLowerCase()
@@ -72,7 +97,7 @@ function searchRecipes(searchText) {
 		renderAppliancesList(allRecipes);
 		renderUstensilsList(allRecipes);
 	}
-	console.log(filterCardsByInput);
+	// console.log(filterCardsByInput);
 	console.log(containerCards);
 }
 console.log(filterCardsByInput);
@@ -94,29 +119,19 @@ console.log(ingredientsSearch.value);
 
 //==================================================================================================
 
-function noMatch(value, matches, number) {
-	if (value.length < number) {
-		alertMessage.classList.add('hidden');
-		alertMessage.ariaHidden = 'true';
-		return;
-	} else {
-		if (matches.length === 0) {
-			containerCards.innerHTML = '';
-			alertMessage.classList.remove('hidden');
-			alertMessage.ariaHidden = 'false';
-		} else if (matches.length >= 1) {
-			alertMessage.classList.add('hidden');
-			alertMessage.ariaHidden = 'true';
-		}
-	}
-}
-//==================================================================================================
 function getFilterByInput() {
 	return filterCardsByInput;
 }
 console.log(filterCardsByInput);
 
 //==================================================================================================
+
+// recipe.ingredients
+//     .join()
+//     .toLowerCase()
+//     .normalize('NFD')
+//     .replace(/[\u0300-\u036f]/g, '')
+// 	.match(regex) ||
 
 // let recipesDisplayed = containerCards.innerHTML;
 
