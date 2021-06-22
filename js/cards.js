@@ -13,24 +13,23 @@ console.log(cardsRecipes);
 // Variables
 //=====================================
 console.log(recipes);
-const allRecipes = recipes;
+let allRecipes = [];
+allRecipes = recipes;
+
+// let ingredientsListArray = [];
+// let appliancesListArray = [];
+// let ustensilsListArray = [];
 
 //==================================================================================================
 //  RECIPES' CARDS
 //==================================================================================================
 
-const init = function () {
-	renderRecipesCards(allRecipes);
-    trapFocusDropdown(wrapperHomepage);
-};
-init();
-
 // Create all recipes' cards
 function renderRecipesCards(recipes) {
-	// renderRecipesCards
 	let newRecipeCard = '';
-
-	recipes.forEach(recipe => {
+    
+    // console.log(allRecipes);
+	recipes.map(recipe => {
 		const ingredients = recipe.ingredients;
 
 		// Ingredients' recipes cards
@@ -102,6 +101,7 @@ function renderRecipesCards(recipes) {
         </article>
         `;
 	});
-	containerCards.innerHTML = newRecipeCard;
+    containerCards.innerHTML = newRecipeCard;
+    
 	// console.log(containerCards);
 }

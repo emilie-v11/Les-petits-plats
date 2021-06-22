@@ -5,26 +5,33 @@
 const mainSearchBar = document.getElementById('search-bar-input');
 const alertMessage = document.getElementById('alert-message');
 
-// const cardTitles = document.getElementsByClassName('card-title');
-// console.log(cardTitles);
-// const cardIngredientsItems = document.getElementsByClassName(
-// 	'card-ingredients-item'
-// );
-// const cardDescriptions = document.getElementsByClassName('recipe-description');
-
 //=====================================
 // Variables
 //=====================================
-// console.log(recipes);
-console.log(allRecipes);
+// console.log(allRecipes);
 
 //==================================================================================================
 // FILTER RECIPES BY MAIN INPUT SEARCH-BAR
 //==================================================================================================
+const init = function () {
+	renderRecipesCards(allRecipes);
+	// trapFocusDropdown(wrapperHomepage);
+	// trapFocusDropdown(window);
+	renderIngredientsList(allRecipes);
+	renderAppliancesList(allRecipes);
+	renderUstensilsList(allRecipes);
+};
+init();
+
+let filterCardsByInput = [];
 
 function searchRecipes(searchText) {
+	console.log(ingredientsListArray);
+	console.log(appliancesListArray);
+
 	if (searchText.length >= 3) {
-		const filterCardsByInput = allRecipes.filter(recipe => {
+		filterCardsByInput = allRecipes.filter(recipe => {
+			console.log(recipe.ingredients);
 			const regex = new RegExp(
 				`${searchText}`
 					.toLowerCase()
@@ -50,16 +57,26 @@ function searchRecipes(searchText) {
 					.match(regex)
 			);
 		});
-		// containerCards.innerHTML = '';
+		containerCards.innerHTML = '';
 		renderRecipesCards(filterCardsByInput);
-        noMatch(searchText, filterCardsByInput, 3);
-		console.log(filterCardsByInput);
+		noMatch(searchText, filterCardsByInput, 3);
 
+		renderIngredientsList(filterCardsByInput);
+		renderAppliancesList(filterCardsByInput);
+		renderUstensilsList(filterCardsByInput);
 	} else {
 		renderRecipesCards(allRecipes);
 		alertMessage.classList.add('hidden');
+
+		renderIngredientsList(allRecipes);
+		renderAppliancesList(allRecipes);
+		renderUstensilsList(allRecipes);
 	}
+	console.log(filterCardsByInput);
+	console.log(containerCards);
 }
+console.log(filterCardsByInput);
+console.log(allRecipes);
 
 //==================================================================================================
 // EVENT
@@ -69,6 +86,12 @@ mainSearchBar.addEventListener('click', closeAllDropdowns);
 mainSearchBar.addEventListener('input', () => {
 	searchRecipes(mainSearchBar.value);
 });
+
+ingredientsSearch.addEventListener('input', () => {
+	searchRecipes(ingredientsSearch.value);
+});
+console.log(ingredientsSearch.value);
+
 //==================================================================================================
 
 function noMatch(value, matches, number) {
@@ -87,6 +110,32 @@ function noMatch(value, matches, number) {
 		}
 	}
 }
+//==================================================================================================
+function getFilterByInput() {
+	return filterCardsByInput;
+}
+console.log(filterCardsByInput);
+
+//==================================================================================================
+
+// let recipesDisplayed = containerCards.innerHTML;
+
+// let idCardsDisplayed = []
+// function idRecipesDisplayed (id) {
+//     let recipesDisplayed = recipesDisplayed.filter(card => {
+//         idCardsDisplayed.push(card.id)
+//     });
+// }
+// idRecipesDisplayed();
+// console.log(idCardsDisplayed);
+// console.log(recipesDisplayed);
+
+//containerCards.map(card => {
+// 	return card.getElementsByClassName('card-recipe');
+// });
+// console.log(idRecipesDisplayed);
+
+//==================================================================================================
 
 // const accentsMap = {
 // 	a: 'á|à|ã|â|À|Á|Ã|Â',

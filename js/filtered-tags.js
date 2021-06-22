@@ -5,7 +5,6 @@
 // List tags item
 const listTagsItem = document.querySelectorAll('.list-tags-item');
 
-
 //filtered tags
 const filteredTagsList = document.querySelector('.filtered-tags-list');
 const filteredTagsItem = document.getElementsByClassName('filtered-tags-item');
@@ -66,32 +65,34 @@ function deleteTag(index) {
 	renderFilteredTags();
 }
 
-function searchTags(inputText) {
-	const filterTagsByInput = ingredientsListArray.filter(ingredients => {
-		const regex = new RegExp(
-			`${inputText}`
-				.toLowerCase()
-				.normalize('NFD')
-				.replace(/[\u0300-\u036f]/g, '')
-		);
-		return (
-			ingredients
-				// .join()
-				.toLowerCase()
-				.normalize('NFD')
-				.replace(/[\u0300-\u036f]/g, '')
-				.match(regex)
-		);
-	});
-	// ingredientsListTags.innerHTML = '';
-	renderIngredientsList(filterTagsByInput);
-	console.log(filterTagsByInput);
-}
+//==================================================================================================
 
-ingredientsSearch.addEventListener('input', () => {
-	searchTags(ingredientsSearch.value);
-});
-console.log(ingredientsSearch.value);
+// function searchTags(inputText) {
+// 	const filterTagsByInput = ingredientsListArray.filter(ingredients => {
+// 		const regex = new RegExp(
+// 			`${inputText}`
+// 				.toLowerCase()
+// 				.normalize('NFD')
+// 				.replace(/[\u0300-\u036f]/g, '')
+// 		);
+// 		return (
+// 			ingredients
+// 				// .join()
+// 				.toLowerCase()
+// 				.normalize('NFD')
+// 				.replace(/[\u0300-\u036f]/g, '')
+// 				.match(regex)
+// 		);
+// 	});
+// 	// ingredientsListTags.innerHTML = '';
+// 	renderIngredientsList(filterTagsByInput);
+// 	console.log(filterTagsByInput);
+// }
+
+// ingredientsSearch.addEventListener('input', () => {
+// 	searchTags(ingredientsSearch.value);
+// });
+// console.log(ingredientsSearch.value);
 
 //appliancesSearch.addEventListener('input', () => {
 //	searchTags(appliancesSearch.value);

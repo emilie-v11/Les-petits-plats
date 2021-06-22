@@ -11,11 +11,7 @@ const ustensilsListTags = document.getElementById('ustensils-list-tags');
 //=====================================
 // Variables
 //=====================================
-let allIngredients;
-let allAppliances;
-let allUstensils;
-// console.log(recipes);
-// const allRecipesData = recipes;
+
 let ingredientsListArray = [];
 let appliancesListArray = [];
 let ustensilsListArray = [];
@@ -25,25 +21,52 @@ let ustensilsListArray = [];
 //==================================================================================================
 // List Tags Ingredients
 //=====================================
+// let allIngredients = [];
+// let ingredientsListArray = [];
 
-function renderIngredientsList(ingredients) {
+// function renderIngredientsList(ingredients) {
+// 	allRecipes.forEach(recipes => {
+// 		recipes.ingredients.map(ingredients => {
+// 			allIngredients.push(ingredients.ingredient);
+// 		});
+// 	});
+
+// 	// let ingredientsList = new Set(allIngredients);
+//	ingredientsListArray = [...new Set(allIngredients)];
+// 	console.log(ingredientsListArray);
+// 	let newItemIngredient = '';
+// 	ingredients.map(item => {
+// 		newItemIngredient += `
+//         <a href="#" class="list-tags-item ingredients col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
+//             arial-label="Rechercher des recettes avec l'ingrédient: '${item}'" data-color="blue" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
+//             ${item}
+//         </a>
+//         `;
+// 		// console.log(item);
+// 	});
+// 	ingredientsListTags.innerHTML = newItemIngredient;
+// }
+// renderIngredientsList(ingredientsListArray);
+// renderIngredientsList(allRecipes);
+
+// allRecipes
+
+function renderIngredientsList(recipes) {
 	let newItemIngredient = '';
 	let allIngredientsRecipes = [];
 
 	recipes.map(recipes => {
-		const ingredients = recipes.ingredients;
-		// console.log(ingredients);
-
-		ingredients.map(ingredients => {
+		recipes.ingredients.map(ingredients => {
 			const ingredient = ingredients.ingredient;
 			allIngredientsRecipes.push(ingredient);
 		});
 	});
 
-	let ingredientsList = new Set(allIngredientsRecipes);
+	// let ingredientsList = new Set(allIngredientsRecipes);
 
-	ingredientsListArray = [...ingredientsList];
-	console.log(ingredientsListArray);
+	// ingredientsListArray = [...ingredientsList];
+	ingredientsListArray = [...new Set(allIngredientsRecipes)];
+	// console.log(ingredientsListArray);
 
 	ingredientsListArray.map(item => {
 		newItemIngredient += `
@@ -52,17 +75,17 @@ function renderIngredientsList(ingredients) {
             ${item}
         </a>
         `;
-		console.log(item);
+		// console.log(item);
 	});
 	ingredientsListTags.innerHTML = newItemIngredient;
 }
-renderIngredientsList(ingredientsListArray);
+// renderIngredientsList(allRecipes);
 
 //=====================================
 // List Tags Appliances
 //=====================================
 
-function renderAppliancesList(item) {
+function renderAppliancesList(recipes) {
 	let newItemAppliance = '';
 	let allAppliancesRecipes = [];
 
@@ -74,7 +97,7 @@ function renderAppliancesList(item) {
 	let appliancesList = new Set(allAppliancesRecipes);
 
 	appliancesListArray = [...appliancesList];
-	console.log(appliancesListArray);
+	// console.log(appliancesListArray);
 
 	appliancesListArray.map(item => {
 		newItemAppliance += `
@@ -83,17 +106,17 @@ function renderAppliancesList(item) {
 	        ${item}
 	    </a>
 	    `;
-		console.log(item);
+		// console.log(item);
 	});
 	appliancesListTags.innerHTML = newItemAppliance;
 }
-renderAppliancesList(allAppliances);
+// renderAppliancesList(allRecipes);
 
 //=====================================
 // List Tags Ustensils
 //=====================================
 
-function renderUstensilsList(item) {
+function renderUstensilsList(recipes) {
 	let newItemUstensils = '';
 	let allUstensilsRecipes = [];
 
@@ -109,7 +132,7 @@ function renderUstensilsList(item) {
 	let ustensilsList = new Set(allUstensilsRecipes);
 
 	ustensilsListArray = [...ustensilsList];
-	console.log(ustensilsListArray);
+	// console.log(ustensilsListArray);
 
 	ustensilsListArray.map(item => {
 		newItemUstensils += `
@@ -118,8 +141,8 @@ function renderUstensilsList(item) {
 	        ${item}
 	    </a>
 	    `;
-		console.log(item);
+		// console.log(item);
 	});
 	ustensilsListTags.innerHTML = newItemUstensils;
 }
-renderUstensilsList(allUstensils);
+// renderUstensilsList(allRecipes);
