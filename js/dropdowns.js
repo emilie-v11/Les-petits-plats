@@ -2,6 +2,9 @@
 //==================================================================================================
 // DOM ELEMENTS
 //==================================================================================================
+// Overlay
+const overlayForm = document.querySelector('.overlay-form');
+
 // Ingredients
 const ingredientsDropdown = document.getElementById(
 	'ingredients-container-dropdown'
@@ -41,6 +44,7 @@ const ustensilsContainerTags = document.getElementById(
 //=====================================
 
 function openDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
+	overlayForm.classList.remove('hidden');
 	dropdown.classList.add('expanded');
 	dropdown.ariaExpanded = 'true';
 	containerTags.classList.remove('hidden');
@@ -61,6 +65,7 @@ function openDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
 }
 
 function closeDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
+	overlayForm.classList.add('hidden');
 	dropdown.classList.remove('expanded');
 	dropdown.ariaExpanded = 'false';
 	containerTags.classList.add('hidden');
@@ -264,12 +269,7 @@ document.addEventListener('keydown', function (e) {
 	}
 });
 
-// document.addEventListener('click', event => {
-// 	// if (
-// 	// 	dropdownsEl.classList.contains('expanded') &&
-// 	// 	!event.target === dropdownsEl)
-// 	// ) {
-// 	// 	closeAllDropdowns();
-// 	// }
-// 	console.log(event.target);
-// });
+overlayForm.addEventListener('click', () => {
+	console.log('overlay click');
+	closeAllDropdowns();
+});

@@ -7,6 +7,7 @@ const wrapperHomepage = document.getElementById('wrapper-homepage');
 //  Cards
 const containerCards = document.getElementById('container-cards-recipes');
 const cardsRecipes = document.getElementsByClassName('card-recipe');
+const cardsEl = document.getElementsByClassName('card');
 console.log(cardsRecipes);
 
 //=====================================
@@ -27,8 +28,8 @@ allRecipes = recipes;
 // Create all recipes' cards
 function renderRecipesCards(recipes) {
 	let newRecipeCard = '';
-    
-    // console.log(allRecipes);
+
+	// console.log(allRecipes);
 	recipes.map(recipe => {
 		const ingredients = recipe.ingredients;
 
@@ -74,7 +75,7 @@ function renderRecipesCards(recipes) {
 		// Create recipes' cards
 		newRecipeCard += `
         <article id="${recipe.id}" class="card-recipe col rounded-3">
-            <a href="#" class="col card rounded-3" aria-label="Accéder à la fiche de recette: '${recipe.name}'">
+            <a href="#" class="col card rounded-3" aria-label="Accéder à la fiche de recette: '${recipe.name}'" tabindex="0">
                 <img src="./img/bg-card-img.svg" class="card-img-top rounded-top border-0" width="380"
                     height="178" aria-hidden="true" alt="">
                 <div class="card-body p-3 rounded-bottom">
@@ -101,7 +102,6 @@ function renderRecipesCards(recipes) {
         </article>
         `;
 	});
-    containerCards.innerHTML = newRecipeCard;
-    
+	containerCards.innerHTML = newRecipeCard;
 	// console.log(containerCards);
 }

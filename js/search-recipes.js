@@ -19,6 +19,11 @@ const init = function () {
 	renderIngredientsList(allRecipes);
 	renderAppliancesList(allRecipes);
 	renderUstensilsList(allRecipes);
+	mainSearchBar.value = '';
+	alertMessage.classList.add('hidden');
+	filteredTagsArray = [];
+	tagBgColorArray = [];
+	renderFilteredTags();
 	// trapFocusDropdown(wrapperHomepage);
 	// trapFocusDropdown(window);
 };
@@ -29,17 +34,17 @@ init();
 //==================================================================================================
 
 function noMatch(value, matches, number) {
-    if (value.length < number) {
-        alertMessage.classList.add('hidden');
+	if (value.length < number) {
+		alertMessage.classList.add('hidden');
 		alertMessage.ariaHidden = 'true';
 		return;
 	} else {
-        if (matches.length === 0) {
-            containerCards.innerHTML = '';
+		if (matches.length === 0) {
+			containerCards.innerHTML = '';
 			alertMessage.classList.remove('hidden');
 			alertMessage.ariaHidden = 'false';
 		} else if (matches.length >= 1) {
-            alertMessage.classList.add('hidden');
+			alertMessage.classList.add('hidden');
 			alertMessage.ariaHidden = 'true';
 		}
 	}
@@ -51,26 +56,26 @@ function noMatch(value, matches, number) {
 let filterCardsByInput = [];
 
 function searchRecipes(searchText) {
-	// console.log(ingredientsListArray);
-	// console.log(appliancesListArray);
-
 	if (searchText.length >= 3) {
 		filterCardsByInput = allRecipes.filter(recipe => {
-			// console.log(recipe.ingredients);
 			const regex = new RegExp(
 				`${searchText}`
 					.toLowerCase()
 					.normalize('NFD')
 					.replace(/[\u0300-\u036f]/g, '')
 			);
+			let ingredientArray = [];
+			for (let key in recipe.ingredients) {
+				let ingredientElts = recipe.ingredients[key].ingredient;
+				ingredientArray.push(ingredientElts);
+			}
 			return (
 				recipe.name
 					.toLowerCase()
 					.normalize('NFD')
 					.replace(/[\u0300-\u036f]/g, '')
 					.match(regex) ||
-				recipe.ingredients
-					.join()
+				`${ingredientArray}`
 					.toLowerCase()
 					.normalize('NFD')
 					.replace(/[\u0300-\u036f]/g, '')
@@ -97,19 +102,31 @@ function searchRecipes(searchText) {
 		renderAppliancesList(allRecipes);
 		renderUstensilsList(allRecipes);
 	}
-	// console.log(filterCardsByInput);
 	console.log(containerCards);
 }
-console.log(filterCardsByInput);
-console.log(allRecipes);
 
 //==================================================================================================
 // EVENT
 //==================================================================================================
-mainSearchBar.addEventListener('click', closeAllDropdowns);
+mainSearchBar.addEventListener('click', function () {
+	closeAllDropdowns();
+	init();
+});
+console.log(filteredTagsArray);
+console.log(tagBgColorArray);
 
 mainSearchBar.addEventListener('input', () => {
 	searchRecipes(mainSearchBar.value);
+});
+
+mainSearchBar.addEventListener('keydown', function (e) {
+	// console.log(e.key);
+	if (e.key === 'Enter' || e.key === 13) {
+		mainSearchBar.blur();
+		cardsEl[0].focus();
+		// cardsRecipes[0].focus();
+		// console.log(cardsEl[0]);
+	}
 });
 
 ingredientsSearch.addEventListener('input', () => {
@@ -118,63 +135,9 @@ ingredientsSearch.addEventListener('input', () => {
 console.log(ingredientsSearch.value);
 
 //==================================================================================================
-
 function getFilterByInput() {
 	return filterCardsByInput;
 }
 console.log(filterCardsByInput);
 
 //==================================================================================================
-
-// recipe.ingredients
-//     .join()
-//     .toLowerCase()
-//     .normalize('NFD')
-//     .replace(/[\u0300-\u036f]/g, '')
-// 	.match(regex) ||
-
-// let recipesDisplayed = containerCards.innerHTML;
-
-// let idCardsDisplayed = []
-// function idRecipesDisplayed (id) {
-//     let recipesDisplayed = recipesDisplayed.filter(card => {
-//         idCardsDisplayed.push(card.id)
-//     });
-// }
-// idRecipesDisplayed();
-// console.log(idCardsDisplayed);
-// console.log(recipesDisplayed);
-
-//containerCards.map(card => {
-// 	return card.getElementsByClassName('card-recipe');
-// });
-// console.log(idRecipesDisplayed);
-
-//==================================================================================================
-
-// const accentsMap = {
-// 	a: 'á|à|ã|â|À|Á|Ã|Â',
-// 	e: 'é|è|ê|É|È|Ê',
-// 	i: 'í|ì|î|Í|Ì|Î',
-// 	o: 'ó|ò|ô|õ|Ó|Ò|Ô|Õ',
-// 	u: 'ú|ù|û|ü|Ú|Ù|Û|Ü',
-// 	c: 'ç|Ç',
-// 	n: 'ñ|Ñ',
-// };
-// const testWord = 'Crème fraîche';
-
-// // const slugify = text => Object.keys(accentsMap).reduce((acc, cur) => acc.replace(new RegExp(accentsMap[cur], 'g'), cur), text);
-// const slugify = text =>
-// 	Object.keys(accentsMap).reduce(
-// 		(acc, cur) => acc.replace(new RegExp(accentsMap[cur], 'g'), cur),
-// 		text
-// 	);
-
-// console.log(ingredientsListArray);
-// // String.prototype.matchAll(regexp)
-// //// String.prototype.normalize([form])
-// //// str.normalize('NFKC');
-// console.log(slugify(testWord));
-
-// const str = 'Crème Brulée';
-// console.log(str.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));

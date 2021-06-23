@@ -21,35 +21,6 @@ let ustensilsListArray = [];
 //==================================================================================================
 // List Tags Ingredients
 //=====================================
-// let allIngredients = [];
-// let ingredientsListArray = [];
-
-// function renderIngredientsList(ingredients) {
-// 	allRecipes.forEach(recipes => {
-// 		recipes.ingredients.map(ingredients => {
-// 			allIngredients.push(ingredients.ingredient);
-// 		});
-// 	});
-
-// 	// let ingredientsList = new Set(allIngredients);
-//	ingredientsListArray = [...new Set(allIngredients)];
-// 	console.log(ingredientsListArray);
-// 	let newItemIngredient = '';
-// 	ingredients.map(item => {
-// 		newItemIngredient += `
-//         <a href="#" class="list-tags-item ingredients col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
-//             arial-label="Rechercher des recettes avec l'ingrédient: '${item}'" data-color="blue" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
-//             ${item}
-//         </a>
-//         `;
-// 		// console.log(item);
-// 	});
-// 	ingredientsListTags.innerHTML = newItemIngredient;
-// }
-// renderIngredientsList(ingredientsListArray);
-// renderIngredientsList(allRecipes);
-
-// allRecipes
 
 function renderIngredientsList(recipes) {
 	let newItemIngredient = '';
@@ -61,12 +32,7 @@ function renderIngredientsList(recipes) {
 			allIngredientsRecipes.push(ingredient);
 		});
 	});
-
-	// let ingredientsList = new Set(allIngredientsRecipes);
-
-	// ingredientsListArray = [...ingredientsList];
 	ingredientsListArray = [...new Set(allIngredientsRecipes)];
-	// console.log(ingredientsListArray);
 
 	ingredientsListArray.map(item => {
 		newItemIngredient += `
@@ -79,7 +45,6 @@ function renderIngredientsList(recipes) {
 	});
 	ingredientsListTags.innerHTML = newItemIngredient;
 }
-// renderIngredientsList(allRecipes);
 
 //=====================================
 // List Tags Appliances
@@ -93,11 +58,7 @@ function renderAppliancesList(recipes) {
 		const appliances = recipes.appliance;
 		allAppliancesRecipes.push(appliances);
 	});
-
-	let appliancesList = new Set(allAppliancesRecipes);
-
-	appliancesListArray = [...appliancesList];
-	// console.log(appliancesListArray);
+	appliancesListArray = [...new Set(allAppliancesRecipes)];
 
 	appliancesListArray.map(item => {
 		newItemAppliance += `
@@ -110,7 +71,6 @@ function renderAppliancesList(recipes) {
 	});
 	appliancesListTags.innerHTML = newItemAppliance;
 }
-// renderAppliancesList(allRecipes);
 
 //=====================================
 // List Tags Ustensils
@@ -128,11 +88,7 @@ function renderUstensilsList(recipes) {
 			allUstensilsRecipes.push(ustensils);
 		});
 	});
-
-	let ustensilsList = new Set(allUstensilsRecipes);
-
-	ustensilsListArray = [...ustensilsList];
-	// console.log(ustensilsListArray);
+	ustensilsListArray = [...new Set(allUstensilsRecipes)];
 
 	ustensilsListArray.map(item => {
 		newItemUstensils += `
@@ -145,4 +101,3 @@ function renderUstensilsList(recipes) {
 	});
 	ustensilsListTags.innerHTML = newItemUstensils;
 }
-// renderUstensilsList(allRecipes);

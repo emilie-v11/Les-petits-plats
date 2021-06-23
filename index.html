@@ -43,7 +43,6 @@
                         <input id="search-bar-input" class="form-control rounded-3 border-light ps-3 pe-5 fs-5"
                             type="text" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
                             aria-label="Search">
-                        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
                         <img class="search-bar-icon position-absolute top-50 end-0 translate-middle-y me-4"
                             src="./img/search-icon.svg" width="32" height="32" alt="icon search" aria-hidden="true">
                     </div>
@@ -55,22 +54,19 @@
                 <div class="filtered-tags-container container-lg p-0">
                     <ul
                         class="filtered-tags-list list-group d-flex justify-content-start flex-wrap list-group-horizontal tags-list ">
-                        <!-- <li
-                        class="filtered-tags-item list-group-item d-flex align-items-center rounded-3 border-light ps-3 py-2 me-2 mb-2 fw-bold text-white bg-blue">
-                        Coco
-                        <button class="filtered-tags-btn ms-3" type="button" aria-label="Supprimer le tag"></button>
-                        </li> -->
                     </ul>
                 </div>
 
                 <!-- <div class="overlay hidden"></div> -->
 
                 <!-- 3 dropdowns container -->
-                <form class="container btn-group d-flex flex-row justify-content-start flex-wrap p-0 mx-0 my-2"
+                <div class="overlay-form hidden">
+                </div>
+                <form id="dropdowns"
+                    class="container btn-group d-flex flex-row justify-content-start flex-wrap p-0 mx-0 my-2"
                     autocomplete="off">
-
                     <!-- expanded / hidden -->
-                    <div id="ingredients-container-dropdown"
+                    <nav id="ingredients-container-dropdown"
                         class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-blue "
                         aria-haspopup="true" aria-expanded="false">
                         <div class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-blue">
@@ -91,10 +87,10 @@
                                 class="dropdown-list-tags list-group row row-cols-1 row-cols-sm-2 row-cols-md-3 d-flex flex-row justify-content-start m-0 p-0 fw-normal ">
                             </ul>
                         </div>
-                    </div>
+                    </nav>
 
                     <!-- expanded / hidden -->
-                    <div id="appliances-container-dropdown"
+                    <nav id="appliances-container-dropdown"
                         class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-green "
                         aria-haspopup="true" aria-expanded="false">
                         <div
@@ -116,10 +112,10 @@
                                 class="dropdown-list-tags list-group row row-cols-1 row-cols-sm-2 row-cols-md-3 d-flex flex-row justify-content-start m-0 p-0 fw-normal">
                             </ul>
                         </div>
-                    </div>
+                    </nav>
 
                     <!-- expanded / hidden -->
-                    <div id="ustensils-container-dropdown"
+                    <nav id="ustensils-container-dropdown"
                         class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-orange "
                         aria-haspopup="true" aria-expanded="false">
                         <div
@@ -141,7 +137,7 @@
                                 class="dropdown-list-tags list-group row row-cols-1 row-cols-sm-2 row-cols-md-3 d-flex flex-row justify-content-start m-0 p-0 fw-normal">
                             </ul>
                         </div>
-                    </div>
+                    </nav>
                 </form>
 
             </nav>
