@@ -2,37 +2,20 @@
 //==================================================================================================
 // DOM ELEMENTS
 //==================================================================================================
-const mainSearchBar = document.getElementById('search-bar-input');
+const searchBar = document.getElementById('search-bar-input');
 const alertMessage = document.getElementById('alert-message');
 
 //=====================================
 // Variables
 //=====================================
 // console.log(allRecipes);
+let filterCardsByInput = [];
+let filterFurtherByTags = [];
+let filterOnlyByTags = [];
 
 //==================================================================================================
-// INIT ALL CARDS RECIPES AND DROPDOWNS LISTS
+// ALERT MESSAGE IF NO MATCH
 //==================================================================================================
-
-const init = function () {
-	renderRecipesCards(allRecipes);
-	renderIngredientsList(allRecipes);
-	renderAppliancesList(allRecipes);
-	renderUstensilsList(allRecipes);
-	mainSearchBar.value = '';
-	alertMessage.classList.add('hidden');
-	filteredTagsArray = [];
-	tagBgColorArray = [];
-	renderFilteredTags();
-	// trapFocusDropdown(wrapperHomepage);
-	// trapFocusDropdown(window);
-};
-init();
-
-//==================================================================================================
-// ALERT MESSAGE WHEN NO MATCH
-//==================================================================================================
-
 function noMatch(value, matches, number) {
 	if (value.length < number) {
 		alertMessage.classList.add('hidden');
@@ -49,90 +32,31 @@ function noMatch(value, matches, number) {
 		}
 	}
 }
+
 //==================================================================================================
-// FILTER RECIPES BY MAIN INPUT SEARCH-BAR
+// FUNCTION FOR RETURN ALL ARRAYS FILTRED
 //==================================================================================================
 
-let filterCardsByInput = [];
-
-function searchRecipes(searchText) {
-	if (searchText.length >= 3) {
-		filterCardsByInput = allRecipes.filter(recipe => {
-			const regex = new RegExp(
-				`${searchText}`
-					.toLowerCase()
-					.normalize('NFD')
-					.replace(/[\u0300-\u036f]/g, '')
-			);
-			let ingredientArray = [];
-			for (let key in recipe.ingredients) {
-				let ingredientElts = recipe.ingredients[key].ingredient;
-				ingredientArray.push(ingredientElts);
-			}
-			return (
-				recipe.name
-					.toLowerCase()
-					.normalize('NFD')
-					.replace(/[\u0300-\u036f]/g, '')
-					.match(regex) ||
-				`${ingredientArray}`
-					.toLowerCase()
-					.normalize('NFD')
-					.replace(/[\u0300-\u036f]/g, '')
-					.match(regex) ||
-				recipe.description
-					.toLowerCase()
-					.normalize('NFD')
-					.replace(/[\u0300-\u036f]/g, '')
-					.match(regex)
-			);
-		});
-		containerCards.innerHTML = '';
-		renderRecipesCards(filterCardsByInput);
-		noMatch(searchText, filterCardsByInput, 3);
-
-		renderIngredientsList(filterCardsByInput);
-		renderAppliancesList(filterCardsByInput);
-		renderUstensilsList(filterCardsByInput);
-	} else {
-		renderRecipesCards(allRecipes);
-		alertMessage.classList.add('hidden');
-
-		renderIngredientsList(allRecipes);
-		renderAppliancesList(allRecipes);
-		renderUstensilsList(allRecipes);
-	}
-	console.log(containerCards);
+function renderAllArraySFiltred(ArrayFiltred) {
+	return (
+		(containerCards.innerHTML = ''),
+		renderRecipesCards(ArrayFiltred),
+		renderIngredientsList(ArrayFiltred),
+		renderAppliancesList(ArrayFiltred),
+		renderUstensilsList(ArrayFiltred)
+	);
 }
 
 //==================================================================================================
-// EVENT
+// FUNCTION FOR NORMALIZE ELEMENTS
 //==================================================================================================
-mainSearchBar.addEventListener('click', function () {
-	closeAllDropdowns();
-	init();
-});
-console.log(filteredTagsArray);
-console.log(tagBgColorArray);
 
-mainSearchBar.addEventListener('input', () => {
-	searchRecipes(mainSearchBar.value);
-});
-
-mainSearchBar.addEventListener('keydown', function (e) {
-	// console.log(e.key);
-	if (e.key === 'Enter' || e.key === 13) {
-		mainSearchBar.blur();
-		cardsEl[0].focus();
-		// cardsRecipes[0].focus();
-		// console.log(cardsEl[0]);
-	}
-});
-
-ingredientsSearch.addEventListener('input', () => {
-	searchRecipes(ingredientsSearch.value);
-});
-console.log(ingredientsSearch.value);
+function normalizeElement(element) {
+	return element
+		.toLowerCase()
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '');
+}
 
 //==================================================================================================
 function getFilterByInput() {
@@ -141,3 +65,123 @@ function getFilterByInput() {
 console.log(filterCardsByInput);
 
 //==================================================================================================
+// FILTER RECIPES BY MAIN SEARCH-BAR
+//==================================================================================================
+
+function requestBySearchBar(searchText) {
+	if (searchText.length >= 3) {
+		filterCardsByInput = allRecipes.filter(recipe => {
+			const regex = new RegExp(normalizeElement(`${searchText}`));
+			let ingredientsArray = [];
+			for (let key in recipe.ingredients) {
+				let ingredientElts = recipe.ingredients[key].ingredient;
+				ingredientsArray.push(ingredientElts);
+			}
+			return (
+				normalizeElement(recipe.name).match(regex) ||
+				normalizeElement(`${ingredientsArray}`).match(regex) ||
+				normalizeElement(recipe.description).match(regex)
+			);
+		});
+		// containerCards.innerHTML = '';
+		noMatch(searchText, filterCardsByInput, 3);
+		renderAllArraySFiltred(filterCardsByInput);
+	} else {
+		// containerCards.innerHTML = '';
+		alertMessage.classList.add('hidden');
+		renderAllArraySFiltred(allRecipes);
+	}
+	console.log(containerCards);
+}
+
+//==================================================================================================
+// FILTER RECIPES BY TAGS
+//==================================================================================================
+
+// FIXME ajouter un forEach pour 'filteredTagsArray' each(filteredTagValue)
+//       et changer le paramètre ds la fonction 'addNewTag' & 'deleteTag'
+
+// FIXME algo de recherche changer || pour && ???? ou utiliser every() ???
+
+// Function for handler the further search & the main search by tags
+function handlerRequestByTags(activeTag) {
+	if (searchBar.value.length >= 3) {
+		furtherSearchByTags(activeTag);
+	} else if (searchBar.value.length < 3) {
+		mainSearchByTags(activeTag);
+	}
+}
+
+// Function for the further search by tags
+function furtherSearchByTags(activeTag) {
+	if (filteredTagsArray.length >= 1) {
+		filterFurtherByTags = filterCardsByInput.filter(recipe => {
+			const regex = new RegExp(normalizeElement(`${activeTag}`));
+			let ingredientsArray = [];
+			for (let key in recipe.ingredients) {
+				let ingredientElts = recipe.ingredients[key].ingredient;
+				ingredientsArray.push(ingredientElts);
+			}
+			ustensilsListArray = recipe.ustensils;
+			return (
+				normalizeElement(`${ingredientsArray}`).match(regex) ||
+				normalizeElement(recipe.appliance).match(regex) ||
+				normalizeElement(`${ustensilsListArray}`).match(regex)
+			);
+		});
+		renderAllArraySFiltred(filterFurtherByTags);
+	} else {
+		renderAllArraySFiltred(filterCardsByInput);
+	}
+	console.log(containerCards);
+}
+
+// Function for the main search by tags
+function mainSearchByTags(activeTag) {
+	if (filteredTagsArray.length >= 1) {
+		filterOnlyByTags = allRecipes.filter(recipe => {
+			const regex = new RegExp(normalizeElement(`${activeTag}`));
+			let ingredientsArray = [];
+			for (let key in recipe.ingredients) {
+				let ingredientElts = recipe.ingredients[key].ingredient;
+				ingredientsArray.push(ingredientElts);
+			}
+			ustensilsListArray = recipe.ustensils;
+			return (
+				normalizeElement(`${ingredientsArray}`).match(regex) ||
+				normalizeElement(recipe.appliance).match(regex) ||
+				normalizeElement(`${ustensilsListArray}`).match(regex)
+			);
+		});
+		renderAllArraySFiltred(filterOnlyByTags);
+	} else {
+		renderAllArraySFiltred(allRecipes);
+	}
+	console.log(containerCards.length, containerCards);
+}
+
+//==================================================================================================
+// FILTER THE LIST ITEM IN DROPDOWNS WITH INPUT
+//==================================================================================================
+let listTagsItemArray = [];
+
+// (item, array)
+function searchListItem(searchText) {
+	if (ingredientsSearch.value.length >= 1) {
+		listTagsItemArray = ingredientsListArray.filter(itemTag => {
+			const regex = new RegExp(normalizeElement(`${searchText}`));
+
+			return normalizeElement(itemTag).match(regex);
+			// 		normalizeElement(recipe.appliance).match(regex) ||
+			// 		normalizeElement(`${ustensilsListArray}`).match(regex)
+		});
+		// ingredientsListTags.innerHTML = '';
+		// renderIngredientsList(listTagsItemArray);
+	} else {
+		return;
+	}
+	// console.log(ingredientsSearch.value);
+	console.log(searchText); // +++ GOOD !!! lettre / mot input dropdown
+	console.log(ingredientsListArray); // +++ GOOD !!! array correspondant à la listItem en cours selon filtres en cours
+	console.log(listTagsItemArray); // +++ GOOD !!! array filtré par 'searchText'
+}

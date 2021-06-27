@@ -19,15 +19,14 @@ let ustensilsListArray = [];
 //==================================================================================================
 //  LIST TAGS IN DROPDOWN
 //==================================================================================================
-// List Tags Ingredients
-//=====================================
 
+// List Tags Ingredients
 function renderIngredientsList(recipes) {
 	let newItemIngredient = '';
 	let allIngredientsRecipes = [];
 
-	recipes.map(recipes => {
-		recipes.ingredients.map(ingredients => {
+	recipes.map(recipe => {
+		recipe.ingredients.map(ingredients => {
 			const ingredient = ingredients.ingredient;
 			allIngredientsRecipes.push(ingredient);
 		});
@@ -46,10 +45,7 @@ function renderIngredientsList(recipes) {
 	ingredientsListTags.innerHTML = newItemIngredient;
 }
 
-//=====================================
 // List Tags Appliances
-//=====================================
-
 function renderAppliancesList(recipes) {
 	let newItemAppliance = '';
 	let allAppliancesRecipes = [];
@@ -72,10 +68,7 @@ function renderAppliancesList(recipes) {
 	appliancesListTags.innerHTML = newItemAppliance;
 }
 
-//=====================================
 // List Tags Ustensils
-//=====================================
-
 function renderUstensilsList(recipes) {
 	let newItemUstensils = '';
 	let allUstensilsRecipes = [];
