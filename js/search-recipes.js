@@ -75,16 +75,16 @@ console.log(filterCardsByInput);
 function requestBySearchBar(searchText) {
 	if (searchText.length >= 3) {
 		filterCardsByInput = allRecipes.filter(recipe => {
-			const regex = new RegExp(normalizeElement(`${searchText}`));
+			const searchValue = normalizeElement(`${searchText}`);
 			let ingredientsArray = [];
 			for (let key in recipe.ingredients) {
 				let ingredientElts = recipe.ingredients[key].ingredient;
 				ingredientsArray.push(ingredientElts);
 			}
 			return (
-				normalizeElement(recipe.name).match(regex) ||
-				normalizeElement(`${ingredientsArray}`).match(regex) ||
-				normalizeElement(recipe.description).match(regex)
+				normalizeElement(recipe.name).includes(searchValue) ||
+				normalizeElement(`${ingredientsArray}`).includes(searchValue) ||
+				normalizeElement(recipe.description).includes(searchValue)
 			);
 		});
 		// containerCards.innerHTML = '';
@@ -120,7 +120,7 @@ function handlerRequestByTags(activeTag) {
 function furtherSearchByTags(activeTag) {
 	if (filteredTagsArray.length >= 1) {
 		filterFurtherByTags = filterCardsByInput.filter(recipe => {
-			const regex = new RegExp(normalizeElement(`${activeTag}`));
+			const searchValue = normalizeElement(`${activeTag}`);
 			let ingredientsArray = [];
 			for (let key in recipe.ingredients) {
 				let ingredientElts = recipe.ingredients[key].ingredient;
@@ -128,9 +128,9 @@ function furtherSearchByTags(activeTag) {
 			}
 			ustensilsListArray = recipe.ustensils;
 			return (
-				normalizeElement(`${ingredientsArray}`).match(regex) ||
-				normalizeElement(recipe.appliance).match(regex) ||
-				normalizeElement(`${ustensilsListArray}`).match(regex)
+				normalizeElement(`${ingredientsArray}`).includes(searchValue) ||
+				normalizeElement(recipe.appliance).includes(searchValue) ||
+				normalizeElement(`${ustensilsListArray}`).includes(searchValue)
 			);
 		});
 		renderAllArraySFiltred(filterFurtherByTags);
@@ -144,7 +144,7 @@ function furtherSearchByTags(activeTag) {
 function mainSearchByTags(activeTag) {
 	if (filteredTagsArray.length >= 1) {
 		filterOnlyByTags = allRecipes.filter(recipe => {
-			const regex = new RegExp(normalizeElement(`${activeTag}`));
+			const searchTag = normalizeElement(`${activeTag}`);
 			let ingredientsArray = [];
 			for (let key in recipe.ingredients) {
 				let ingredientElts = recipe.ingredients[key].ingredient;
@@ -152,9 +152,9 @@ function mainSearchByTags(activeTag) {
 			}
 			ustensilsListArray = recipe.ustensils;
 			return (
-				normalizeElement(`${ingredientsArray}`).match(regex) ||
-				normalizeElement(recipe.appliance).match(regex) ||
-				normalizeElement(`${ustensilsListArray}`).match(regex)
+				normalizeElement(`${ingredientsArray}`).includes(searchTag) ||
+				normalizeElement(recipe.appliance).includes(searchTag) ||
+				normalizeElement(`${ustensilsListArray}`).includes(searchTag)
 			);
 		});
 		renderAllArraySFiltred(filterOnlyByTags);
@@ -172,8 +172,8 @@ function mainSearchByTags(activeTag) {
 function searchIngredientsList(searchText) {
 	if (ingredientsSearch.value.length >= 1) {
 		ingredientsListFiltred = ingredientsListArray.filter(itemTag => {
-			const regex = new RegExp(normalizeElement(`${searchText}`));
-			return normalizeElement(itemTag).match(regex);
+			const searchValue = normalizeElement(`${searchText}`);
+			return normalizeElement(itemTag).includes(searchValue);
 		});
 		renderIngredientsListFiltred(ingredientsListFiltred);
 	} else {
@@ -185,8 +185,8 @@ function searchIngredientsList(searchText) {
 function searchAppliancesList(searchText) {
 	if (appliancesSearch.value.length >= 1) {
 		appliancesListFiltred = appliancesListArray.filter(itemTag => {
-			const regex = new RegExp(normalizeElement(`${searchText}`));
-			return normalizeElement(itemTag).match(regex);
+			const searchValue = normalizeElement(`${searchText}`);
+			return normalizeElement(itemTag).includes(searchValue);
 		});
 		renderAppliancesListFiltred(appliancesListFiltred);
 	} else {
@@ -198,8 +198,8 @@ function searchAppliancesList(searchText) {
 function searchUstensilsList(searchText) {
 	if (ustensilsSearch.value.length >= 1) {
 		ustensilsListFiltred = ustensilsListArray.filter(itemTag => {
-			const regex = new RegExp(normalizeElement(`${searchText}`));
-			return normalizeElement(itemTag).match(regex);
+			const searchValue = normalizeElement(`${searchText}`);
+			return normalizeElement(itemTag).includes(searchValue);
 		});
 		renderUstensilsListFiltred(ustensilsListFiltred);
 	} else {
