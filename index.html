@@ -43,7 +43,6 @@
                         <input id="search-bar-input" class="form-control rounded-3 border-light ps-3 pe-5 fs-5"
                             type="text" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
                             aria-label="Search">
-                        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
                         <img class="search-bar-icon position-absolute top-50 end-0 translate-middle-y me-4"
                             src="./img/search-icon.svg" width="32" height="32" alt="icon search" aria-hidden="true">
                     </div>
@@ -55,23 +54,21 @@
                 <div class="filtered-tags-container container-lg p-0">
                     <ul
                         class="filtered-tags-list list-group d-flex justify-content-start flex-wrap list-group-horizontal tags-list ">
-                        <!-- <li
-                        class="filtered-tags-item list-group-item d-flex align-items-center rounded-3 border-light ps-3 py-2 me-2 mb-2 fw-bold text-white bg-blue">
-                        Coco
-                        <button class="filtered-tags-btn ms-3" type="button" aria-label="Supprimer le tag"></button>
-                        </li> -->
                     </ul>
                 </div>
 
                 <!-- <div class="overlay hidden"></div> -->
 
                 <!-- 3 dropdowns container -->
-                <form class="container btn-group d-flex flex-row justify-content-start flex-wrap p-0 mx-0 my-2"
+                <div class="overlay-form hidden">
+                </div>
+                <form id="dropdowns"
+                    class="container btn-group d-flex flex-row justify-content-start flex-wrap p-0 mx-0 my-2"
                     autocomplete="off">
-
                     <!-- expanded / hidden -->
-                    <div id="ingredients-container-dropdown"
-                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-blue ">
+                    <nav id="ingredients-container-dropdown"
+                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-blue "
+                        aria-haspopup="true" aria-expanded="false">
                         <div class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-blue">
                             <label for="ingredients-search" class="visually-hidden">Filtrez les recettes par
                                 ingrédients</label>
@@ -90,11 +87,12 @@
                                 class="dropdown-list-tags list-group row row-cols-1 row-cols-sm-2 row-cols-md-3 d-flex flex-row justify-content-start m-0 p-0 fw-normal ">
                             </ul>
                         </div>
-                    </div>
+                    </nav>
 
                     <!-- expanded / hidden -->
-                    <div id="appliances-container-dropdown"
-                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-green ">
+                    <nav id="appliances-container-dropdown"
+                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-green "
+                        aria-haspopup="true" aria-expanded="false">
                         <div
                             class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-green">
                             <label for="appliances-search" class="visually-hidden">Filtrez les recettes par
@@ -114,11 +112,12 @@
                                 class="dropdown-list-tags list-group row row-cols-1 row-cols-sm-2 row-cols-md-3 d-flex flex-row justify-content-start m-0 p-0 fw-normal">
                             </ul>
                         </div>
-                    </div>
+                    </nav>
 
                     <!-- expanded / hidden -->
-                    <div id="ustensils-container-dropdown"
-                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-orange ">
+                    <nav id="ustensils-container-dropdown"
+                        class="dropdown-container position-relative me-3 mb-3 rounded-3 text-white bg-orange "
+                        aria-haspopup="true" aria-expanded="false">
                         <div
                             class="input-dropdown-wrap btn-group d-flex flex-row align-items-center rounded-3 bg-orange">
                             <label for="ustensils-search" class="visually-hidden">Filtrez les recettes par
@@ -138,19 +137,24 @@
                                 class="dropdown-list-tags list-group row row-cols-1 row-cols-sm-2 row-cols-md-3 d-flex flex-row justify-content-start m-0 p-0 fw-normal">
                             </ul>
                         </div>
-                    </div>
+                    </nav>
                 </form>
 
             </nav>
         </header>
 
         <main>
+            <div id="alert-message" class="container-lg mb-5 hidden" aria-hidden="true">
+                <p class="alert alert-danger text-center" role="alert">
+                    Aucune recette ne correspond à votre critère... Vous pouvez chercher "tarte aux pommes", "poisson",
+                    etc.
+                </p>
+            </div>
+
             <!-- container Cards' recipes -->
             <div id="wrap-container-cards" class="container-lg mb-5">
                 <div id="container-cards-recipes" class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 gy-4 gx-4 g-xxl-5">
-
                 </div>
-
             </div>
 
         </main>
@@ -159,12 +163,14 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script> -->
+
     <!-- main JS -->
     <script src="./js/recipes.js"></script>
     <script src="./js/dropdowns.js"></script>
     <script src="./js/cards.js"></script>
     <script src="./js/tags-dropdown.js"></script>
     <script src="./js/filtered-tags.js"></script>
+    <script src="./js/search-recipes.js"></script>
     <script src="./js/main.js"></script>
 
 </body>

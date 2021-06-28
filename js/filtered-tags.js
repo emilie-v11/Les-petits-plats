@@ -3,32 +3,30 @@
 // DOM ELEMENTS
 //==================================================================================================
 // List tags item
-// const listTagsItem = document.getElementsByClassName('list-tags-item');
 const listTagsItem = document.querySelectorAll('.list-tags-item');
 
 //filtered tags
 const filteredTagsList = document.querySelector('.filtered-tags-list');
 const filteredTagsItem = document.getElementsByClassName('filtered-tags-item');
-// const filteredTagsItem = document.querySelectorAll('.filtered-tags-item');
-// console.log(filteredTagsItem);
 
 //=====================================
 // Variables
 //=====================================
 let filteredTagsArray = [];
-// let activeTagsArray = [];
-let RecipesByTagsItemArray = [];
 
 let tagBgColorArray = [];
 let tagBgColor;
 
+// let RecipesByTagsItemArray = [];
+// let activeTagsArray = [];
 //==================================================================================================
 // FILTERED TAGS
 //==================================================================================================
 // let activeTags;
+let filteredTagValue;
 
 function addNewTag(event, tagBgColor) {
-	let filteredTagValue = event.target.dataset.value; // textContent
+	filteredTagValue = event.target.dataset.value; // textContent
 	if (filteredTagsArray.includes(filteredTagValue)) {
 		return;
 	} else {
@@ -37,16 +35,20 @@ function addNewTag(event, tagBgColor) {
 
 		tagBgColor = event.target.dataset.color;
 		tagBgColorArray.push(tagBgColor);
-		// console.log(tagBgColor);
-
-		// event.target.style.opacity = '0.5';
 
 		renderFilteredTags();
+		handlerRequestByTags(filteredTagValue);
+		// handlerRequestByTags(filteredTagsArray); // faire un forEach
+
+		// tagsListSearch(filteredTagValue);
+		// tagsListSearch(filteredTagsArray);
+
 		console.log(filteredTagsArray);
 		console.log(tagBgColorArray);
-		// filterRecipesByTagsItem();
 	}
 }
+console.log(filteredTagValue);
+console.log(filteredTagsArray);
 
 function renderFilteredTags() {
 	let newTag = '';
@@ -66,6 +68,6 @@ function deleteTag(index) {
 	filteredTagsArray.splice(index, 1); // delete or remove the tag name
 	tagBgColorArray.splice(index, 1); // delete or remove the tag color
 	renderFilteredTags();
+	handlerRequestByTags(filteredTagsArray);
+	// tagsListSearch(filteredTagValue);
 }
-
-// function filterRecipesByTagsItem() {}

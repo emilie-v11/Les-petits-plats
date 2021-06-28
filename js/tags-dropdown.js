@@ -11,8 +11,7 @@ const ustensilsListTags = document.getElementById('ustensils-list-tags');
 //=====================================
 // Variables
 //=====================================
-// console.log(recipes);
-// const allRecipesData = recipes;
+
 let ingredientsListArray = [];
 let appliancesListArray = [];
 let ustensilsListArray = [];
@@ -20,80 +19,78 @@ let ustensilsListArray = [];
 //==================================================================================================
 //  LIST TAGS IN DROPDOWN
 //==================================================================================================
-// List Tags Ingredients
+//=====================================
+// INGREDIENTS
 //=====================================
 
-function renderIngredientsList() {
-	let newItemIngredient = '';
+// List Tags Ingredients for filter
+function renderIngredientsList(recipes) {
 	let allIngredientsRecipes = [];
 
-	recipes.map(recipes => {
-		const ingredients = recipes.ingredients;
-		// console.log(ingredients);
-
-		ingredients.map(ingredients => {
+	recipes.map(recipe => {
+		recipe.ingredients.map(ingredients => {
 			const ingredient = ingredients.ingredient;
 			allIngredientsRecipes.push(ingredient);
 		});
 	});
+	ingredientsListArray = [...new Set(allIngredientsRecipes)];
 
-	let ingredientsList = new Set(allIngredientsRecipes);
+	renderIngredientsListFiltred(ingredientsListArray);
+}
 
-	let ingredientsListArray = [...ingredientsList];
-	console.log(ingredientsListArray);
-
-	ingredientsListArray.map(item => {
-		newItemIngredient += `
+// List Tags Ingredients for search in dropdown input
+function renderIngredientsListFiltred(ingredientsListArray) {
+	const newItemIngredient = ingredientsListArray
+		.map(
+			item => `
         <a href="#" class="list-tags-item ingredients col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
             arial-label="Rechercher des recettes avec l'ingrédient: '${item}'" data-color="blue" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
             ${item}
         </a>
-        `;
-		console.log(item);
-
-		ingredientsListTags.innerHTML = newItemIngredient;
-	});
+        `
+		)
+		.join('');
+	ingredientsListTags.innerHTML = newItemIngredient;
 }
-renderIngredientsList();
 
 //=====================================
+// APPLIANCES
+//=====================================
+
 // List Tags Appliances
-//=====================================
-
-function renderAppliancesList() {
-	let newItemAppliance = '';
+function renderAppliancesList(recipes) {
 	let allAppliancesRecipes = [];
 
 	recipes.map(recipes => {
 		const appliances = recipes.appliance;
 		allAppliancesRecipes.push(appliances);
 	});
+	appliancesListArray = [...new Set(allAppliancesRecipes)];
 
-	let appliancesList = new Set(allAppliancesRecipes);
+	renderAppliancesListFiltred(appliancesListArray);
+}
 
-	let appliancesListArray = [...appliancesList];
-	console.log(appliancesListArray);
-
-	appliancesListArray.map(item => {
-		newItemAppliance += `
-	    <a href="#" class="list-tags-item appliances col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
+// List Tags Appliances for search in dropdown input
+function renderAppliancesListFiltred(appliancesListArray) {
+	const newItemAppliance = appliancesListArray
+		.map(
+			item => `
+        <a href="#" class="list-tags-item appliances col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
             arial-label="Rechercher des recettes utilisant l'appareil: '${item}'" data-color="green" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
 	        ${item}
 	    </a>
-	    `;
-		console.log(item);
-
-		appliancesListTags.innerHTML = newItemAppliance;
-	});
+        `
+		)
+		.join('');
+	appliancesListTags.innerHTML = newItemAppliance;
 }
-renderAppliancesList();
 
 //=====================================
+// USTENSILS
+//=====================================
+
 // List Tags Ustensils
-//=====================================
-
-function renderUstensilsList() {
-	let newItemUstensils = '';
+function renderUstensilsList(recipes) {
 	let allUstensilsRecipes = [];
 
 	recipes.map(recipes => {
@@ -104,22 +101,22 @@ function renderUstensilsList() {
 			allUstensilsRecipes.push(ustensils);
 		});
 	});
+	ustensilsListArray = [...new Set(allUstensilsRecipes)];
 
-	let ustensilsList = new Set(allUstensilsRecipes);
+	renderUstensilsListFiltred(ustensilsListArray);
+}
 
-	let ustensilsListArray = [...ustensilsList];
-	console.log(ustensilsListArray);
-
-	ustensilsListArray.map(item => {
-		newItemUstensils += `
-	    <a href="#" class="list-tags-item ustensils col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
+// List Tags Ustensils for search in dropdown input
+function renderUstensilsListFiltred(ustensilsListArray) {
+	const newItemUstensil = ustensilsListArray
+		.map(
+			item => `
+        <a href="#" class="list-tags-item ustensils col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
             arial-label="Rechercher des recettes utilisant l'ustensil: '${item}'" data-color="orange" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
 	        ${item}
 	    </a>
-	    `;
-		console.log(item);
-
-		ustensilsListTags.innerHTML = newItemUstensils;
-	});
+        `
+		)
+		.join('');
+	ustensilsListTags.innerHTML = newItemUstensil;
 }
-renderUstensilsList();

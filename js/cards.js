@@ -6,23 +6,31 @@ const wrapperHomepage = document.getElementById('wrapper-homepage');
 
 //  Cards
 const containerCards = document.getElementById('container-cards-recipes');
+const cardsRecipes = document.getElementsByClassName('card-recipe');
+const cardsEl = document.getElementsByClassName('card');
+console.log(cardsRecipes);
 
 //=====================================
 // Variables
 //=====================================
 console.log(recipes);
-// const allRecipesData = recipes;
-// let allRecipesArray = [];
+let allRecipes = [];
+allRecipes = recipes;
+
+// let ingredientsListArray = [];
+// let appliancesListArray = [];
+// let ustensilsListArray = [];
 
 //==================================================================================================
 //  RECIPES' CARDS
 //==================================================================================================
 
 // Create all recipes' cards
-function renderRecipesCards() {
+function renderRecipesCards(recipes) {
 	let newRecipeCard = '';
 
-	recipes.forEach(recipe => {
+	// console.log(allRecipes);
+	recipes.map(recipe => {
 		const ingredients = recipe.ingredients;
 
 		// Ingredients' recipes cards
@@ -46,13 +54,12 @@ function renderRecipesCards() {
 					? ingredient.unit.concat('s')
 					: ingredient.unit !== undefined
 					? ingredient.unit
-					: '';
-
+					: ''
+			// fix quantity's ingredients
 			let fixQuantity =
 				ingredient.quantity !== undefined
 					? `: ${ingredient.quantity}`
 					: '';
-
 			newIngredientTag += `
             <li class="card-ingredients-item list-group-item bg-transparent border-0 fw-bold p-0">
                 <span class="recipe-ingredient">${ingredient.ingredient}</span>
@@ -65,11 +72,10 @@ function renderRecipesCards() {
             </li>
             `;
 		});
-
 		// Create recipes' cards
 		newRecipeCard += `
-        <div class="col rounded-3">
-            <a href="#" class="card rounded-3" aria-label="Accéder à la fiche de recette: '${recipe.name}'">
+        <article id="${recipe.id}" class="card-recipe col rounded-3">
+            <a href="#" class="col card rounded-3" aria-label="Accéder à la fiche de recette: '${recipe.name}'" tabindex="0">
                 <img src="./img/bg-card-img.svg" class="card-img-top rounded-top border-0" width="380"
                     height="178" aria-hidden="true" alt="">
                 <div class="card-body p-3 rounded-bottom">
@@ -91,23 +97,11 @@ function renderRecipesCards() {
                             <p class="recipe-description card-text ">${recipe.description}</p>
                         </div>
                     </div>
-
                 </div>
             </a>
-        </div>
+        </article>
         `;
 	});
 	containerCards.innerHTML = newRecipeCard;
-	console.log(containerCards);
+	// console.log(containerCards);
 }
-
-renderRecipesCards();
-trapFocusDropdown(wrapperHomepage);
-
-// containerCards.innerHTML = `
-// Aucune recette ne correspond à votre recherche.
-// Essayez fraise,
-// `;
-//===================================================================
-// console.log(allRecipesData);
-console.log(recipes);
