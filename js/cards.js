@@ -54,7 +54,7 @@ function renderRecipesCards(recipes) {
 					? ingredient.unit.concat('s')
 					: ingredient.unit !== undefined
 					? ingredient.unit
-					: '';
+					: ''
 			// fix quantity's ingredients
 			let fixQuantity =
 				ingredient.quantity !== undefined
