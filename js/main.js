@@ -56,10 +56,13 @@ searchBar.addEventListener('keydown', function (e) {
 //=====================================
 
 ingredientsSearch.addEventListener('input', function () {
-	searchListItem(ingredientsSearch.value);
+	searchIngredientsList(ingredientsSearch.value);
 });
 
-// ingredientsSearch.addEventListener('input', () => {
-// 	furtherResearch(ingredientsSearch.value);
-// });
-// console.log(ingredientsSearch.value);
+appliancesSearch.addEventListener('input', function () {
+	searchAppliancesList(appliancesSearch.value);
+});
+
+ustensilsSearch.addEventListener('input', function () {
+	searchUstensilsList(ustensilsSearch.value);
+});

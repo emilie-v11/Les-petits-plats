@@ -13,6 +13,10 @@ let filterCardsByInput = [];
 let filterFurtherByTags = [];
 let filterOnlyByTags = [];
 
+let ingredientsListFiltred = [];
+let appliancesListFiltred = [];
+let ustensilsListFiltred = [];
+
 //==================================================================================================
 // ALERT MESSAGE IF NO MATCH
 //==================================================================================================
@@ -163,25 +167,42 @@ function mainSearchByTags(activeTag) {
 //==================================================================================================
 // FILTER THE LIST ITEM IN DROPDOWNS WITH INPUT
 //==================================================================================================
-let listTagsItemArray = [];
 
-// (item, array)
-function searchListItem(searchText) {
+// search by Input Ingredients
+function searchIngredientsList(searchText) {
 	if (ingredientsSearch.value.length >= 1) {
-		listTagsItemArray = ingredientsListArray.filter(itemTag => {
+		ingredientsListFiltred = ingredientsListArray.filter(itemTag => {
 			const regex = new RegExp(normalizeElement(`${searchText}`));
-
 			return normalizeElement(itemTag).match(regex);
-			// 		normalizeElement(recipe.appliance).match(regex) ||
-			// 		normalizeElement(`${ustensilsListArray}`).match(regex)
 		});
-		// ingredientsListTags.innerHTML = '';
-		// renderIngredientsList(listTagsItemArray);
+		renderIngredientsListFiltred(ingredientsListFiltred);
 	} else {
-		return;
+		renderIngredientsListFiltred(ingredientsListArray);
 	}
-	// console.log(ingredientsSearch.value);
-	console.log(searchText); // +++ GOOD !!! lettre / mot input dropdown
-	console.log(ingredientsListArray); // +++ GOOD !!! array correspondant à la listItem en cours selon filtres en cours
-	console.log(listTagsItemArray); // +++ GOOD !!! array filtré par 'searchText'
+}
+
+// search by Input Appliances
+function searchAppliancesList(searchText) {
+	if (appliancesSearch.value.length >= 1) {
+		appliancesListFiltred = appliancesListArray.filter(itemTag => {
+			const regex = new RegExp(normalizeElement(`${searchText}`));
+			return normalizeElement(itemTag).match(regex);
+		});
+		renderAppliancesListFiltred(appliancesListFiltred);
+	} else {
+		renderAppliancesListFiltred(appliancesListArray);
+	}
+}
+
+// search by Input Ustensils
+function searchUstensilsList(searchText) {
+	if (ustensilsSearch.value.length >= 1) {
+		ustensilsListFiltred = ustensilsListArray.filter(itemTag => {
+			const regex = new RegExp(normalizeElement(`${searchText}`));
+			return normalizeElement(itemTag).match(regex);
+		});
+		renderUstensilsListFiltred(ustensilsListFiltred);
+	} else {
+		renderUstensilsListFiltred(ustensilsListArray);
+	}
 }

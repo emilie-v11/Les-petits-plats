@@ -78,6 +78,65 @@ function mainSearchByTags(activeTag) {
 }
 
 //==================================================================================================
+
+// List Tags Ingredients for filter
+function renderIngredientsList(recipes) {
+	let newItemIngredient = '';
+	let allIngredientsRecipes = [];
+
+	recipes.map(recipe => {
+		recipe.ingredients.map(ingredients => {
+			const ingredient = ingredients.ingredient;
+			allIngredientsRecipes.push(ingredient);
+		});
+	});
+	ingredientsListArray = [...new Set(allIngredientsRecipes)];
+
+	ingredientsListArray.map(item => {
+		newItemIngredient += `
+	    <a href="#" class="list-tags-item ingredients col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
+	        arial-label="Rechercher des recettes avec l'ingrédient: '${item}'" data-color="blue" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
+	        ${item}
+	    </a>
+	    `;
+		// console.log(item);
+	});
+	ingredientsListTags.innerHTML = newItemIngredient;
+}
+
+// // List Tags Ingredients for search in dropdown input
+// const renderIngredientsListFiltred = listTagsItemArray => {
+// 	const html = listTagsItemArray
+// 		.map(
+// 			item => `
+//         <a href="#" class="list-tags-item ingredients col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
+//             arial-label="Rechercher des recettes avec l'ingrédient: '${item}'" data-color="blue" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
+//             ${item}
+//         </a>
+//         `
+// 		)
+// 		.join('');
+// 	ingredientsListTags.innerHTML = html;
+// };
+
+let listIngredientsFiltred = [];
+
+function searchListItem(searchText) {
+	if (ingredientsSearch.value.length >= 1) {
+		listIngredientsFiltred = ingredientsListArray.filter(itemTag => {
+			const regex = new RegExp(normalizeElement(`${searchText}`));
+			return normalizeElement(itemTag).match(regex);
+		});
+		renderIngredientsListFiltred(listIngredientsFiltred);
+	} else {
+		renderIngredientsListFiltred(ingredientsListArray);
+	}
+	// console.log(searchText); // +++ GOOD !!! lettre / mot input dropdown
+	// console.log(ingredientsListArray); // +++ GOOD !!! array correspondant à la listItem en cours selon filtres en cours
+	// console.log(listIngredientsFiltred); // +++ GOOD !!! array filtré par 'searchText'
+}
+
+
 //==================================================================================================
 
 if (searchBar.value.length >= 3) {

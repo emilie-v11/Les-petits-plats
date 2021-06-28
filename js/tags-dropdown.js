@@ -19,10 +19,12 @@ let ustensilsListArray = [];
 //==================================================================================================
 //  LIST TAGS IN DROPDOWN
 //==================================================================================================
+//=====================================
+// INGREDIENTS
+//=====================================
 
-// List Tags Ingredients
+// List Tags Ingredients for filter
 function renderIngredientsList(recipes) {
-	let newItemIngredient = '';
 	let allIngredientsRecipes = [];
 
 	recipes.map(recipe => {
@@ -33,21 +35,30 @@ function renderIngredientsList(recipes) {
 	});
 	ingredientsListArray = [...new Set(allIngredientsRecipes)];
 
-	ingredientsListArray.map(item => {
-		newItemIngredient += `
+	renderIngredientsListFiltred(ingredientsListArray);
+}
+
+// List Tags Ingredients for search in dropdown input
+function renderIngredientsListFiltred(ingredientsListArray) {
+	const newItemIngredient = ingredientsListArray
+		.map(
+			item => `
         <a href="#" class="list-tags-item ingredients col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
             arial-label="Rechercher des recettes avec l'ingrédient: '${item}'" data-color="blue" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
             ${item}
         </a>
-        `;
-		// console.log(item);
-	});
+        `
+		)
+		.join('');
 	ingredientsListTags.innerHTML = newItemIngredient;
 }
 
+//=====================================
+// APPLIANCES
+//=====================================
+
 // List Tags Appliances
 function renderAppliancesList(recipes) {
-	let newItemAppliance = '';
 	let allAppliancesRecipes = [];
 
 	recipes.map(recipes => {
@@ -56,21 +67,30 @@ function renderAppliancesList(recipes) {
 	});
 	appliancesListArray = [...new Set(allAppliancesRecipes)];
 
-	appliancesListArray.map(item => {
-		newItemAppliance += `
-	    <a href="#" class="list-tags-item appliances col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
+	renderAppliancesListFiltred(appliancesListArray);
+}
+
+// List Tags Appliances for search in dropdown input
+function renderAppliancesListFiltred(appliancesListArray) {
+	const newItemAppliance = appliancesListArray
+		.map(
+			item => `
+        <a href="#" class="list-tags-item appliances col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
             arial-label="Rechercher des recettes utilisant l'appareil: '${item}'" data-color="green" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
 	        ${item}
 	    </a>
-	    `;
-		// console.log(item);
-	});
+        `
+		)
+		.join('');
 	appliancesListTags.innerHTML = newItemAppliance;
 }
 
+//=====================================
+// USTENSILS
+//=====================================
+
 // List Tags Ustensils
 function renderUstensilsList(recipes) {
-	let newItemUstensils = '';
 	let allUstensilsRecipes = [];
 
 	recipes.map(recipes => {
@@ -83,14 +103,20 @@ function renderUstensilsList(recipes) {
 	});
 	ustensilsListArray = [...new Set(allUstensilsRecipes)];
 
-	ustensilsListArray.map(item => {
-		newItemUstensils += `
-	    <a href="#" class="list-tags-item ustensils col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
+	renderUstensilsListFiltred(ustensilsListArray);
+}
+
+// List Tags Ustensils for search in dropdown input
+function renderUstensilsListFiltred(ustensilsListArray) {
+	const newItemUstensil = ustensilsListArray
+		.map(
+			item => `
+        <a href="#" class="list-tags-item ustensils col-1 list-group-item list-group-item-action bg-transparent border-0 text-white m-0 p-0 px-4"
             arial-label="Rechercher des recettes utilisant l'ustensil: '${item}'" data-color="orange" data-value="${item}" onclick="addNewTag(event, tagBgColor)">
 	        ${item}
 	    </a>
-	    `;
-		// console.log(item);
-	});
-	ustensilsListTags.innerHTML = newItemUstensils;
+        `
+		)
+		.join('');
+	ustensilsListTags.innerHTML = newItemUstensil;
 }
