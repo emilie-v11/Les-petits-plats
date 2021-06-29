@@ -17,12 +17,9 @@ let filteredTagsArray = [];
 let tagBgColorArray = [];
 let tagBgColor;
 
-// let RecipesByTagsItemArray = [];
-// let activeTagsArray = [];
 //==================================================================================================
 // FILTERED TAGS
 //==================================================================================================
-// let activeTags;
 let filteredTagValue;
 
 function addNewTag(event, tagBgColor) {
@@ -38,11 +35,7 @@ function addNewTag(event, tagBgColor) {
 
 		renderFilteredTags();
 		handlerRequestByTags(filteredTagValue);
-		// handlerRequestByTags(filteredTagsArray); // faire un forEach
-
-		// tagsListSearch(filteredTagValue);
-		// tagsListSearch(filteredTagsArray);
-
+		//handlerRequestByTags(filteredTagsArray); // FIXME faire un forEach
 		console.log(filteredTagsArray);
 		console.log(tagBgColorArray);
 	}
@@ -68,6 +61,5 @@ function deleteTag(index) {
 	filteredTagsArray.splice(index, 1); // delete or remove the tag name
 	tagBgColorArray.splice(index, 1); // delete or remove the tag color
 	renderFilteredTags();
-	handlerRequestByTags(filteredTagsArray);
-	// tagsListSearch(filteredTagValue);
+	handlerRequestByTags(filteredTagsArray); // FIXME
 }
