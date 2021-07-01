@@ -39,7 +39,7 @@ const recipes = [
 		servings: 2,
 		ingredients: [
 			{
-				ingredient: 'Thon Rouge (ou blanc)',
+				ingredient: 'Thon rouge ou blanc',
 				quantity: 200,
 				unit: 'grammes',
 			},
@@ -260,7 +260,7 @@ const recipes = [
 		description:
 			"Etaler la pâte dans les moules à tartelette. Faire cuire la pâte 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crème fraîche, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pâte sur les tartelettes. Couper les fraises en 2 et les positionner dessus.",
 		appliance: 'Four',
-		ustensils: ['Moule à tartelettes (6)', 'Casserole'],
+		ustensils: ['Moule à tartelettes', 'Casserole'],
 	},
 	{
 		id: 8,

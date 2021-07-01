@@ -162,6 +162,8 @@ function mainSearchByTags(activeTag) {
 		renderAllArraySFiltred(allRecipes);
 	}
 	console.log(containerCards.length, containerCards);
+	console.log(filteredTagsArray);
+	console.log(activeTag);
 }
 
 //==================================================================================================

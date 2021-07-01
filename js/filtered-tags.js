@@ -34,8 +34,8 @@ function addNewTag(event, tagBgColor) {
 		tagBgColorArray.push(tagBgColor);
 
 		renderFilteredTags();
-		handlerRequestByTags(filteredTagValue);
-		//handlerRequestByTags(filteredTagsArray); // FIXME faire un forEach
+		//handlerRequestByTags(filteredTagValue);
+		handlerRequestByTags(filteredTagsArray); // FIXME faire un forEach
 		console.log(filteredTagsArray);
 		console.log(tagBgColorArray);
 	}
@@ -60,6 +60,6 @@ function renderFilteredTags() {
 function deleteTag(index) {
 	filteredTagsArray.splice(index, 1); // delete or remove the tag name
 	tagBgColorArray.splice(index, 1); // delete or remove the tag color
-	renderFilteredTags();
+    renderFilteredTags();
 	handlerRequestByTags(filteredTagsArray); // FIXME
 }
