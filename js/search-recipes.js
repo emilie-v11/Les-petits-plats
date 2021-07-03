@@ -8,10 +8,9 @@ const alertMessage = document.getElementById('alert-message');
 //=====================================
 // Variables
 //=====================================
-// console.log(allRecipes);
 let filterCardsByInput = [];
 let filterFurtherByTags = [];
-let filterOnlyByTags = [];
+let filterCardsByTags = [];
 
 let ingredientsListFiltred = [];
 let appliancesListFiltred = [];
@@ -63,12 +62,6 @@ function normalizeElement(element) {
 }
 
 //==================================================================================================
-function getFilterByInput() {
-	return filterCardsByInput;
-}
-console.log(filterCardsByInput);
-
-//==================================================================================================
 // FILTER RECIPES BY MAIN SEARCH-BAR
 //==================================================================================================
 
@@ -87,81 +80,73 @@ function requestBySearchBar(searchText) {
 				normalizeElement(recipe.description).match(regex)
 			);
 		});
-		// containerCards.innerHTML = '';
 		noMatch(searchText, filterCardsByInput, 3);
 		renderAllArraySFiltred(filterCardsByInput);
 	} else {
-		// containerCards.innerHTML = '';
 		alertMessage.classList.add('hidden');
 		renderAllArraySFiltred(allRecipes);
 	}
-	console.log(containerCards);
 }
 
 //==================================================================================================
 // FILTER RECIPES BY TAGS
 //==================================================================================================
 
-// FIXME ajouter un forEach pour 'filteredTagsArray' each(filteredTagValue)
-//       et changer le paramètre ds la fonction 'addNewTag' & 'deleteTag'
-
-// FIXME algo de recherche changer || pour && ???? ou utiliser every() ???
-
 // Function for handler the further search & the main search by tags
-function handlerRequestByTags(activeTag) {
+function handlerRequestByTags(tags) {
 	if (searchBar.value.length >= 3) {
-		furtherSearchByTags(activeTag);
+		furtherSearchByTags(tags);
 	} else if (searchBar.value.length < 3) {
-		mainSearchByTags(activeTag);
+		mainSearchByTags(tags);
 	}
 }
 
-// Function for the further search by tags
-function furtherSearchByTags(activeTag) {
+// Function for the main search by tags
+function mainSearchByTags(tags) {
 	if (filteredTagsArray.length >= 1) {
-		filterFurtherByTags = filterCardsByInput.filter(recipe => {
-			const regex = new RegExp(normalizeElement(`${activeTag}`));
+		filterCardsByTags = allRecipes.filter(recipe => {
 			let ingredientsArray = [];
 			for (let key in recipe.ingredients) {
 				let ingredientElts = recipe.ingredients[key].ingredient;
 				ingredientsArray.push(ingredientElts);
 			}
-			ustensilsListArray = recipe.ustensils;
-			return (
-				normalizeElement(`${ingredientsArray}`).match(regex) ||
-				normalizeElement(recipe.appliance).match(regex) ||
-				normalizeElement(`${ustensilsListArray}`).match(regex)
+			let ustensilsListArray = recipe.ustensils;
+			return tags.every(
+				tag =>
+					ingredientsArray.includes(tag) ||
+					recipe.appliance.includes(tag) ||
+					ustensilsListArray.includes(tag)
+			);
+		});
+		renderAllArraySFiltred(filterCardsByTags);
+	} else {
+		renderAllArraySFiltred(allRecipes);
+	}
+	console.log(filterCardsByTags);
+}
+
+// Function for the further search by tags
+function furtherSearchByTags(tags) {
+	if (filteredTagsArray.length >= 1) {
+		filterFurtherByTags = filterCardsByInput.filter(recipe => {
+			let ingredientsArray = [];
+			for (let key in recipe.ingredients) {
+				let ingredientElts = recipe.ingredients[key].ingredient;
+				ingredientsArray.push(ingredientElts);
+			}
+			let ustensilsListArray = recipe.ustensils;
+			return tags.every(
+				tag =>
+					ingredientsArray.includes(tag) ||
+					recipe.appliance.includes(tag) ||
+					ustensilsListArray.includes(tag)
 			);
 		});
 		renderAllArraySFiltred(filterFurtherByTags);
 	} else {
 		renderAllArraySFiltred(filterCardsByInput);
 	}
-	console.log(containerCards);
-}
-
-// Function for the main search by tags
-function mainSearchByTags(activeTag) {
-	if (filteredTagsArray.length >= 1) {
-		filterOnlyByTags = allRecipes.filter(recipe => {
-			const regex = new RegExp(normalizeElement(`${activeTag}`));
-			let ingredientsArray = [];
-			for (let key in recipe.ingredients) {
-				let ingredientElts = recipe.ingredients[key].ingredient;
-				ingredientsArray.push(ingredientElts);
-			}
-			ustensilsListArray = recipe.ustensils;
-			return (
-				normalizeElement(`${ingredientsArray}`).match(regex) ||
-				normalizeElement(recipe.appliance).match(regex) ||
-				normalizeElement(`${ustensilsListArray}`).match(regex)
-			);
-		});
-		renderAllArraySFiltred(filterOnlyByTags);
-	} else {
-		renderAllArraySFiltred(allRecipes);
-	}
-	console.log(containerCards.length, containerCards);
+	console.log(filterFurtherByTags);
 }
 
 //==================================================================================================
@@ -172,8 +157,8 @@ function mainSearchByTags(activeTag) {
 function searchIngredientsList(searchText) {
 	if (ingredientsSearch.value.length >= 1) {
 		ingredientsListFiltred = ingredientsListArray.filter(itemTag => {
-			const regex = new RegExp(normalizeElement(`${searchText}`));
-			return normalizeElement(itemTag).match(regex);
+			const searchValue = normalizeElement(`${searchText}`);
+			return normalizeElement(itemTag).includes(searchValue);
 		});
 		renderIngredientsListFiltred(ingredientsListFiltred);
 	} else {
@@ -185,8 +170,8 @@ function searchIngredientsList(searchText) {
 function searchAppliancesList(searchText) {
 	if (appliancesSearch.value.length >= 1) {
 		appliancesListFiltred = appliancesListArray.filter(itemTag => {
-			const regex = new RegExp(normalizeElement(`${searchText}`));
-			return normalizeElement(itemTag).match(regex);
+			const searchValue = normalizeElement(`${searchText}`);
+			return normalizeElement(itemTag).includes(searchValue);
 		});
 		renderAppliancesListFiltred(appliancesListFiltred);
 	} else {
@@ -198,8 +183,8 @@ function searchAppliancesList(searchText) {
 function searchUstensilsList(searchText) {
 	if (ustensilsSearch.value.length >= 1) {
 		ustensilsListFiltred = ustensilsListArray.filter(itemTag => {
-			const regex = new RegExp(normalizeElement(`${searchText}`));
-			return normalizeElement(itemTag).match(regex);
+			const searchValue = normalizeElement(`${searchText}`);
+			return normalizeElement(itemTag).includes(searchValue);
 		});
 		renderUstensilsListFiltred(ustensilsListFiltred);
 	} else {

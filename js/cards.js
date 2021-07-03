@@ -8,18 +8,13 @@ const wrapperHomepage = document.getElementById('wrapper-homepage');
 const containerCards = document.getElementById('container-cards-recipes');
 const cardsRecipes = document.getElementsByClassName('card-recipe');
 const cardsEl = document.getElementsByClassName('card');
-console.log(cardsRecipes);
 
 //=====================================
 // Variables
 //=====================================
-console.log(recipes);
-let allRecipes = [];
-allRecipes = recipes;
 
-// let ingredientsListArray = [];
-// let appliancesListArray = [];
-// let ustensilsListArray = [];
+let allRecipes = [];
+allRecipes = [...recipes];
 
 //==================================================================================================
 //  RECIPES' CARDS
@@ -54,7 +49,8 @@ function renderRecipesCards(recipes) {
 					? ingredient.unit.concat('s')
 					: ingredient.unit !== undefined
 					? ingredient.unit
-					: ''
+					: '';
+
 			// fix quantity's ingredients
 			let fixQuantity =
 				ingredient.quantity !== undefined
@@ -72,6 +68,7 @@ function renderRecipesCards(recipes) {
             </li>
             `;
 		});
+
 		// Create recipes' cards
 		newRecipeCard += `
         <article id="${recipe.id}" class="card-recipe col rounded-3">
@@ -103,5 +100,4 @@ function renderRecipesCards(recipes) {
         `;
 	});
 	containerCards.innerHTML = newRecipeCard;
-	// console.log(containerCards);
 }
