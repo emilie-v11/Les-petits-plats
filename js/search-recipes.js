@@ -102,7 +102,7 @@ function handlerRequestByTags(tags) {
 }
 
 // Function for the main search by tags
-function mainSearchByTags(activeTag) {
+function mainSearchByTags(tags) {
 	if (filteredTagsArray.length >= 1) {
 		filterCardsByTags = allRecipes.filter(recipe => {
 			let ingredientsArray = [];
