@@ -8,10 +8,9 @@ const alertMessage = document.getElementById('alert-message');
 //=====================================
 // Variables
 //=====================================
-// console.log(allRecipes);
 let filterCardsByInput = [];
 let filterFurtherByTags = [];
-let filterOnlyByTags = [];
+let filterCardsByTags = [];
 
 let ingredientsListFiltred = [];
 let appliancesListFiltred = [];
@@ -63,12 +62,6 @@ function normalizeElement(element) {
 }
 
 //==================================================================================================
-function getFilterByInput() {
-	return filterCardsByInput;
-}
-console.log(filterCardsByInput);
-
-//==================================================================================================
 // FILTER RECIPES BY MAIN SEARCH-BAR
 //==================================================================================================
 
@@ -87,81 +80,73 @@ function requestBySearchBar(searchText) {
 				normalizeElement(recipe.description).includes(searchValue)
 			);
 		});
-		// containerCards.innerHTML = '';
 		noMatch(searchText, filterCardsByInput, 3);
 		renderAllArraySFiltred(filterCardsByInput);
 	} else {
-		// containerCards.innerHTML = '';
 		alertMessage.classList.add('hidden');
 		renderAllArraySFiltred(allRecipes);
 	}
-	console.log(containerCards);
 }
 
 //==================================================================================================
 // FILTER RECIPES BY TAGS
 //==================================================================================================
 
-// FIXME ajouter un forEach pour 'filteredTagsArray' each(filteredTagValue)
-//       et changer le paramètre ds la fonction 'addNewTag' & 'deleteTag'
-
-// FIXME algo de recherche changer || pour && ???? ou utiliser every() ???
-
-// Function for handler the further search & the main search by tags
-function handlerRequestByTags(activeTag) {
+//Function for handler the further search & the main search by tags
+function handlerRequestByTags(tags) {
 	if (searchBar.value.length >= 3) {
-		furtherSearchByTags(activeTag);
+		furtherSearchByTags(tags);
 	} else if (searchBar.value.length < 3) {
-		mainSearchByTags(activeTag);
+		mainSearchByTags(tags);
 	}
 }
 
-// Function for the further search by tags
-function furtherSearchByTags(activeTag) {
+// Function for the main search by tags
+function mainSearchByTags(tags) {
 	if (filteredTagsArray.length >= 1) {
-		filterFurtherByTags = filterCardsByInput.filter(recipe => {
-			const searchValue = normalizeElement(`${activeTag}`);
+		filterCardsByTags = allRecipes.filter(recipe => {
 			let ingredientsArray = [];
 			for (let key in recipe.ingredients) {
 				let ingredientElts = recipe.ingredients[key].ingredient;
 				ingredientsArray.push(ingredientElts);
 			}
-			ustensilsListArray = recipe.ustensils;
-			return (
-				normalizeElement(`${ingredientsArray}`).includes(searchValue) ||
-				normalizeElement(recipe.appliance).includes(searchValue) ||
-				normalizeElement(`${ustensilsListArray}`).includes(searchValue)
+			let ustensilsListArray = recipe.ustensils;
+			return tags.every(
+				tag =>
+					ingredientsArray.includes(tag) ||
+					recipe.appliance.includes(tag) ||
+					ustensilsListArray.includes(tag)
+			);
+		});
+		renderAllArraySFiltred(filterCardsByTags);
+	} else {
+		renderAllArraySFiltred(allRecipes);
+	}
+}
+
+// Function for the further search by tags
+function furtherSearchByTags(tags) {
+	if (filteredTagsArray.length >= 1) {
+		filterFurtherByTags = filterCardsByInput.filter(recipe => {
+			let ingredientsArray = [];
+			for (let key in recipe.ingredients) {
+				let ingredientElts = recipe.ingredients[key].ingredient;
+				ingredientsArray.push(ingredientElts);
+			}
+			let ustensilsListArray = recipe.ustensils;
+			return tags.every(
+				tag =>
+					ingredientsArray.includes(tag) ||
+					recipe.appliance.includes(tag) ||
+					ustensilsListArray.includes(tag)
 			);
 		});
 		renderAllArraySFiltred(filterFurtherByTags);
 	} else {
 		renderAllArraySFiltred(filterCardsByInput);
 	}
-	console.log(containerCards);
-}
-
-// Function for the main search by tags
-function mainSearchByTags(activeTag) {
-	if (filteredTagsArray.length >= 1) {
-		filterOnlyByTags = allRecipes.filter(recipe => {
-			const searchTag = normalizeElement(`${activeTag}`);
-			let ingredientsArray = [];
-			for (let key in recipe.ingredients) {
-				let ingredientElts = recipe.ingredients[key].ingredient;
-				ingredientsArray.push(ingredientElts);
-			}
-			ustensilsListArray = recipe.ustensils;
-			return (
-				normalizeElement(`${ingredientsArray}`).includes(searchTag) ||
-				normalizeElement(recipe.appliance).includes(searchTag) ||
-				normalizeElement(`${ustensilsListArray}`).includes(searchTag)
-			);
-		});
-		renderAllArraySFiltred(filterOnlyByTags);
-	} else {
-		renderAllArraySFiltred(allRecipes);
-	}
-	console.log(containerCards.length, containerCards);
+	console.log(allRecipes);
+	console.log(filterCardsByTags);
 }
 
 //==================================================================================================

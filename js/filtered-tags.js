@@ -17,38 +17,26 @@ let filteredTagsArray = [];
 let tagBgColorArray = [];
 let tagBgColor;
 
-// let RecipesByTagsItemArray = [];
-// let activeTagsArray = [];
 //==================================================================================================
 // FILTERED TAGS
 //==================================================================================================
-// let activeTags;
 let filteredTagValue;
 
 function addNewTag(event, tagBgColor) {
-	filteredTagValue = event.target.dataset.value; // textContent
+	filteredTagValue = event.target.dataset.value;
 	if (filteredTagsArray.includes(filteredTagValue)) {
 		return;
 	} else {
 		filteredTagsArray.push(filteredTagValue);
-		console.log(filteredTagValue, event.target.dataset);
-
 		tagBgColor = event.target.dataset.color;
 		tagBgColorArray.push(tagBgColor);
 
 		renderFilteredTags();
-		handlerRequestByTags(filteredTagValue);
-		// handlerRequestByTags(filteredTagsArray); // faire un forEach
+		handlerRequestByTags(filteredTagsArray);
 
-		// tagsListSearch(filteredTagValue);
-		// tagsListSearch(filteredTagsArray);
-
-		console.log(filteredTagsArray);
-		console.log(tagBgColorArray);
+		console.log(filteredTagsArray, filterCardsByTags);
 	}
 }
-console.log(filteredTagValue);
-console.log(filteredTagsArray);
 
 function renderFilteredTags() {
 	let newTag = '';
@@ -60,14 +48,17 @@ function renderFilteredTags() {
             <button class="filtered-tags-btn ms-3" type="button" aria-label="Supprimer le tag" onclick="deleteTag(${i})"></button>
         </li>`;
 	}
-	filteredTagsList.innerHTML = newTag; //adding new tag inside ul tag
+	//adding new tag inside ul tag
+	filteredTagsList.innerHTML = newTag;
 	closeAllDropdowns();
 }
 
 function deleteTag(index) {
-	filteredTagsArray.splice(index, 1); // delete or remove the tag name
-	tagBgColorArray.splice(index, 1); // delete or remove the tag color
+	// delete or remove the tag name
+	filteredTagsArray.splice(index, 1);
+	// delete or remove the tag color
+	tagBgColorArray.splice(index, 1);
+
 	renderFilteredTags();
 	handlerRequestByTags(filteredTagsArray);
-	// tagsListSearch(filteredTagValue);
 }
