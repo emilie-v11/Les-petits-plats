@@ -13,6 +13,7 @@ const filteredTagsItem = document.getElementsByClassName('filtered-tags-item');
 // Variables
 //=====================================
 let filteredTagsArray = [];
+let filteredTagValue;
 
 let tagBgColorArray = [];
 let tagBgColor;
@@ -20,28 +21,22 @@ let tagBgColor;
 //==================================================================================================
 // FILTERED TAGS
 //==================================================================================================
-let filteredTagValue;
 
 function addNewTag(event, tagBgColor) {
-	filteredTagValue = event.target.dataset.value; // textContent
+	filteredTagValue = event.target.dataset.value;
 	if (filteredTagsArray.includes(filteredTagValue)) {
 		return;
 	} else {
 		filteredTagsArray.push(filteredTagValue);
-		console.log(filteredTagValue, event.target.dataset);
-
 		tagBgColor = event.target.dataset.color;
 		tagBgColorArray.push(tagBgColor);
 
 		renderFilteredTags();
-		//handlerRequestByTags(filteredTagValue);
-		handlerRequestByTags(filteredTagsArray); // FIXME faire un forEach
-		console.log(filteredTagsArray);
-		console.log(tagBgColorArray);
+		handlerRequestByTags(filteredTagsArray);
+
+		console.log(filteredTagsArray, filterCardsByTags);
 	}
 }
-console.log(filteredTagValue);
-console.log(filteredTagsArray);
 
 function renderFilteredTags() {
 	let newTag = '';
@@ -53,13 +48,17 @@ function renderFilteredTags() {
             <button class="filtered-tags-btn ms-3" type="button" aria-label="Supprimer le tag" onclick="deleteTag(${i})"></button>
         </li>`;
 	}
-	filteredTagsList.innerHTML = newTag; //adding new tag inside ul tag
+	//adding new tag inside ul tag
+	filteredTagsList.innerHTML = newTag;
 	closeAllDropdowns();
 }
 
 function deleteTag(index) {
-	filteredTagsArray.splice(index, 1); // delete or remove the tag name
-	tagBgColorArray.splice(index, 1); // delete or remove the tag color
-    renderFilteredTags();
-	handlerRequestByTags(filteredTagsArray); // FIXME
+	// delete or remove the tag name
+	filteredTagsArray.splice(index, 1);
+	// delete or remove the tag color
+	tagBgColorArray.splice(index, 1);
+
+	renderFilteredTags();
+	handlerRequestByTags(filteredTagsArray);
 }
