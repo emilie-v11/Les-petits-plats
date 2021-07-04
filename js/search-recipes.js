@@ -92,61 +92,37 @@ function requestBySearchBar(searchText) {
 // FILTER RECIPES BY TAGS
 //==================================================================================================
 
-// Function for handler the further search & the main search by tags
-function handlerRequestByTags(tags) {
+// Function for handler the search by tags
+function handlerRequestByTags() {
 	if (searchBar.value.length >= 3) {
-		furtherSearchByTags(tags);
+		requestByTags(filteredTagsArr, filterFurtherByTags, filterCardsByInput);
 	} else if (searchBar.value.length < 3) {
-		mainSearchByTags(tags);
+		requestByTags(filteredTagsArr, filterCardsByTags, allRecipes);
 	}
 }
 
-// Function for the main search by tags
-function mainSearchByTags(tags) {
-	if (filteredTagsArray.length >= 1) {
-		filterCardsByTags = allRecipes.filter(recipe => {
+// Function for search by tags only search & the further search
+function requestByTags(tags, arrayFiltred, array) {
+	if (filteredTagsArr.length >= 1) {
+		arrayFiltred = array.filter(recipe => {
 			let ingredientsArray = [];
 			for (let key in recipe.ingredients) {
 				let ingredientElts = recipe.ingredients[key].ingredient;
 				ingredientsArray.push(ingredientElts);
 			}
-			let ustensilsListArray = recipe.ustensils;
+			let appliancesArray = recipe.appliance;
+			let ustensilsArray = recipe.ustensils;
 			return tags.every(
 				tag =>
 					ingredientsArray.includes(tag) ||
-					recipe.appliance.includes(tag) ||
-					ustensilsListArray.includes(tag)
+					appliancesArray.includes(tag) ||
+					ustensilsArray.includes(tag)
 			);
 		});
-		renderAllArraySFiltred(filterCardsByTags);
+		renderAllArraySFiltred(arrayFiltred);
 	} else {
-		renderAllArraySFiltred(allRecipes);
+		renderAllArraySFiltred(array);
 	}
-	console.log(filterCardsByTags);
-}
-
-// Function for the further search by tags
-function furtherSearchByTags(tags) {
-	if (filteredTagsArray.length >= 1) {
-		filterFurtherByTags = filterCardsByInput.filter(recipe => {
-			let ingredientsArray = [];
-			for (let key in recipe.ingredients) {
-				let ingredientElts = recipe.ingredients[key].ingredient;
-				ingredientsArray.push(ingredientElts);
-			}
-			let ustensilsListArray = recipe.ustensils;
-			return tags.every(
-				tag =>
-					ingredientsArray.includes(tag) ||
-					recipe.appliance.includes(tag) ||
-					ustensilsListArray.includes(tag)
-			);
-		});
-		renderAllArraySFiltred(filterFurtherByTags);
-	} else {
-		renderAllArraySFiltred(filterCardsByInput);
-	}
-	console.log(filterFurtherByTags);
 }
 
 //==================================================================================================
