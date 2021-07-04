@@ -12,7 +12,7 @@ const filteredTagsItem = document.getElementsByClassName('filtered-tags-item');
 //=====================================
 // Variables
 //=====================================
-let filteredTagsArray = [];
+let filteredTagsArr = [];
 
 let tagBgColorArray = [];
 let tagBgColor;
@@ -24,27 +24,27 @@ let filteredTagValue;
 
 function addNewTag(event, tagBgColor) {
 	filteredTagValue = event.target.dataset.value;
-	if (filteredTagsArray.includes(filteredTagValue)) {
+	if (filteredTagsArr.includes(filteredTagValue)) {
 		return;
 	} else {
-		filteredTagsArray.push(filteredTagValue);
+		filteredTagsArr.push(filteredTagValue);
 		tagBgColor = event.target.dataset.color;
 		tagBgColorArray.push(tagBgColor);
 
 		renderFilteredTags();
-		handlerRequestByTags(filteredTagsArray);
+		handlerRequestByTags(filteredTagsArr);
 
-		console.log(filteredTagsArray, filterCardsByTags);
+		console.log(filteredTagsArr, filterCardsByTags);
 	}
 }
 
 function renderFilteredTags() {
 	let newTag = '';
-	for (let i = 0; i < filteredTagsArray.length; i++) {
+	for (let i = 0; i < filteredTagsArr.length; i++) {
 		newTag += `
         <li class="filtered-tags-item list-group-item d-flex align-items-center rounded-3 border-light ps-3 py-2 me-2 mb-2 fw-bold text-white bg-${tagBgColorArray[i]}"
            data-tag="#${i}">
-                ${filteredTagsArray[i]}
+                ${filteredTagsArr[i]}
             <button class="filtered-tags-btn ms-3" type="button" aria-label="Supprimer le tag" onclick="deleteTag(${i})"></button>
         </li>`;
 	}
@@ -55,10 +55,10 @@ function renderFilteredTags() {
 
 function deleteTag(index) {
 	// delete or remove the tag name
-	filteredTagsArray.splice(index, 1);
+	filteredTagsArr.splice(index, 1);
 	// delete or remove the tag color
 	tagBgColorArray.splice(index, 1);
 
 	renderFilteredTags();
-	handlerRequestByTags(filteredTagsArray);
+	handlerRequestByTags(filteredTagsArr);
 }
