@@ -10,7 +10,7 @@ const init = function () {
 	renderUstensilsList(allRecipes);
 	searchBar.value = '';
 	alertMessage.classList.add('hidden');
-	filteredTagsArray = [];
+	filteredTagsArr = [];
 	tagBgColorArray = [];
 	renderFilteredTags();
 	// trapFocusDropdown(wrapperHomepage);
