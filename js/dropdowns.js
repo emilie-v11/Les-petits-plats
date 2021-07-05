@@ -87,7 +87,6 @@ function closeDropdown(dropdown, containerTags, inputDropdown, btnChevron) {
 }
 
 function handlerDropdownIngredients() {
-	// e.preventDefault();
 	if (!ingredientsDropdown.classList.contains('expanded')) {
 		closeDropdown(
 			appliancesDropdown,
@@ -119,7 +118,6 @@ function handlerDropdownIngredients() {
 }
 
 function handlerDropdownAppliances() {
-	// e.preventDefault();
 	if (!appliancesDropdown.classList.contains('expanded')) {
 		closeDropdown(
 			ingredientsDropdown,
@@ -151,7 +149,6 @@ function handlerDropdownAppliances() {
 }
 
 function handlerDropdownUstensils() {
-	// e.preventDefault();
 	if (!ustensilsDropdown.classList.contains('expanded')) {
 		closeDropdown(
 			ingredientsDropdown,

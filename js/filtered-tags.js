@@ -32,11 +32,9 @@ function addNewTag(event, tagBgColor) {
 		tagBgColorArray.push(tagBgColor);
 
 		renderFilteredTags();
-		// handlerRequestByTags(filteredTagsArr);
 		handlerRequestByTags();
-
-		console.log(filteredTagsArr, filterCardsByTags);
 	}
+	console.log(filteredTagsArr);
 }
 
 function renderFilteredTags() {
@@ -61,6 +59,6 @@ function deleteTag(index) {
 	tagBgColorArray.splice(index, 1);
 
 	renderFilteredTags();
-	// handlerRequestByTags(filteredTagsArr);
 	handlerRequestByTags();
+	console.log(filteredTagsArr);
 }

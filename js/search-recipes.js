@@ -19,7 +19,8 @@ let ustensilsListFiltred = [];
 //==================================================================================================
 // ALERT MESSAGE IF NO MATCH
 //==================================================================================================
-function noMatch(value, matches, number) {
+
+function noMatch (value, matches, number) {
 	if (value.length < number) {
 		alertMessage.classList.add('hidden');
 		alertMessage.ariaHidden = 'true';
