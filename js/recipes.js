@@ -76,7 +76,7 @@ const recipes = [
     {
         id: 3,
         name: 'Poulet coco réunionnais',
-        picture: 'poulet-coco réunionnais.webp',
+        picture: 'poulet-coco-reunionnais.webp',
         servings: 4,
         ingredients: [
             {
@@ -1299,8 +1299,8 @@ const recipes = [
     },
     {
         id: 36,
-        name: 'Lasagne courgettes et chèvre',
-        picture: 'lasagnes-courgettes-chèvre.webp',
+        name: 'Lasagnes courgettes et chèvre',
+        picture: 'lasagnes-courgettes-chevre.webp',
         servings: 2,
         ingredients: [
             {
