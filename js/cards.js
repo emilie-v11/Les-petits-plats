@@ -22,41 +22,37 @@ allRecipes = [...recipes];
 
 // Create all recipes' cards
 function renderRecipesCards(recipes) {
-	let newRecipeCard = '';
+    let newRecipeCard = '';
 
-	// console.log(allRecipes);
-	recipes.map(recipe => {
-		const ingredients = recipe.ingredients;
+    // console.log(allRecipes);
+    recipes.map(recipe => {
+        const ingredients = recipe.ingredients;
 
-		// Ingredients' recipes cards
-		let newIngredientTag = '';
-		ingredients.map(ingredient => {
-			// fix unit's ingredients : Plural / singular or abbreviation
-			let fixUnits =
-				ingredient.unit === 'grammes'
-					? ingredient.unit.replace('grammes', 'g')
-					: (ingredient.unit === 'cuillère à soupe' ||
-							ingredient.unit === 'cuillère à café') &&
-					  ingredient.quantity !== 1
-					? ingredient.unit.replace(ingredient.unit, 'cuillères')
-					: (ingredient.unit === 'cuillère à soupe' ||
-							ingredient.unit === 'cuillère à café') &&
-					  ingredient.quantity === 1
-					? ingredient.unit.replace(ingredient.unit, 'cuillère')
-					: (ingredient.unit === 'gousse' ||
-							ingredient.unit === 'sachet') &&
-					  ingredient.quantity !== 1
-					? ingredient.unit.concat('s')
-					: ingredient.unit !== undefined
-					? ingredient.unit
-					: '';
+        // Ingredients' recipes cards
+        let newIngredientTag = '';
+        ingredients.map(ingredient => {
+            // fix unit's ingredients : Plural / singular or abbreviation
+            let fixUnits =
+                ingredient.unit === 'grammes'
+                    ? ingredient.unit.replace('grammes', 'g')
+                    : (ingredient.unit === 'cuillère à soupe' ||
+                          ingredient.unit === 'cuillère à café') &&
+                      ingredient.quantity !== 1
+                    ? ingredient.unit.replace(ingredient.unit, 'cuillères')
+                    : (ingredient.unit === 'cuillère à soupe' ||
+                          ingredient.unit === 'cuillère à café') &&
+                      ingredient.quantity === 1
+                    ? ingredient.unit.replace(ingredient.unit, 'cuillère')
+                    : (ingredient.unit === 'gousse' || ingredient.unit === 'sachet') &&
+                      ingredient.quantity !== 1
+                    ? ingredient.unit.concat('s')
+                    : ingredient.unit !== undefined
+                    ? ingredient.unit
+                    : '';
 
-			// fix quantity's ingredients
-			let fixQuantity =
-				ingredient.quantity !== undefined
-					? `: ${ingredient.quantity}`
-					: '';
-			newIngredientTag += `
+            // fix quantity's ingredients
+            let fixQuantity = ingredient.quantity !== undefined ? `: ${ingredient.quantity}` : '';
+            newIngredientTag += `
             <li class="card-ingredients-item list-group-item bg-transparent border-0 fw-bold p-0">
                 <span class="recipe-ingredient">${ingredient.ingredient}</span>
                 <span class="recipe-quantity fw-normal">
@@ -67,14 +63,13 @@ function renderRecipesCards(recipes) {
                 </span>
             </li>
             `;
-		});
+        });
 
-		// Create recipes' cards
-		newRecipeCard += `
+        // Create recipes' cards
+        newRecipeCard += `
         <article id="${recipe.id}" class="card-recipe col rounded-3">
             <a href="#" class="col card rounded-3" aria-label="Accéder à la fiche de recette: '${recipe.name}'" tabindex="0">
-                <img src="./img/bg-card-img.svg" class="card-img-top rounded-top border-0" width="380"
-                    height="178" aria-hidden="true" alt="">
+                <img src="./img/recipies/${recipe.picture}" class="card-img-top rounded-top border-0" width="380" height="178" aria-hidden="true" alt="${recipe.name}">
                 <div class="card-body p-3 rounded-bottom">
                     <div class="card-heading d-flex justify-content-between align-items-center fw-bold mb-3">
                         <h2 class="card-title mb-0 fw-bold">${recipe.name}</h2>
@@ -98,6 +93,6 @@ function renderRecipesCards(recipes) {
             </a>
         </article>
         `;
-	});
-	containerCards.innerHTML = newRecipeCard;
+    });
+    containerCards.innerHTML = newRecipeCard;
 }
